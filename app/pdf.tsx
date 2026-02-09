@@ -7,9 +7,10 @@ import WebView from 'react-native-webview';
 const PAGE_OFFSET = 16;
 
 export default function PdfScreen() {
-  const params = useLocalSearchParams<{ page?: string }>();
+  const params = useLocalSearchParams<{ page?: string; term?: string }>();
   const basePage = Number(params.page ?? '1');
   const targetPage = Number.isFinite(basePage) ? Math.max(1, basePage + PAGE_OFFSET) : 1;
+  const term = typeof params.term === 'string' ? params.term.trim() : '';
 
   const [pdfUri, setPdfUri] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
@@ -49,7 +50,9 @@ export default function PdfScreen() {
     );
   }
 
-  const uriWithPage = `${pdfUri}#page=${targetPage}`;
+  const fragmentParts = [`page=${targetPage}`];
+  if (term) fragmentParts.push(`search=${encodeURIComponent(term)}`);
+  const uriWithPage = `${pdfUri}#${fragmentParts.join('&')}`;
 
   // Web: render via iframe for best PDF UX (built-in browser PDF viewer)
   if (Platform.OS === 'web') {

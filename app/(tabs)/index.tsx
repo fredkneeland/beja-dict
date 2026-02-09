@@ -1,11 +1,10 @@
-import { Image } from 'expo-image';
-import { StyleSheet, Switch, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Fuse from 'fuse.js';
 import React from 'react';
 import { DictionaryEntry, getDictionary } from '../../data/dictionary';
 
-import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
@@ -51,14 +50,7 @@ export default function HomeScreen() {
   }, [search, isBeja, dictionary, fuse]);
 
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
+    <SafeAreaView style={styles.screen} edges={['top', 'left', 'right']}>
       <View style={styles.searchContainer}>
         <TextInput
           style={styles.searchInput}
@@ -69,18 +61,28 @@ export default function HomeScreen() {
           autoCorrect={false}
         />
         <View style={styles.toggleRow}>
-          <Text style={{marginRight: 8}}>Beja</Text>
-          <Switch
-            value={isBeja}
-            onValueChange={setIsBeja}
-          />
-          <Text style={{marginLeft: 8}}>English</Text>
+          <View style={styles.segmented} accessibilityRole="tablist">
+            <TouchableOpacity
+              accessibilityRole="tab"
+              accessibilityState={{ selected: isBeja }}
+              style={[styles.segment, isBeja && styles.segmentActive]}
+              onPress={() => setIsBeja(true)}>
+              <Text style={[styles.segmentText, isBeja && styles.segmentTextActive]}>Beja</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              accessibilityRole="tab"
+              accessibilityState={{ selected: !isBeja }}
+              style={[styles.segment, !isBeja && styles.segmentActive]}
+              onPress={() => setIsBeja(false)}>
+              <Text style={[styles.segmentText, !isBeja && styles.segmentTextActive]}>English</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
-      {/* Results list (avoid FlatList inside ScrollView) */}
-      <View style={{ marginTop: 8 }}>
+
+      <ScrollView style={styles.resultsContainer} contentContainerStyle={{ paddingBottom: 24 }}>
         {search.trim().length > 0 && limitedResults.length === 0 ? (
-          <Text style={{ textAlign: 'center', margin: 16 }}>No results found.</Text>
+          <Text style={styles.emptyText}>No results found.</Text>
         ) : null}
 
         {limitedResults.map((item, i) => (
@@ -90,7 +92,8 @@ export default function HomeScreen() {
             onPress={() => {
               const page = item.source?.page;
               if (typeof page === 'number') {
-                router.push({ pathname: '/pdf', params: { page: String(page) } });
+                const term = isBeja ? item.headword : search.trim();
+                router.push({ pathname: '/pdf', params: { page: String(page), term } });
               }
             }}>
             <Text style={styles.resultHeadword}>{item.headword}</Text>
@@ -98,22 +101,21 @@ export default function HomeScreen() {
             <Text style={styles.resultMeta}>Page: {item.source?.page}</Text>
           </TouchableOpacity>
         ))}
-      </View>
-    </ParallaxScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
   searchContainer: {
-    padding: 16,
-    backgroundColor: 'rgba(255,255,255,0.9)',
-    borderRadius: 12,
-    margin: 16,
-    marginBottom: 0,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 2,
+    paddingHorizontal: 16,
+    paddingTop: 12,
+    paddingBottom: 12,
+    borderBottomWidth: 1,
+    borderColor: '#eee',
   },
   searchInput: {
     borderWidth: 1,
@@ -129,27 +131,42 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  titleContainer: {
+  segmented: {
     flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+    overflow: 'hidden',
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  segment: {
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    backgroundColor: '#fff',
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  segmentActive: {
+    backgroundColor: '#111827',
+  },
+  segmentText: {
+    fontSize: 14,
+    color: '#111827',
+    fontWeight: '600',
+  },
+  segmentTextActive: {
+    color: '#fff',
+  },
+  resultsContainer: {
+    flex: 1,
+  },
+  emptyText: {
+    textAlign: 'center',
+    marginTop: 16,
+    color: '#666',
   },
   resultItem: {
     padding: 12,
     borderBottomWidth: 1,
     borderColor: '#eee',
-    backgroundColor: '#fafafa',
+    backgroundColor: '#fff',
   },
   resultHeadword: {
     fontWeight: 'bold',
