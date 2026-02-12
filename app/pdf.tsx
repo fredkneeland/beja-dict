@@ -4,12 +4,12 @@ import React from 'react';
 import { ActivityIndicator, Platform, StyleSheet, Text, View } from 'react-native';
 import WebView from 'react-native-webview';
 
-const PAGE_OFFSET = 16;
-
 export default function PdfScreen() {
-  const params = useLocalSearchParams<{ page?: string; term?: string }>();
+  const params = useLocalSearchParams<{ page?: string; offset?: string; term?: string }>();
   const basePage = Number(params.page ?? '1');
-  const targetPage = Number.isFinite(basePage) ? Math.max(1, basePage + PAGE_OFFSET) : 1;
+  const offset = Number(params.offset ?? '16');
+  const safeOffset = Number.isFinite(offset) ? offset : 16;
+  const targetPage = Number.isFinite(basePage) ? Math.max(1, basePage + safeOffset) : 1;
   const term = typeof params.term === 'string' ? params.term.trim() : '';
 
   const [pdfUri, setPdfUri] = React.useState<string | null>(null);
