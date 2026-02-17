@@ -3,6 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Fuse from 'fuse.js';
 import React from 'react';
+import { Dict2Entry, getDict2 } from '../../data/dict2';
 import { DictionaryEntry, getDictionary } from '../../data/dictionary';
 import { EnglishBejaEntry, getEnglishBeja } from '../../data/english_beja';
 
@@ -15,33 +16,64 @@ export default function HomeScreen() {
 
   type SearchResult =
     | { kind: 'beja_en'; entry: DictionaryEntry }
-    | { kind: 'en_beja'; entry: EnglishBejaEntry };
+    | { kind: 'en_beja'; entry: EnglishBejaEntry }
+    | { kind: 'dict2'; entry: Dict2Entry };
 
   const [results, setResults] = React.useState<SearchResult[]>([]);
   const dictionary = React.useMemo(() => getDictionary(), []);
   const englishBeja = React.useMemo(() => getEnglishBeja(), []);
+  const dict2 = React.useMemo(() => getDict2(), []);
   const limitedResults = React.useMemo(() => results.slice(0, 30), [results]);
 
   const normalizeForSearch = React.useCallback((input: string) => {
-    return (input || '')
+    // Keep apostrophes (common in Beja orthography) but normalize the many unicode variants
+    // so that  /  / BC etc. behave consistently.
+    const normalized = (input || '')
       .toLowerCase()
+      .replace(/[\u2019\u2018\u02BC\u02BB\u2032]/g, "'")
       .normalize('NFKD')
       .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-z0-9]+/g, ' ')
+      .replace(/[^a-z0-9']+/g, ' ')
+      .replace(/\s+/g, ' ')
       .trim();
+
+    return normalized;
   }, []);
 
+  const stripApostrophes = React.useCallback((input: string) => input.replace(/'+/g, ''), []);
+
   const fuse = React.useMemo(() => {
-    type IndexedResult = SearchResult & { bejaSearch: string };
+    type IndexedResult = SearchResult & { bejaSearch: string; bejaSearchNoApos: string };
 
     const collection: IndexedResult[] = [
       ...dictionary.map((entry) => {
         const bejaRaw = [entry.headword, ...(entry.headword_parts ?? [])].join(' ');
-        return { kind: 'beja_en' as const, entry, bejaSearch: normalizeForSearch(bejaRaw) };
+        const bejaSearch = normalizeForSearch(bejaRaw);
+        return {
+          kind: 'beja_en' as const,
+          entry,
+          bejaSearch,
+          bejaSearchNoApos: stripApostrophes(bejaSearch),
+        };
       }),
       ...englishBeja.map((entry) => {
         const bejaRaw = (entry.beja ?? []).join(' ');
-        return { kind: 'en_beja' as const, entry, bejaSearch: normalizeForSearch(bejaRaw) };
+        const bejaSearch = normalizeForSearch(bejaRaw);
+        return {
+          kind: 'en_beja' as const,
+          entry,
+          bejaSearch,
+          bejaSearchNoApos: stripApostrophes(bejaSearch),
+        };
+      }),
+      ...dict2.map((entry) => {
+        const bejaSearch = normalizeForSearch(entry.headword);
+        return {
+          kind: 'dict2' as const,
+          entry,
+          bejaSearch,
+          bejaSearchNoApos: stripApostrophes(bejaSearch),
+        };
       }),
     ];
 
@@ -50,9 +82,15 @@ export default function HomeScreen() {
       ignoreLocation: true,
       threshold: 0.4,
       minMatchCharLength: 2,
-      keys: [{ name: 'bejaSearch', weight: 1 }],
+      // Use both forms so missing/extra apostrophes are a small penalty, not a hard mismatch.
+      // - bejaSearch: exact-ish matching when apostrophes are present
+      // - bejaSearchNoApos: forgiving matching when apostrophes differ
+      keys: [
+        { name: 'bejaSearch', weight: 0.7 },
+        { name: 'bejaSearchNoApos', weight: 0.3 },
+      ],
     });
-  }, [dictionary, englishBeja, normalizeForSearch]);
+  }, [dictionary, englishBeja, dict2, normalizeForSearch, stripApostrophes]);
 
   React.useEffect(() => {
     if (!search.trim()) {
@@ -76,11 +114,20 @@ export default function HomeScreen() {
         )
         .map(entry => ({ kind: 'en_beja' as const, entry }));
 
+      const dict2Matches: SearchResult[] = dict2
+        .filter(entry =>
+          (entry.gloss_en && entry.gloss_en.toLowerCase().includes(s)) ||
+          (entry.raw && entry.raw.toLowerCase().includes(s))
+        )
+        .map(entry => ({ kind: 'dict2' as const, entry }));
+
       const scoreEnglishResult = (r: SearchResult) => {
         const englishCandidates: string[] =
           r.kind === 'beja_en'
             ? (r.entry.gloss_en ?? [])
-            : [r.entry.english ?? ''];
+            : r.kind === 'en_beja'
+              ? [r.entry.english ?? '']
+              : [r.entry.gloss_en ?? ''];
 
         const normalized = englishCandidates
           .map(t => (t || '').toLowerCase().trim())
@@ -89,7 +136,10 @@ export default function HomeScreen() {
         const exact = normalized.some(t => t === s);
         const starts = normalized.some(t => t.startsWith(s));
         const includes = normalized.some(t => t.includes(s));
-        const rawIncludes = (r.entry.raw ?? []).some(line => line.toLowerCase().includes(s));
+        const rawIncludes =
+          r.kind === 'dict2'
+            ? (r.entry.raw ?? '').toLowerCase().includes(s)
+            : (r.entry.raw ?? []).some(line => line.toLowerCase().includes(s));
 
         // Lower is better
         const rank = exact ? 0 : starts ? 1 : includes ? 2 : rawIncludes ? 3 : 4;
@@ -98,13 +148,23 @@ export default function HomeScreen() {
         return { rank, bestLen };
       };
 
-      const merged = [ ...bejaEnMatches, ...enBejaMatches]
+      const merged = [ ...bejaEnMatches, ...enBejaMatches, ...dict2Matches]
         .map(r => ({ r, ...scoreEnglishResult(r) }))
         .sort((a, b) => {
           if (a.rank !== b.rank) return a.rank - b.rank;
           if (a.bestLen !== b.bestLen) return a.bestLen - b.bestLen;
-          const aPrimary = (a.r.kind === 'beja_en' ? a.r.entry.headword : a.r.entry.english) ?? '';
-          const bPrimary = (b.r.kind === 'beja_en' ? b.r.entry.headword : b.r.entry.english) ?? '';
+          const aPrimary =
+            a.r.kind === 'beja_en'
+              ? a.r.entry.headword
+              : a.r.kind === 'en_beja'
+                ? a.r.entry.english
+                : a.r.entry.headword;
+          const bPrimary =
+            b.r.kind === 'beja_en'
+              ? b.r.entry.headword
+              : b.r.kind === 'en_beja'
+                ? b.r.entry.english
+                : b.r.entry.headword;
           return aPrimary.localeCompare(bPrimary);
         })
         .map(x => x.r);
@@ -113,12 +173,30 @@ export default function HomeScreen() {
     } else {
       // Fuzzy Beja search: match headword and headword_parts
       const q = normalizeForSearch(search);
+      const qNoApos = stripApostrophes(q);
+      const qCompact = q.replace(/\s+/g, '');
+      const qNoAposCompact = qNoApos.replace(/\s+/g, '');
       const matches = fuse.search(q, { limit: 80 });
       const sorted: SearchResult[] = matches
         .slice()
         .sort((a, b) => {
-          const aStarts = (a.item as any).bejaSearch?.startsWith(q);
-          const bStarts = (b.item as any).bejaSearch?.startsWith(q);
+          const aItem = a.item as any;
+          const bItem = b.item as any;
+
+          // 1) Exact match (including apostrophes) wins.
+          const aExact = (aItem?.bejaSearch ?? '').replace(/\s+/g, '') === qCompact;
+          const bExact = (bItem?.bejaSearch ?? '').replace(/\s+/g, '') === qCompact;
+          if (aExact !== bExact) return aExact ? -1 : 1;
+
+          // 2) If the only difference is apostrophes (i.e. exact when apostrophes are stripped), rank at the top.
+          const aExactNoApos = (aItem?.bejaSearchNoApos ?? '').replace(/\s+/g, '') === qNoAposCompact;
+          const bExactNoApos = (bItem?.bejaSearchNoApos ?? '').replace(/\s+/g, '') === qNoAposCompact;
+          if (aExactNoApos !== bExactNoApos) return aExactNoApos ? -1 : 1;
+
+          const aStarts =
+            aItem?.bejaSearch?.startsWith(q) || (qNoApos && aItem?.bejaSearchNoApos?.startsWith(qNoApos));
+          const bStarts =
+            bItem?.bejaSearch?.startsWith(q) || (qNoApos && bItem?.bejaSearchNoApos?.startsWith(qNoApos));
           if (aStarts !== bStarts) return aStarts ? -1 : 1;
           return (a.score ?? 1) - (b.score ?? 1);
         })
@@ -127,25 +205,31 @@ export default function HomeScreen() {
 
       setResults(sorted);
     }
-  }, [search, isBeja, dictionary, englishBeja, fuse]);
+  }, [search, isBeja, dictionary, englishBeja, dict2, fuse, normalizeForSearch, stripApostrophes]);
 
   const getBejaText = (r: SearchResult) => {
     if (r.kind === 'beja_en') return r.entry.headword ?? '';
-    return (r.entry.beja && r.entry.beja.length > 0 ? r.entry.beja.join('; ') : '') || '';
+    if (r.kind === 'en_beja') {
+      return (r.entry.beja && r.entry.beja.length > 0 ? r.entry.beja.join('; ') : '') || '';
+    }
+    return r.entry.headword ?? '';
   };
 
   const getEnglishText = (r: SearchResult) => {
     if (r.kind === 'beja_en') return r.entry.gloss_en?.join('; ') ?? '';
-    return r.entry.english ?? '';
+    if (r.kind === 'en_beja') return r.entry.english ?? '';
+    return r.entry.gloss_en ?? '';
   };
 
   const getArabicText = (r: SearchResult) => {
+    if (r.kind === 'dict2') return '';
     const ar = r.entry.gloss_ar;
     return ar && ar.length > 0 ? ar.join('; ') : '';
   };
 
   const getSourcePage = (r: SearchResult) => r.entry.source?.page;
-  const getPdfOffset = (r: SearchResult) => (r.kind === 'en_beja' ? 198 : 16);
+  const getPdfOffset = (r: SearchResult) => (r.kind === 'en_beja' ? 198 : r.kind === 'dict2' ? 0 : 16);
+  const getPdfDoc = (r: SearchResult) => (r.kind === 'dict2' ? 'dict2' : 'dictionary');
 
   const getPrimaryText = (r: SearchResult) => (isBeja ? getBejaText(r) : getEnglishText(r));
   const getSecondaryText = (r: SearchResult) => (isBeja ? getEnglishText(r) : getBejaText(r));
@@ -194,8 +278,13 @@ export default function HomeScreen() {
               const page = getSourcePage(r);
               if (typeof page === 'number') {
                 const offset = getPdfOffset(r);
+                const doc = getPdfDoc(r);
                 const term = isBeja ? getBejaText(r) : search.trim();
-                router.push({ pathname: '/pdf', params: { page: String(page), offset: String(offset), term } });
+                const headword = getBejaText(r) || getPrimaryText(r);
+                router.push({
+                  pathname: '/pdf',
+                  params: { doc, page: String(page), offset: String(offset), term, headword },
+                });
               }
             }}>
             <Text style={styles.resultHeadword}>{getPrimaryText(r)}</Text>

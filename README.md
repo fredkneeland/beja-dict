@@ -25,6 +25,21 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
+## Deploy (GitHub Pages)
+
+This repo includes a GitHub Actions workflow that exports the web build and deploys it to GitHub Pages.
+
+1. In your GitHub repo settings, go to **Pages** and set **Build and deployment** → **Source** to **GitHub Actions**.
+2. Push to the `main` branch.
+3. The workflow in `.github/workflows/deploy-pages.yml` will publish the site at `https://<user>.github.io/<repo>/`.
+
+Local sanity-check (simulates hosting under `/<repo>/`):
+
+```bash
+npm run export:web
+GH_PAGES_BASE_PATH=<repo> npm run postprocess:gh-pages
+```
+
 ## Get a fresh project
 
 When you're ready, run:
