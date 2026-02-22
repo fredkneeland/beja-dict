@@ -1,26 +1,3 @@
-// Ensures the browser URL always includes the base path (e.g. /beja-dict) for static hosting
-function ensureBasePathInUrl() {
-  if (typeof window === 'undefined') return;
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', ensureBasePathInUrl, { once: true });
-    return;
-  }
-  const base = (typeof globalThis !== 'undefined' && (globalThis.__GH_PAGES_BASE_PATH__ || globalThis.__EXPO_BASE_URL__)) || '';
-  if (!base) return;
-  const prefix = `/${base.replace(/^\/+/g, '').replace(/\/+$/g, '')}`;
-  const path = window.location.pathname;
-  // If already at /beja-dict or /beja-dict/..., do nothing
-  if (path === prefix || path.startsWith(prefix + '/')) {
-    // But if at /beja-dict (no trailing slash), normalize to /beja-dict/
-    if (path === prefix) {
-      window.history.replaceState({}, '', prefix + '/' + window.location.search + window.location.hash);
-    }
-    return;
-  }
-  // If at root or anywhere else, rewrite to /beja-dict/...
-  const newUrl = prefix + path + window.location.search + window.location.hash;
-  window.history.replaceState({}, '', newUrl);
-}
 import * as Clipboard from 'expo-clipboard';
 import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -44,9 +21,6 @@ function appendBaseUrl(path: string): string {
 }
 
 export default function HomeScreen() {
-  React.useEffect(() => {
-    ensureBasePathInUrl();
-  }, [search, isBeja]);
   const router = useRouter();
   const [search, setSearch] = React.useState("");
   const [isBeja, setIsBeja] = React.useState(true);
