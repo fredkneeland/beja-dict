@@ -1,4 +1,6 @@
 import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import * as Clipboard from 'expo-clipboard';
+import { CopyButton } from '../../components/ui/copy-button';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Fuse from 'fuse.js';
@@ -333,30 +335,46 @@ export default function HomeScreen() {
           <Text style={styles.emptyText}>No results found.</Text>
         ) : null}
 
-        {limitedResults.map((r, i) => (
-          <TouchableOpacity
-            key={`${r.kind}-${getPrimaryText(r)}-${getSourcePage(r) ?? i}-${i}`}
-            style={styles.resultItem}
-            onPress={() => {
-              const page = getSourcePage(r);
-              if (typeof page === 'number') {
-                const offset = getPdfOffset(r);
-                const doc = getPdfDoc(r);
-                const term = isBeja ? getBejaText(r) : search.trim();
-                const headword = getBejaText(r) || getPrimaryText(r);
-                router.push({
-                  pathname: appendBaseUrl('/pdf'),
-                  params: { doc, page: String(page), offset: String(offset), term, headword },
-                });
-              }
-            }}>
-            <Text style={styles.resultHeadword}>{getPrimaryText(r)}</Text>
-            <Text style={styles.resultGloss}>
-              {getSecondaryText(r)}
-              {getArabicText(r) ? ` — ${getArabicText(r)}` : ''}
-            </Text>
-          </TouchableOpacity>
-        ))}
+        {limitedResults.map((r, i) => {
+          const bejaWord = getBejaText(r);
+          return (
+            <View
+              key={`${r.kind}-${getPrimaryText(r)}-${getSourcePage(r) ?? i}-${i}`}
+              style={[styles.resultItem, { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }]}
+            >
+              <TouchableOpacity
+                style={{ flex: 1 }}
+                onPress={() => {
+                  const page = getSourcePage(r);
+                  if (typeof page === 'number') {
+                    const offset = getPdfOffset(r);
+                    const doc = getPdfDoc(r);
+                    const term = isBeja ? getBejaText(r) : search.trim();
+                    const headword = getBejaText(r) || getPrimaryText(r);
+                    router.push({
+                      pathname: appendBaseUrl('/pdf'),
+                      params: { doc, page: String(page), offset: String(offset), term, headword },
+                    });
+                  }
+                }}
+                accessibilityRole="button"
+                accessibilityLabel={`View PDF for ${bejaWord}`}
+              >
+                <Text style={styles.resultHeadword}>{getPrimaryText(r)}</Text>
+                <Text style={styles.resultGloss}>
+                  {getSecondaryText(r)}
+                  {getArabicText(r) ? ` — ${getArabicText(r)}` : ''}
+                </Text>
+              </TouchableOpacity>
+              <CopyButton
+                onPress={() => {
+                  if (bejaWord) Clipboard.setStringAsync(bejaWord);
+                }}
+                style={{ marginLeft: 8 }}
+              />
+            </View>
+          );
+        })}
       </ScrollView>
     </SafeAreaView>
   );
