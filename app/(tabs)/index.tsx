@@ -10,15 +10,6 @@ import { DictionaryEntry, getDictionary } from '../../data/dictionary';
 import { EnglishBejaEntry, getEnglishBeja } from '../../data/english_beja';
 
 import { useRouter } from 'expo-router';
-// Use appendBaseUrl if available (expo-router >=6.0.0), fallback to manual base path
-function appendBaseUrl(path: string): string {
-  // @ts-ignore
-  if (typeof globalThis.appendBaseUrl === 'function') return globalThis.appendBaseUrl(path);
-  // Try injected env
-  const base = (typeof globalThis !== 'undefined' && (globalThis.__GH_PAGES_BASE_PATH__ || globalThis.__EXPO_BASE_URL__)) || '';
-  if (base && path.startsWith('/')) return `/${base.replace(/^\/+|\/+$/g, '')}${path}`;
-  return path;
-}
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -352,7 +343,7 @@ export default function HomeScreen() {
                     const term = isBeja ? getBejaText(r) : search.trim();
                     const headword = getBejaText(r) || getPrimaryText(r);
                     router.push({
-                      pathname: appendBaseUrl('/pdf'),
+                      pathname: '/pdf',
                       params: { doc, page: String(page), offset: String(offset), term, headword },
                     });
                   }
