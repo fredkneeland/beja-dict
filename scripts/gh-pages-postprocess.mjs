@@ -37,17 +37,18 @@ async function listFilesRecursive(dir) {
 }
 
 function injectBaseEnv(html) {
+  // The base URL is now baked into the bundle via experiments.baseUrl in
+  // app.config.js, so we no longer need to inject runtime globals for
+  // expo-router's path handling.  We keep only the NODE_ENV polyfill
+  // (some older RN web polyfills reference window.process).
   const injection =
     `<script>\n` +
-    `globalThis.__GH_PAGES_BASE_PATH__ = ${JSON.stringify(basePath)};\n` +
     `window.process = window.process || {};\n` +
     `window.process.env = window.process.env || {};\n` +
-    // Ensure Expo Router's baseUrl helpers work in the browser bundle.
-    `window.process.env.EXPO_BASE_URL = ${JSON.stringify(basePath)};\n` +
     `window.process.env.NODE_ENV = window.process.env.NODE_ENV || 'production';\n` +
     `</script>`;
 
-  if (html.includes('window.process.env.EXPO_BASE_URL')) {
+  if (html.includes("window.process.env.NODE_ENV = window.process.env.NODE_ENV || 'production'")) {
     return html;
   }
 
@@ -70,12 +71,14 @@ function injectBaseEnv(html) {
 function rewriteAbsolutePaths(html) {
   if (!prefix) return html;
 
-  // Prefix any root-absolute URL-ish attributes.
-  // Avoid protocol-relative URLs ("//example.com").
+  // Prefix root-absolute URL attributes that don't already start with the base
+  // path (Expo's export with experiments.baseUrl already prefixes some URLs).
+  // Avoid protocol-relative URLs ("//example.com") and already-prefixed URLs.
+  const escaped = prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const withPrefixedAttrs = html
-    .replace(/\bhref="\/(?!\/)/g, `href=\"${prefix}/`)
-    .replace(/\bsrc="\/(?!\/)/g, `src=\"${prefix}/`)
-    .replace(/\bcontent="\/(?!\/)/g, `content=\"${prefix}/`);
+    .replace(new RegExp(`\\bhref="\\/(?!\\/)(?!${escaped.slice(1)}\\/)`, 'g'), `href="${prefix}/`)
+    .replace(new RegExp(`\\bsrc="\\/(?!\\/)(?!${escaped.slice(1)}\\/)`, 'g'), `src="${prefix}/`)
+    .replace(new RegExp(`\\bcontent="\\/(?!\\/)(?!${escaped.slice(1)}\\/)`, 'g'), `content="${prefix}/`);
 
   return withPrefixedAttrs;
 }
@@ -104,10 +107,12 @@ async function main() {
     }
   }
 
-  // SPA fallback for GitHub Pages: serve the app for unknown paths.
+  // SPA fallback for GitHub Pages: always overwrite 404.html with index.html
+  // so unknown paths (e.g. /pdf?query=...) load the full SPA instead of the
+  // expo-router +not-found pre-render.
   const indexHtmlPath = path.join(distDir, 'index.html');
   const notFoundPath = path.join(distDir, '404.html');
-  if ((await exists(indexHtmlPath)) && !(await exists(notFoundPath))) {
+  if (await exists(indexHtmlPath)) {
     await fs.copyFile(indexHtmlPath, notFoundPath);
   }
 
