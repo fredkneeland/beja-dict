@@ -4,15 +4,23 @@ function ensureBasePathInUrl() {
   const base = (typeof globalThis !== 'undefined' && (globalThis.__GH_PAGES_BASE_PATH__ || globalThis.__EXPO_BASE_URL__)) || '';
   if (!base) return;
   const prefix = `/${base.replace(/^\/+/g, '').replace(/\/+$/g, '')}`;
-  if (!window.location.pathname.startsWith(prefix)) {
-    const newUrl = prefix + window.location.pathname + window.location.search + window.location.hash;
-    window.history.replaceState({}, '', newUrl);
+  const path = window.location.pathname;
+  // If already at /beja-dict or /beja-dict/..., do nothing
+  if (path === prefix || path.startsWith(prefix + '/')) {
+    // But if at /beja-dict (no trailing slash), normalize to /beja-dict/
+    if (path === prefix) {
+      window.history.replaceState({}, '', prefix + '/' + window.location.search + window.location.hash);
+    }
+    return;
   }
+  // If at root or anywhere else, rewrite to /beja-dict/...
+  const newUrl = prefix + path + window.location.search + window.location.hash;
+  window.history.replaceState({}, '', newUrl);
 }
-import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
-import { CopyButton } from '../../components/ui/copy-button';
+import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { CopyButton } from '../../components/ui/copy-button';
 
 import Fuse from 'fuse.js';
 import React from 'react';

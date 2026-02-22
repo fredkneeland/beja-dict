@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { TouchableOpacity, Platform } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import * as React from 'react';
+import { TouchableOpacity } from 'react-native';
 
 export function CopyButton({ onPress, size = 22, color = '#888', style }) {
   return (
