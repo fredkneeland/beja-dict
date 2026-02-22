@@ -1,6 +1,10 @@
 // Ensures the browser URL always includes the base path (e.g. /beja-dict) for static hosting
 function ensureBasePathInUrl() {
   if (typeof window === 'undefined') return;
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ensureBasePathInUrl, { once: true });
+    return;
+  }
   const base = (typeof globalThis !== 'undefined' && (globalThis.__GH_PAGES_BASE_PATH__ || globalThis.__EXPO_BASE_URL__)) || '';
   if (!base) return;
   const prefix = `/${base.replace(/^\/+/g, '').replace(/\/+$/g, '')}`;
