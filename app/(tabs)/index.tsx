@@ -8,6 +8,15 @@ import { DictionaryEntry, getDictionary } from '../../data/dictionary';
 import { EnglishBejaEntry, getEnglishBeja } from '../../data/english_beja';
 
 import { useRouter } from 'expo-router';
+// Use appendBaseUrl if available (expo-router >=6.0.0), fallback to manual base path
+function appendBaseUrl(path: string): string {
+  // @ts-ignore
+  if (typeof globalThis.appendBaseUrl === 'function') return globalThis.appendBaseUrl(path);
+  // Try injected env
+  const base = (typeof globalThis !== 'undefined' && (globalThis.__GH_PAGES_BASE_PATH__ || globalThis.__EXPO_BASE_URL__)) || '';
+  if (base && path.startsWith('/')) return `/${base.replace(/^\/+|\/+$/g, '')}${path}`;
+  return path;
+}
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -42,35 +51,83 @@ export default function HomeScreen() {
 
   const stripApostrophes = React.useCallback((input: string) => input.replace(/'+/g, ''), []);
 
+  const isWithinEditDistance1 = React.useCallback((a: string, b: string) => {
+    if (a === b) return true;
+    const la = a.length;
+    const lb = b.length;
+    if (Math.abs(la - lb) > 1) return false;
+
+    // Ensure a is the shorter (or equal) string.
+    if (la > lb) return isWithinEditDistance1(b, a);
+
+    let i = 0;
+    let j = 0;
+    let edits = 0;
+    while (i < a.length && j < b.length) {
+      if (a[i] === b[j]) {
+        i++;
+        j++;
+        continue;
+      }
+      edits++;
+      if (edits > 1) return false;
+      if (a.length === b.length) {
+        // substitution
+        i++;
+        j++;
+      } else {
+        // insertion into b (or deletion from b)
+        j++;
+      }
+    }
+    // Account for trailing char in the longer string.
+    if (j < b.length || i < a.length) edits++;
+    return edits <= 1;
+  }, []);
+
   const fuse = React.useMemo(() => {
-    type IndexedResult = SearchResult & { bejaSearch: string; bejaSearchNoApos: string };
+    type IndexedResult = SearchResult & {
+      bejaPrimary: string;
+      bejaPrimaryNoApos: string;
+      bejaSearch: string;
+      bejaSearchNoApos: string;
+    };
 
     const collection: IndexedResult[] = [
       ...dictionary.map((entry) => {
+        const bejaPrimary = normalizeForSearch(entry.headword ?? '');
         const bejaRaw = [entry.headword, ...(entry.headword_parts ?? [])].join(' ');
         const bejaSearch = normalizeForSearch(bejaRaw);
         return {
           kind: 'beja_en' as const,
           entry,
+          bejaPrimary,
+          bejaPrimaryNoApos: stripApostrophes(bejaPrimary),
           bejaSearch,
           bejaSearchNoApos: stripApostrophes(bejaSearch),
         };
       }),
       ...englishBeja.map((entry) => {
+        const bejaPrimary = normalizeForSearch((entry.beja ?? [])[0] ?? '');
         const bejaRaw = (entry.beja ?? []).join(' ');
         const bejaSearch = normalizeForSearch(bejaRaw);
         return {
           kind: 'en_beja' as const,
           entry,
+          bejaPrimary,
+          bejaPrimaryNoApos: stripApostrophes(bejaPrimary),
           bejaSearch,
           bejaSearchNoApos: stripApostrophes(bejaSearch),
         };
       }),
       ...dict2.map((entry) => {
+        const bejaPrimary = normalizeForSearch(entry.headword ?? '');
         const bejaSearch = normalizeForSearch(entry.headword);
         return {
           kind: 'dict2' as const,
           entry,
+          bejaPrimary,
+          bejaPrimaryNoApos: stripApostrophes(bejaPrimary),
           bejaSearch,
           bejaSearchNoApos: stripApostrophes(bejaSearch),
         };
@@ -80,14 +137,16 @@ export default function HomeScreen() {
     return new Fuse(collection, {
       includeScore: true,
       ignoreLocation: true,
-      threshold: 0.4,
+      // Slightly stricter threshold keeps very-distant matches from crowding out
+      // near-misses like giraat → giiraat.
+      threshold: 0.33,
       minMatchCharLength: 2,
-      // Use both forms so missing/extra apostrophes are a small penalty, not a hard mismatch.
-      // - bejaSearch: exact-ish matching when apostrophes are present
-      // - bejaSearchNoApos: forgiving matching when apostrophes differ
+      // Prefer primary headword matches, but keep broader forms for flexibility.
       keys: [
-        { name: 'bejaSearch', weight: 0.7 },
-        { name: 'bejaSearchNoApos', weight: 0.3 },
+        { name: 'bejaPrimary', weight: 0.75 },
+        { name: 'bejaPrimaryNoApos', weight: 0.15 },
+        { name: 'bejaSearch', weight: 0.08 },
+        { name: 'bejaSearchNoApos', weight: 0.02 },
       ],
     });
   }, [dictionary, englishBeja, dict2, normalizeForSearch, stripApostrophes]);
@@ -176,36 +235,40 @@ export default function HomeScreen() {
       const qNoApos = stripApostrophes(q);
       const qCompact = q.replace(/\s+/g, '');
       const qNoAposCompact = qNoApos.replace(/\s+/g, '');
-      const matches = fuse.search(q, { limit: 80 });
-      const sorted: SearchResult[] = matches
-        .slice()
+      const matches = fuse.search(q, { limit: 200 });
+      const ranked = matches.map((m) => {
+        const item: any = m.item;
+        const bejaSearchCompact = String(item?.bejaSearch ?? '').replace(/\s+/g, '');
+        const bejaSearchNoAposCompact = String(item?.bejaSearchNoApos ?? '').replace(/\s+/g, '');
+        const primaryCompact = String(item?.bejaPrimary ?? '').replace(/\s+/g, '');
+        const primaryNoAposCompact = String(item?.bejaPrimaryNoApos ?? '').replace(/\s+/g, '');
+
+        const exact = bejaSearchCompact === qCompact;
+        const exactNoApos = bejaSearchNoAposCompact === qNoAposCompact;
+        const starts =
+          (typeof item?.bejaSearch === 'string' && item.bejaSearch.startsWith(q)) ||
+          (qNoApos && typeof item?.bejaSearchNoApos === 'string' && item.bejaSearchNoApos.startsWith(qNoApos));
+        const near =
+          (primaryCompact && isWithinEditDistance1(primaryCompact, qCompact)) ||
+          (qNoAposCompact && primaryNoAposCompact && isWithinEditDistance1(primaryNoAposCompact, qNoAposCompact));
+
+        return { ...m, _rank: { exact, exactNoApos, starts, near } };
+      });
+
+      const sorted: SearchResult[] = ranked
         .sort((a, b) => {
-          const aItem = a.item as any;
-          const bItem = b.item as any;
-
-          // 1) Exact match (including apostrophes) wins.
-          const aExact = (aItem?.bejaSearch ?? '').replace(/\s+/g, '') === qCompact;
-          const bExact = (bItem?.bejaSearch ?? '').replace(/\s+/g, '') === qCompact;
-          if (aExact !== bExact) return aExact ? -1 : 1;
-
-          // 2) If the only difference is apostrophes (i.e. exact when apostrophes are stripped), rank at the top.
-          const aExactNoApos = (aItem?.bejaSearchNoApos ?? '').replace(/\s+/g, '') === qNoAposCompact;
-          const bExactNoApos = (bItem?.bejaSearchNoApos ?? '').replace(/\s+/g, '') === qNoAposCompact;
-          if (aExactNoApos !== bExactNoApos) return aExactNoApos ? -1 : 1;
-
-          const aStarts =
-            aItem?.bejaSearch?.startsWith(q) || (qNoApos && aItem?.bejaSearchNoApos?.startsWith(qNoApos));
-          const bStarts =
-            bItem?.bejaSearch?.startsWith(q) || (qNoApos && bItem?.bejaSearchNoApos?.startsWith(qNoApos));
-          if (aStarts !== bStarts) return aStarts ? -1 : 1;
+          if (a._rank.exact !== b._rank.exact) return a._rank.exact ? -1 : 1;
+          if (a._rank.exactNoApos !== b._rank.exactNoApos) return a._rank.exactNoApos ? -1 : 1;
+          if (a._rank.starts !== b._rank.starts) return a._rank.starts ? -1 : 1;
+          if (a._rank.near !== b._rank.near) return a._rank.near ? -1 : 1;
           return (a.score ?? 1) - (b.score ?? 1);
         })
         .slice(0, 60)
-        .map(m => (m.item as unknown as SearchResult));
+        .map((m) => m.item as unknown as SearchResult);
 
       setResults(sorted);
     }
-  }, [search, isBeja, dictionary, englishBeja, dict2, fuse, normalizeForSearch, stripApostrophes]);
+  }, [search, isBeja, dictionary, englishBeja, dict2, fuse, normalizeForSearch, stripApostrophes, isWithinEditDistance1]);
 
   const getBejaText = (r: SearchResult) => {
     if (r.kind === 'beja_en') return r.entry.headword ?? '';
@@ -282,7 +345,7 @@ export default function HomeScreen() {
                 const term = isBeja ? getBejaText(r) : search.trim();
                 const headword = getBejaText(r) || getPrimaryText(r);
                 router.push({
-                  pathname: '/pdf',
+                  pathname: appendBaseUrl('/pdf'),
                   params: { doc, page: String(page), offset: String(offset), term, headword },
                 });
               }
