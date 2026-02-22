@@ -36,7 +36,7 @@ This repo includes a GitHub Actions workflow that exports the web build and depl
 Local sanity-check (simulates hosting under `/<repo>/`):
 
 ```bash
-npm run export:web
+EXPO_BASE_URL=<repo> npm run export:web
 GH_PAGES_BASE_PATH=<repo> npm run postprocess:gh-pages
 ```
 

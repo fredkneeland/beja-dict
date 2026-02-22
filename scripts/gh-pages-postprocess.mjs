@@ -39,6 +39,7 @@ async function listFilesRecursive(dir) {
 function injectBaseEnv(html) {
   const injection =
     `<script>\n` +
+    `globalThis.__GH_PAGES_BASE_PATH__ = ${JSON.stringify(basePath)};\n` +
     `window.process = window.process || {};\n` +
     `window.process.env = window.process.env || {};\n` +
     // Ensure Expo Router's baseUrl helpers work in the browser bundle.

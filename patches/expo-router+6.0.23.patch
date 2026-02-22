@@ -1,0 +1,47 @@
+diff --git a/node_modules/expo-router/build/getLinkingConfig.js b/node_modules/expo-router/build/getLinkingConfig.js
+index 2a0ee73..78abb25 100644
+--- a/node_modules/expo-router/build/getLinkingConfig.js
++++ b/node_modules/expo-router/build/getLinkingConfig.js
+@@ -8,6 +8,34 @@ const constants_1 = require("./constants");
+ const getReactNavigationConfig_1 = require("./getReactNavigationConfig");
+ const getRoutesRedirects_1 = require("./getRoutesRedirects");
+ const linking_1 = require("./link/linking");
++
++function stripGhPagesBasePath(path) {
++    try {
++        if (expo_modules_core_1.Platform.OS !== 'web') {
++            return path;
++        }
++        const g = typeof globalThis !== 'undefined' ? globalThis : undefined;
++        const base = g?.__GH_PAGES_BASE_PATH__ || g?.__EXPO_BASE_URL__ || g?.__EXPO_BASE_PATH__;
++        if (typeof base !== 'string' || !base) {
++            return path;
++        }
++        const trimmed = base.replace(/^\/+/, '').replace(/\/+$/, '');
++        if (!trimmed) {
++            return path;
++        }
++        const prefix = '/' + trimmed;
++        if (path === prefix) {
++            return '/';
++        }
++        if (path.startsWith(prefix + '/')) {
++            return path.slice(prefix.length) || '/';
++        }
++        return path;
++    }
++    catch {
++        return path;
++    }
++}
+ function getNavigationConfig(routes, metaOnly, { sitemap, notFound }) {
+     const config = (0, getReactNavigationConfig_1.getReactNavigationConfig)(routes, metaOnly);
+     const sitemapRoute = (() => {
+@@ -88,6 +116,7 @@ function getLinkingConfig(routes, context, getRouteInfo, { metaOnly = true, serv
+         },
+         subscribe: (0, linking_1.subscribe)(nativeLinking, redirects),
+         getStateFromPath: (path, options) => {
++            path = stripGhPagesBasePath(path);
+             return (0, linking_1.getStateFromPath)(path, options, getRouteInfo().segments);
+         },
+         getPathFromState(state, options) {

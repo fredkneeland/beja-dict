@@ -34,7 +34,7 @@ jobs:
         run: npm ci
 
       - name: Export web
-        run: npx expo export -p web --output-dir dist
+        run: EXPO_BASE_URL=${{ github.event.repository.name }} npx expo export -p web --output-dir dist
 
       - name: GitHub Pages postprocess
         run: GH_PAGES_BASE_PATH=${{ github.event.repository.name }} node scripts/gh-pages-postprocess.mjs dist
