@@ -1,3 +1,14 @@
+// Ensures the browser URL always includes the base path (e.g. /beja-dict) for static hosting
+function ensureBasePathInUrl() {
+  if (typeof window === 'undefined') return;
+  const base = (typeof globalThis !== 'undefined' && (globalThis.__GH_PAGES_BASE_PATH__ || globalThis.__EXPO_BASE_URL__)) || '';
+  if (!base) return;
+  const prefix = `/${base.replace(/^\/+/g, '').replace(/\/+$/g, '')}`;
+  if (!window.location.pathname.startsWith(prefix)) {
+    const newUrl = prefix + window.location.pathname + window.location.search + window.location.hash;
+    window.history.replaceState({}, '', newUrl);
+  }
+}
 import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
 import { CopyButton } from '../../components/ui/copy-button';
@@ -21,6 +32,9 @@ function appendBaseUrl(path: string): string {
 }
 
 export default function HomeScreen() {
+  React.useEffect(() => {
+    ensureBasePathInUrl();
+  }, [search, isBeja]);
   const router = useRouter();
   const [search, setSearch] = React.useState("");
   const [isBeja, setIsBeja] = React.useState(true);
