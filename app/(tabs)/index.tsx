@@ -287,6 +287,11 @@ export default function HomeScreen() {
   const getPdfOffset = (r: SearchResult) => (r.kind === 'en_beja' ? 198 : r.kind === 'dict2' ? 0 : 16);
   const getPdfDoc = (r: SearchResult) => (r.kind === 'dict2' ? 'dict2' : 'dictionary');
 
+  const getRawText = (r: SearchResult) => {
+    if (r.kind === 'dict2') return r.entry.raw ?? '';
+    return (r.entry.raw ?? []).join('\n');
+  };
+
   const getPrimaryText = (r: SearchResult) => (isBeja ? getBejaText(r) : getEnglishText(r));
   const getSecondaryText = (r: SearchResult) => (isBeja ? getEnglishText(r) : getBejaText(r));
 
@@ -359,7 +364,8 @@ export default function HomeScreen() {
               </TouchableOpacity>
               <CopyButton
                 onPress={() => {
-                  if (bejaWord) Clipboard.setStringAsync(bejaWord);
+                  const raw = getRawText(r);
+                  if (raw) Clipboard.setStringAsync(raw);
                 }}
                 style={{ marginLeft: 8 }}
               />
