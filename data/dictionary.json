@@ -51484,39 +51484,15 @@
     }
   },
   {
-    "headword": "dhoom",
+    "headword": "dhoom Adv",
     "headword_parts": [
-      "dhoom"
+      "dhoom Adv"
     ],
     "gloss_en": [
-      "downward"
+      "downward, underneath"
     ],
-    "gloss_ar": null,
-    "pos": [
-      "Adv"
-    ],
-    "gender": null,
-    "number": null,
-    "class": null,
-    "nominalized_verb": false,
-    "regions": null,
-    "raw": [
-      "dhoom Adv * downward,"
-    ],
-    "source": {
-      "page": 45,
-      "start_line": 1,
-      "end_line": 1
-    }
-  },
-  {
-    "headword": "underneath",
-    "headword_parts": [
-      "underneath"
-    ],
-    "gloss_en": null,
     "gloss_ar": [
-      "الهبوط"
+      "الهبوط‎"
     ],
     "pos": [
       "Adv"
@@ -51531,26 +51507,24 @@
       "Eg"
     ],
     "raw": [
-      "underneath * الهبوط * Adv *",
-      "-",
-      "* Er Su Eg"
+      "dhoom Adv * downward, underneath * الهبوط‎ * Adv * - * Er Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 2,
-      "end_line": 4
+      "start_line": 1,
+      "end_line": 1
     }
   },
   {
-    "headword": "dhoom",
+    "headword": "dhoom N",
     "headword_parts": [
-      "dhoom"
+      "dhoom N"
     ],
     "gloss_en": [
       "grave"
     ],
     "gloss_ar": [
-      "القبر"
+      "القبر‎"
     ],
     "pos": [
       "N"
@@ -51563,30 +51537,30 @@
       "Er"
     ],
     "raw": [
-      "dhoom N * grave * القبر * N * m *",
-      "Er"
+      "dhoom N * grave * القبر‎ * N * m * Er"
     ],
     "source": {
       "page": 45,
-      "start_line": 5,
-      "end_line": 6
+      "start_line": 2,
+      "end_line": 2
     }
   },
   {
     "headword": "dhoom/t",
     "headword_parts": [
-      "dhoom/t"
+      "dhoom",
+      "t"
     ],
     "gloss_en": [
-      "Jess"
+      "less"
     ],
     "gloss_ar": [
-      "أقل"
+      "أقل‎"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -51594,13 +51568,12 @@
       "Su"
     ],
     "raw": [
-      "dhoom/t * Jess * أقل * Adj * mf *",
-      "Su"
+      "dhoom/t * less * أقل‎ * Adj * m f * Su"
     ],
     "source": {
       "page": 45,
-      "start_line": 7,
-      "end_line": 8
+      "start_line": 3,
+      "end_line": 3
     }
   },
   {
@@ -51612,7 +51585,7 @@
       "move down"
     ],
     "gloss_ar": [
-      "إلى انتقل الأسفل"
+      "إلى‎ انتقل الأسفل"
     ],
     "pos": [
       "V"
@@ -51627,13 +51600,12 @@
       "Eg"
     ],
     "raw": [
-      "dhoomaa * move down * إلى انتقل",
-      "الأسفل * V * Cush * Er Su Eg"
+      "dhoomaa * move down * إلى‎ انتقل الأسفل * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 9,
-      "end_line": 10
+      "start_line": 4,
+      "end_line": 4
     }
   },
   {
@@ -51642,28 +51614,31 @@
       "dhoomti"
     ],
     "gloss_en": [
-      "descent, move eastward",
-      "NV"
+      "descent, move eastward"
     ],
     "gloss_ar": [
-      "وشرقا النزول"
+      "وشرقا النزول»"
     ],
-    "pos": null,
+    "pos": [
+      "N",
+      "V"
+    ],
     "gender": "m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "dhoomti * descent, move eastward *",
-      "وشرقا النزول» * NV*m* Er"
+      "dhoomti * descent, move eastward * وشرقا النزول» * N V * m * Er Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 11,
-      "end_line": 12
+      "start_line": 5,
+      "end_line": 5
     }
   },
   {
@@ -51672,10 +51647,9 @@
       "dhuubaa"
     ],
     "gloss_en": [
-      "gulp",
-      "ali"
+      "gulp"
     ],
-    "gloss_ar": null,
+    "gloss_ar": [],
     "pos": [
       "V"
     ],
@@ -51689,13 +51663,12 @@
       "Eg"
     ],
     "raw": [
-      "dhuubaa * gulp * ali * V * Cush *",
-      "Er Su Eg"
+      "dhuubaa * gulp *  * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 14,
-      "end_line": 15
+      "start_line": 6,
+      "end_line": 6
     }
   },
   {
@@ -51707,7 +51680,7 @@
       "kept, safe, be"
     ],
     "gloss_ar": [
-      "تبقى أن"
+      "تبقى‎ أن"
     ],
     "pos": [
       "V"
@@ -51722,13 +51695,12 @@
       "Eg"
     ],
     "raw": [
-      "dibaya * kept, safe, be * تبقى أن * V *",
-      "Sem * Er Su Eg"
+      "dibaya * kept, safe, be * تبقى‎ أن * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 16,
-      "end_line": 17
+      "start_line": 7,
+      "end_line": 7
     }
   },
   {
@@ -51740,7 +51712,7 @@
       "loaf"
     ],
     "gloss_ar": [
-      "الرغيف"
+      "الرغيف‎"
     ],
     "pos": [
       "N"
@@ -51755,13 +51727,12 @@
       "Eg"
     ],
     "raw": [
-      "dibbooliit * loaf * الرغيف * N * f*",
-      "Er Su Eg"
+      "dibbooliit * loaf * الرغيف‎ * N * f * Er Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 18,
-      "end_line": 19
+      "start_line": 8,
+      "end_line": 8
     }
   },
   {
@@ -51773,7 +51744,7 @@
       "collect"
     ],
     "gloss_ar": [
-      "اجمع"
+      "اجمع‎"
     ],
     "pos": [
       "V"
@@ -51788,13 +51759,12 @@
       "Eg"
     ],
     "raw": [
-      "dibila * collect * اجمع * V * Sem *",
-      "Er Su Eg"
+      "dibila * collect * اجمع‎ * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 20,
-      "end_line": 21
+      "start_line": 9,
+      "end_line": 9
     }
   },
   {
@@ -51808,7 +51778,9 @@
     "gloss_ar": [
       "وتكرارا مرارا اجمع"
     ],
-    "pos": null,
+    "pos": [
+      "V"
+    ],
     "gender": null,
     "number": null,
     "class": "Sem",
@@ -51817,32 +51789,30 @@
       "Er"
     ],
     "raw": [
-      "dibildibla * collect repeatedly *",
-      "وتكرارا مرارا اجمع * 77 * Sem *",
-      "Er"
+      "dibildibla * collect repeatedly * وتكرارا مرارا اجمع * V * Sem * Er"
     ],
     "source": {
       "page": 45,
-      "start_line": 22,
-      "end_line": 24
+      "start_line": 10,
+      "end_line": 10
     }
   },
   {
     "headword": "dibiloob/t",
     "headword_parts": [
-      "dibiloob/t"
+      "dibiloob",
+      "t"
     ],
     "gloss_en": [
       "small"
     ],
     "gloss_ar": [
-      "الصغير",
-      "مم"
+      "الصغير‎"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "f",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -51851,13 +51821,12 @@
       "Eg"
     ],
     "raw": [
-      "dibiloob/t * small * الصغير * Adj * مم",
-      "f* Er Eg"
+      "dibiloob/t * small * الصغير‎ * Adj * m f * Er Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 25,
-      "end_line": 26
+      "start_line": 11,
+      "end_line": 11
     }
   },
   {
@@ -51869,7 +51838,7 @@
       "mass"
     ],
     "gloss_ar": [
-      "كبير مقدار أو عدد"
+      "كبير‎ مقدار أو عدد"
     ],
     "pos": [
       "N"
@@ -51882,13 +51851,12 @@
       "Er"
     ],
     "raw": [
-      "dibilt * mass * كبير مقدار أو عدد * N*f",
-      "* Er"
+      "dibilt * mass * كبير‎ مقدار أو عدد * N * f * Er"
     ],
     "source": {
       "page": 45,
-      "start_line": 27,
-      "end_line": 28
+      "start_line": 12,
+      "end_line": 12
     }
   },
   {
@@ -51900,7 +51868,7 @@
       "keep, preserve"
     ],
     "gloss_ar": [
-      "على حافظ"
+      "على‎ حافظ"
     ],
     "pos": [
       "V"
@@ -51915,30 +51883,30 @@
       "Eg"
     ],
     "raw": [
-      "dibiya * keep, preserve * على حافظ *",
-      "V * Sem * Er Su Eg"
+      "dibiya * keep, preserve * على‎ حافظ * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 29,
-      "end_line": 30
+      "start_line": 13,
+      "end_line": 13
     }
   },
   {
     "headword": "diblaab/t",
     "headword_parts": [
-      "diblaab/t"
+      "diblaab",
+      "t"
     ],
     "gloss_en": [
       "gatherer"
     ],
     "gloss_ar": [
-      "المجمع"
+      "المجمع‎"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -51947,13 +51915,12 @@
       "Eg"
     ],
     "raw": [
-      "diblaab/t * gatherer * المجمع * Adj *",
-      "mf * Su Eg"
+      "diblaab/t * gatherer * المجمع‎ * Adj * m f * Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 31,
-      "end_line": 32
+      "start_line": 14,
+      "end_line": 14
     }
   },
   {
@@ -51965,7 +51932,7 @@
       "w.c."
     ],
     "gloss_ar": [
-      "مرخاض"
+      "مرخاض‎"
     ],
     "pos": [
       "N"
@@ -51978,13 +51945,12 @@
       "Er"
     ],
     "raw": [
-      "dibluusiib * w.c. * مرخاض * N * m*",
-      "Er"
+      "dibluusiib * w.c. * مرخاض‎ * N * m * Er"
     ],
     "source": {
       "page": 45,
-      "start_line": 33,
-      "end_line": 34
+      "start_line": 15,
+      "end_line": 15
     }
   },
   {
@@ -51996,25 +51962,27 @@
       "collection, preserving"
     ],
     "gloss_ar": [
-      "على والحفاظ جمعء",
-      "رم"
+      "على والحفاظ جمعء"
     ],
-    "pos": null,
-    "gender": null,
+    "pos": [
+      "N"
+    ],
+    "gender": "m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "dibuul * collection, preserving *",
-      "على والحفاظ جمعء * [2 * رم * Er"
+      "dibuul * collection, preserving * على والحفاظ جمعء * N * m * Er Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 35,
-      "end_line": 36
+      "start_line": 16,
+      "end_line": 16
     }
   },
   {
@@ -52040,14 +52008,42 @@
       "Eg"
     ],
     "raw": [
-      "dibuuy * preserving, taking care *",
-      "الرعاية الحفاظ * N * m * Su",
-      "Eg"
+      "dibuuy * preserving, taking care * الرعاية الحفاظ * N * m * Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 38,
-      "end_line": 40
+      "start_line": 17,
+      "end_line": 17
+    }
+  },
+  {
+    "headword": "did",
+    "headword_parts": [
+      "did"
+    ],
+    "gloss_en": [
+      "against"
+    ],
+    "gloss_ar": [
+      "البعض‎ بعضها ضد"
+    ],
+    "pos": [
+      "N"
+    ],
+    "gender": "m",
+    "number": null,
+    "class": null,
+    "nominalized_verb": false,
+    "regions": [
+      "Er"
+    ],
+    "raw": [
+      "did * against * البعض‎ بعضها ضد * N * m * Er"
+    ],
+    "source": {
+      "page": 45,
+      "start_line": 18,
+      "end_line": 18
     }
   },
   {
@@ -52059,7 +52055,7 @@
       "go away"
     ],
     "gloss_ar": [
-      "بعيدا اذهب"
+      "بعيدا‎ اذهب"
     ],
     "pos": [
       "V"
@@ -52074,13 +52070,12 @@
       "Eg"
     ],
     "raw": [
-      "difa * go away * بعيدا اذهب * V * Sem",
-      "* Er Su Eg"
+      "difa * go away * بعيدا‎ اذهب * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 43,
-      "end_line": 44
+      "start_line": 19,
+      "end_line": 19
     }
   },
   {
@@ -52092,7 +52087,7 @@
       "fortress, wall"
     ],
     "gloss_ar": [
-      "وسور القلعة"
+      "وسور‎ القلعة"
     ],
     "pos": [
       "N"
@@ -52106,29 +52101,28 @@
       "Su"
     ],
     "raw": [
-      "dif'a * fortress, wall * وسور القلعة. *",
-      "N * m* Er Su"
+      "dif'a * fortress, wall * وسور‎ القلعة * N * m * Er Su"
     ],
     "source": {
       "page": 45,
-      "start_line": 45,
-      "end_line": 46
+      "start_line": 20,
+      "end_line": 20
     }
   },
   {
     "headword": "digaab/t",
     "headword_parts": [
-      "digaab/t"
+      "digaab",
+      "t"
     ],
     "gloss_en": [
-      "heavy",
-      "J)"
+      "heavy"
     ],
-    "gloss_ar": null,
+    "gloss_ar": [],
     "pos": [
       "Adj"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -52137,13 +52131,12 @@
       "Eg"
     ],
     "raw": [
-      "digaab/t * heavy * J) * Adj * mf",
-      "* Su Eg"
+      "digaab/t * heavy *  * Adj * m f * Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 47,
-      "end_line": 48
+      "start_line": 21,
+      "end_line": 21
     }
   },
   {
@@ -52169,45 +52162,44 @@
       "Eg"
     ],
     "raw": [
-      "digabaaleeb * careless person *",
-      "مهمل الشخص * N * m * Er Eg"
+      "digabaaleeb * careless person * مهمل الشخص * N * m * Er Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 49,
-      "end_line": 50
+      "start_line": 22,
+      "end_line": 22
     }
   },
   {
     "headword": "digabaaliib/t",
     "headword_parts": [
-      "digabaaliib/t"
+      "digabaaliib",
+      "t"
     ],
     "gloss_en": [
       "careless person"
     ],
     "gloss_ar": [
-      "مبال",
-      "شخص"
+      "مبال‎  شخص‎"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "digabaaliib/t * careless person *",
-      "مبال Y شخص * Adj * mf* Su"
+      "digabaaliib/t * careless person * مبال‎  شخص‎ * Adj * m f * Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 51,
-      "end_line": 52
+      "start_line": 23,
+      "end_line": 23
     }
   },
   {
@@ -52219,7 +52211,7 @@
       "shaken, be"
     ],
     "gloss_ar": [
-      "تهتز أن"
+      "تهتز‎ أن"
     ],
     "pos": [
       "V"
@@ -52233,13 +52225,12 @@
       "Eg"
     ],
     "raw": [
-      "digamaa * shaken, be * تهتز أن * V *",
-      "Cush * Su Eg"
+      "digamaa * shaken, be * تهتز‎ أن * V * Cush * Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 54,
-      "end_line": 55
+      "start_line": 24,
+      "end_line": 24
     }
   },
   {
@@ -52248,10 +52239,9 @@
       "digat"
     ],
     "gloss_en": [
-      "breast",
-      "gsi)"
+      "breast"
     ],
-    "gloss_ar": null,
+    "gloss_ar": [],
     "pos": [
       "N"
     ],
@@ -52261,15 +52251,16 @@
     "nominalized_verb": false,
     "regions": [
       "Er",
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "digat * breast * gsi) * N * f * Er Su"
+      "digat * breast *  * N * f * Er Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 56,
-      "end_line": 56
+      "start_line": 25,
+      "end_line": 25
     }
   },
   {
@@ -52281,7 +52272,7 @@
       "return, go back"
     ],
     "gloss_ar": [
-      "عد"
+      "عد‎"
     ],
     "pos": [
       "V"
@@ -52295,13 +52286,12 @@
       "Eg"
     ],
     "raw": [
-      "digaya * return, go back * عد * V *",
-      "Sem * Su Eg"
+      "digaya * return, go back * عد‎ * V * Sem * Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 58,
-      "end_line": 59
+      "start_line": 26,
+      "end_line": 26
     }
   },
   {
@@ -52313,8 +52303,8 @@
       "hut, rough construction"
     ],
     "gloss_ar": [
-      "الخام",
-      "الكوخ"
+      "الخام الكوخ",
+      "‎"
     ],
     "pos": [
       "N"
@@ -52327,13 +52317,12 @@
       "Er"
     ],
     "raw": [
-      "diggeeb * hut, rough construction *",
-      "الخام cling الكوخ, * N * m * Er"
+      "diggeeb * hut, rough construction * الخام الكوخ,‎ * N * m * Er"
     ],
     "source": {
       "page": 45,
-      "start_line": 60,
-      "end_line": 61
+      "start_line": 27,
+      "end_line": 27
     }
   },
   {
@@ -52359,13 +52348,12 @@
       "Su"
     ],
     "raw": [
-      "digifa * trample * لتدوس * V * Sem *",
-      "Er Su"
+      "digifa * trample * لتدوس * V * Sem * Er Su"
     ],
     "source": {
       "page": 45,
-      "start_line": 62,
-      "end_line": 63
+      "start_line": 28,
+      "end_line": 28
     }
   },
   {
@@ -52374,13 +52362,15 @@
       "digiiti"
     ],
     "gloss_en": [
-      "return",
-      "NV"
+      "return"
     ],
     "gloss_ar": [
-      "عودة"
+      "عودة‎"
     ],
-    "pos": null,
+    "pos": [
+      "N",
+      "V"
+    ],
     "gender": "m",
     "number": null,
     "class": null,
@@ -52390,49 +52380,23 @@
       "Eg"
     ],
     "raw": [
-      "digiiti * return * عودة * NV * m*",
-      "Su Eg"
+      "digiiti * return * عودة‎ * N V * m * Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 64,
-      "end_line": 65
+      "start_line": 29,
+      "end_line": 29
     }
   },
   {
     "headword": "digiri santigireed",
     "headword_parts": [
-      "digiri",
-      "santigireed"
+      "digiri santigireed"
     ],
     "gloss_en": [
-      "degree"
+      "degree centigrade"
     ],
-    "gloss_ar": null,
-    "pos": null,
-    "gender": null,
-    "number": null,
-    "class": null,
-    "nominalized_verb": false,
-    "regions": null,
-    "raw": [
-      "digiri santigireed * degree"
-    ],
-    "source": {
-      "page": 45,
-      "start_line": 66,
-      "end_line": 66
-    }
-  },
-  {
-    "headword": "centigrade",
-    "headword_parts": [
-      "centigrade"
-    ],
-    "gloss_en": [
-      "Fy"
-    ],
-    "gloss_ar": null,
+    "gloss_ar": [],
     "pos": [
       "Phr"
     ],
@@ -52440,15 +52404,16 @@
     "number": null,
     "class": null,
     "nominalized_verb": false,
-    "regions": null,
+    "regions": [
+      "Er"
+    ],
     "raw": [
-      "centigrade * 43 54>. * Phr",
-      "* _ * Fy"
+      "digiri santigireed * degree centigrade *  * Phr * - * Er"
     ],
     "source": {
       "page": 45,
-      "start_line": 67,
-      "end_line": 68
+      "start_line": 30,
+      "end_line": 30
     }
   },
   {
@@ -52460,7 +52425,7 @@
       "give back"
     ],
     "gloss_ar": [
-      "اعد رد"
+      "اعد‎ رد"
     ],
     "pos": [
       "V"
@@ -52474,13 +52439,12 @@
       "Eg"
     ],
     "raw": [
-      "digiya * give back * اعد رد * V *",
-      "Sem * Su Eg"
+      "digiya * give back * اعد‎ رد * V * Sem * Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 69,
-      "end_line": 70
+      "start_line": 31,
+      "end_line": 31
     }
   },
   {
@@ -52489,13 +52453,15 @@
       "diguuy"
     ],
     "gloss_en": [
-      "repeating, review",
-      "NV"
+      "repeating, review"
     ],
     "gloss_ar": [
-      "تكرار"
+      "تكرار‎"
     ],
-    "pos": null,
+    "pos": [
+      "N",
+      "V"
+    ],
     "gender": null,
     "number": null,
     "class": null,
@@ -52504,30 +52470,30 @@
       "Su"
     ],
     "raw": [
-      "diguuy * repeating, review * تكرار *",
-      "NV * -* Su"
+      "diguuy * repeating, review * تكرار‎ * N V * - * Su"
     ],
     "source": {
       "page": 45,
-      "start_line": 71,
-      "end_line": 72
+      "start_line": 32,
+      "end_line": 32
     }
   },
   {
     "headword": "digwaagwaab/t",
     "headword_parts": [
-      "digwaagwaab/t"
+      "digwaagwaab",
+      "t"
     ],
     "gloss_en": [
       "crouched"
     ],
     "gloss_ar": [
-      "الرابض"
+      "الرابض‎"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -52536,13 +52502,12 @@
       "Su"
     ],
     "raw": [
-      "digwaagwaab/t * crouched * الرابض",
-      "* Adj * mf * Er Su"
+      "digwaagwaab/t * crouched * الرابض‎ * Adj * m f * Er Su"
     ],
     "source": {
       "page": 45,
-      "start_line": 73,
-      "end_line": 74
+      "start_line": 33,
+      "end_line": 33
     }
   },
   {
@@ -52569,13 +52534,12 @@
       "Eg"
     ],
     "raw": [
-      "digwagwa * fast, active, be * تسرع *",
-      "V * Sem * Er Su Eg"
+      "digwagwa * fast, active, be * تسرع * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 45,
-      "start_line": 75,
-      "end_line": 76
+      "start_line": 34,
+      "end_line": 34
     }
   },
   {
@@ -52587,12 +52551,12 @@
       "necklace of gold"
     ],
     "gloss_ar": [
-      "قلادة الذهب من"
+      "قلادة‎ الذهب من"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -52600,13 +52564,12 @@
       "Er"
     ],
     "raw": [
-      "digwgwaat * necklace of gold * قلادة",
-      "الذهب من * N * 2 * Er"
+      "digwgwaat * necklace of gold * قلادة‎ الذهب من * N * f * Er"
     ],
     "source": {
       "page": 45,
-      "start_line": 77,
-      "end_line": 0
+      "start_line": 35,
+      "end_line": 35
     }
   },
   {
@@ -52628,34 +52591,35 @@
     "class": "Sem",
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "digwigwa * prepare, make ready * _",
-      "ترتيب أو إعداد * V * Sem * Er"
+      "digwigwa * prepare, make ready * ترتيب أو إعداد * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 46,
       "start_line": 1,
-      "end_line": 2
+      "end_line": 1
     }
   },
   {
     "headword": "digwriib/t",
     "headword_parts": [
-      "digwriib/t"
+      "digwriib",
+      "t"
     ],
     "gloss_en": [
       "strict"
     ],
     "gloss_ar": [
-      "الصارم",
-      "م"
+      "الصارم‎"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "f",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -52663,13 +52627,12 @@
       "Su"
     ],
     "raw": [
-      "digwriib/t * strict * الصارم * Adj * م",
-      "f * Su"
+      "digwriib/t * strict * الصارم‎ * Adj * m f * Su"
     ],
     "source": {
       "page": 46,
-      "start_line": 4,
-      "end_line": 5
+      "start_line": 2,
+      "end_line": 2
     }
   },
   {
@@ -52681,7 +52644,7 @@
       "wolf"
     ],
     "gloss_ar": [
-      "الذئب"
+      "الذئب‎"
     ],
     "pos": [
       "N"
@@ -52694,29 +52657,30 @@
       "Su"
     ],
     "raw": [
-      "diib * wolf * الذئب * N * m * Su"
+      "diib * wolf * الذئب‎ * N * m * Su"
     ],
     "source": {
       "page": 46,
-      "start_line": 6,
-      "end_line": 6
+      "start_line": 3,
+      "end_line": 3
     }
   },
   {
     "headword": "diifoob/t",
     "headword_parts": [
-      "diifoob/t"
+      "diifoob",
+      "t"
     ],
     "gloss_en": [
       "boiled grain"
     ],
     "gloss_ar": [
-      "الحبوب المغلية"
+      "الحبوب‎ المغلية"
     ],
     "pos": [
       "N"
     ],
-    "gender": "f",
+    "gender": null,
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -52726,13 +52690,12 @@
       "Eg"
     ],
     "raw": [
-      "diifoob/t * boiled grain * الحبوب",
-      "المغلية * N * f* Er Su Eg"
+      "diifoob/t * boiled grain * الحبوب‎ المغلية * N * f* Er Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 7,
-      "end_line": 8
+      "start_line": 4,
+      "end_line": 4
     }
   },
   {
@@ -52743,8 +52706,10 @@
     "gloss_en": [
       "message, messenger, task"
     ],
-    "gloss_ar": null,
-    "pos": null,
+    "gloss_ar": [
+      "f"
+    ],
+    "pos": [],
     "gender": null,
     "number": null,
     "class": null,
@@ -52755,13 +52720,12 @@
       "Eg"
     ],
     "raw": [
-      "diigwat * message, messenger, task",
-      "* £* Er Su Eg"
+      "diigwat * message, messenger, task * f * Er Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 9,
-      "end_line": 10
+      "start_line": 5,
+      "end_line": 5
     }
   },
   {
@@ -52770,40 +52734,13 @@
       "diigwataa"
     ],
     "gloss_en": [
-      "send a message, do"
-    ],
-    "gloss_ar": null,
-    "pos": null,
-    "gender": null,
-    "number": null,
-    "class": null,
-    "nominalized_verb": false,
-    "regions": null,
-    "raw": [
-      "diigwataa * send a message, do"
-    ],
-    "source": {
-      "page": 46,
-      "start_line": 11,
-      "end_line": 11
-    }
-  },
-  {
-    "headword": "errands",
-    "headword_parts": [
-      "errands"
-    ],
-    "gloss_en": [
-      "Er Su Eg diigwataata-maktab",
-      "post office"
+      "send a message, do errands"
     ],
     "gloss_ar": [
-      "رسالة إرسل",
-      "البريد مكتب"
+      "رسالة‎ إرسل"
     ],
     "pos": [
-      "V",
-      "Phr"
+      "V"
     ],
     "gender": null,
     "number": null,
@@ -52815,15 +52752,42 @@
       "Eg"
     ],
     "raw": [
-      "errands * رسالة إرسل * V *",
-      "Cush * Er Su Eg",
-      "diigwataata-maktab * post office *",
-      "البريد مكتب * Phr * * Er"
+      "diigwataa * send a message, do errands * رسالة‎ إرسل * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 12,
-      "end_line": 15
+      "start_line": 6,
+      "end_line": 6
+    }
+  },
+  {
+    "headword": "diigwataata-maktab",
+    "headword_parts": [
+      "diigwataata-maktab"
+    ],
+    "gloss_en": [
+      "post office"
+    ],
+    "gloss_ar": [
+      "البريد مكتب"
+    ],
+    "pos": [
+      "Phr"
+    ],
+    "gender": null,
+    "number": null,
+    "class": null,
+    "nominalized_verb": false,
+    "regions": [
+      "Er"
+    ],
+    "raw": [
+      "diigwataata-maktab * post office * البريد مكتب * Phr * - * Er"
+    ],
+    "source": {
+      "page": 46,
+      "start_line": 7,
+      "end_line": 7
     }
   },
   {
@@ -52849,13 +52813,12 @@
       "Eg"
     ],
     "raw": [
-      "diigwatkinaab * messenger * رسول",
-      "* N * m * Er Eg"
+      "diigwatkinaab * messenger * رسول * N * m * Er Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 17,
-      "end_line": 18
+      "start_line": 8,
+      "end_line": 8
     }
   },
   {
@@ -52867,7 +52830,7 @@
       "cock"
     ],
     "gloss_ar": [
-      "الديك"
+      "الديك‎"
     ],
     "pos": [
       "N"
@@ -52878,15 +52841,16 @@
     "nominalized_verb": false,
     "regions": [
       "Er",
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "diik * cock * الديك * N * m * Er Su"
+      "diik * cock * الديك‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 19,
-      "end_line": 19
+      "start_line": 9,
+      "end_line": 9
     }
   },
   {
@@ -52895,27 +52859,30 @@
       "diima"
     ],
     "gloss_en": [
-      "always",
-      "Ady"
+      "always"
     ],
     "gloss_ar": [
-      "دائما"
+      "دائما‎"
     ],
-    "pos": null,
+    "pos": [
+      "Adv"
+    ],
     "gender": null,
     "number": null,
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "diima * always * دائما * Ady * - * Er"
+      "diima * always * دائما‎ * Adv * - * Er Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 21,
-      "end_line": 21
+      "start_line": 10,
+      "end_line": 10
     }
   },
   {
@@ -52927,7 +52894,7 @@
       "always"
     ],
     "gloss_ar": [
-      "دائما"
+      "دائما‎"
     ],
     "pos": [
       "Adv"
@@ -52941,13 +52908,12 @@
       "Eg"
     ],
     "raw": [
-      "diimha * always * دائما * Adv * -* —",
-      "Er Eg"
+      "diimha * always * دائما‎ * Adv * - * Er Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 23,
-      "end_line": 24
+      "start_line": 11,
+      "end_line": 11
     }
   },
   {
@@ -52959,7 +52925,7 @@
       "religion"
     ],
     "gloss_ar": [
-      "الدين"
+      "الدين‎"
     ],
     "pos": [
       "N"
@@ -52969,15 +52935,17 @@
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "diin * religion * الدين * N * m* Er"
+      "diin * religion * الدين‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 25,
-      "end_line": 25
+      "start_line": 12,
+      "end_line": 12
     }
   },
   {
@@ -52989,7 +52957,7 @@
       "dinar"
     ],
     "gloss_ar": [
-      "الدينار"
+      "الدينار‎"
     ],
     "pos": [
       "N"
@@ -52999,15 +52967,16 @@
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su"
     ],
     "raw": [
-      "diinaar * dinar * الدينار * N * m * Er"
+      "diinaar * dinar * الدينار‎ * N * m * Er Su"
     ],
     "source": {
       "page": 46,
-      "start_line": 27,
-      "end_line": 27
+      "start_line": 13,
+      "end_line": 13
     }
   },
   {
@@ -53019,7 +52988,7 @@
       "annihilate"
     ],
     "gloss_ar": [
-      "للقضاء"
+      "للقضاء‎"
     ],
     "pos": [
       "V"
@@ -53034,13 +53003,12 @@
       "Eg"
     ],
     "raw": [
-      "diinanoosaa * annihilate * للقضاء *",
-      "V * Cush * Er Su Eg"
+      "diinanoosaa * annihilate * للقضاء‎ * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 29,
-      "end_line": 30
+      "start_line": 14,
+      "end_line": 14
     }
   },
   {
@@ -53052,13 +53020,12 @@
       "strolling"
     ],
     "gloss_ar": [
-      "التمشي",
-      "مم"
+      "التمشي‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -53067,13 +53034,12 @@
       "Eg"
     ],
     "raw": [
-      "diinooy * strolling * التمشي * N * مم *",
-      "Er Eg"
+      "diinooy * strolling * التمشي‎ * N * m * Er Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 31,
-      "end_line": 32
+      "start_line": 15,
+      "end_line": 15
     }
   },
   {
@@ -53085,7 +53051,7 @@
       "go aimlessly, walk about"
     ],
     "gloss_ar": [
-      "هدف بلا اذهب"
+      "هدف‎ بلا اذهب"
     ],
     "pos": [
       "V"
@@ -53100,14 +53066,12 @@
       "Eg"
     ],
     "raw": [
-      "diinooyaa * go aimlessly, walk",
-      "about * هدف بلا اذهب * V *",
-      "Cush * Er Su Eg"
+      "diinooyaa * go aimlessly, walk about * هدف‎ بلا اذهب * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 33,
-      "end_line": 35
+      "start_line": 16,
+      "end_line": 16
     }
   },
   {
@@ -53124,22 +53088,22 @@
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
     "regions": [
       "Er",
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "diinooyt * wandering, promenade *",
-      "منتزه أو التجول * N * £ * Er Su"
+      "diinooyt * wandering, promenade * منتزه أو التجول * N * f * Er Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 36,
-      "end_line": 37
+      "start_line": 17,
+      "end_line": 17
     }
   },
   {
@@ -53151,7 +53115,7 @@
       "curse"
     ],
     "gloss_ar": [
-      "لعنة"
+      "لعنة‎"
     ],
     "pos": [
       "N"
@@ -53164,12 +53128,12 @@
       "Su"
     ],
     "raw": [
-      "diint * curse * لعنة * N * f* Su"
+      "diint * curse * لعنة‎ * N * f * Su"
     ],
     "source": {
       "page": 46,
-      "start_line": 39,
-      "end_line": 39
+      "start_line": 18,
+      "end_line": 18
     }
   },
   {
@@ -53181,26 +53145,25 @@
       "thorn"
     ],
     "gloss_ar": [
-      "شوكة"
+      "شوكة‎"
     ],
     "pos": [
       "N"
     ],
     "gender": "f",
-    "number": "pl",
+    "number": "sgpl",
     "class": null,
     "nominalized_verb": false,
     "regions": [
       "Er"
     ],
     "raw": [
-      "diint * thorn * شوكة * N * f sg pl *",
-      "Er"
+      "diint * thorn * شوكة‎ * N * f sg pl * Er"
     ],
     "source": {
       "page": 46,
-      "start_line": 40,
-      "end_line": 41
+      "start_line": 19,
+      "end_line": 19
     }
   },
   {
@@ -53212,7 +53175,7 @@
       "cursed, be"
     ],
     "gloss_ar": [
-      "ألعن"
+      "ألعن‎"
     ],
     "pos": [
       "V"
@@ -53225,13 +53188,12 @@
       "Su"
     ],
     "raw": [
-      "diintamaa * cursed, be * ألعن * V *",
-      "Cush * Su"
+      "diintamaa * cursed, be * ألعن‎ * V * Cush * Su"
     ],
     "source": {
       "page": 46,
-      "start_line": 42,
-      "end_line": 43
+      "start_line": 20,
+      "end_line": 20
     }
   },
   {
@@ -53243,7 +53205,7 @@
       "container, pot"
     ],
     "gloss_ar": [
-      "وعاءالماء"
+      "وعاءالماء‎"
     ],
     "pos": [
       "N"
@@ -53256,20 +53218,18 @@
       "Er"
     ],
     "raw": [
-      "diir * container, pot * وعاءالماء * N *",
-      "m * Er"
+      "diir * container, pot * وعاءالماء‎ * N * m * Er"
     ],
     "source": {
       "page": 46,
-      "start_line": 44,
-      "end_line": 45
+      "start_line": 21,
+      "end_line": 21
     }
   },
   {
     "headword": "diir diwaan",
     "headword_parts": [
-      "diir",
-      "diwaan"
+      "diir diwaan"
     ],
     "gloss_en": [
       "container, pot"
@@ -53289,13 +53249,12 @@
       "Eg"
     ],
     "raw": [
-      "diir diwaan * container, pot *",
-      "وعاء الحاوية» * N * m * Su Eg"
+      "diir diwaan * container, pot * وعاء الحاوية * N * m * Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 46,
-      "end_line": 47
+      "start_line": 22,
+      "end_line": 22
     }
   },
   {
@@ -53324,8 +53283,8 @@
     ],
     "source": {
       "page": 46,
-      "start_line": 48,
-      "end_line": 48
+      "start_line": 23,
+      "end_line": 23
     }
   },
   {
@@ -53337,12 +53296,12 @@
       "chicken, cluck"
     ],
     "gloss_ar": [
-      "الدجاج وقرقرة"
+      "الدجاج‎ وقرقرة"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -53350,30 +53309,30 @@
       "Su"
     ],
     "raw": [
-      "diirha * chicken, cluck * «¢\\sall",
-      "الدجاج وقرقرة * N * 8 * Su"
+      "diirha * chicken, cluck *  الدجاج‎ وقرقرة * N * f * Su"
     ],
     "source": {
       "page": 46,
-      "start_line": 49,
-      "end_line": 50
+      "start_line": 24,
+      "end_line": 24
     }
   },
   {
     "headword": "diirhoob/t",
     "headword_parts": [
-      "diirhoob/t"
+      "diirhoob",
+      "t"
     ],
     "gloss_en": [
       "cock"
     ],
     "gloss_ar": [
-      "الدجاج"
+      "الدجاج‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -53382,13 +53341,12 @@
       "Eg"
     ],
     "raw": [
-      "diirhoob/t * cock * الدجاج * N* mf",
-      "* Er Eg"
+      "diirhoob/t * cock * الدجاج‎ * N * m f * Er Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 51,
-      "end_line": 52
+      "start_line": 25,
+      "end_line": 25
     }
   },
   {
@@ -53400,7 +53358,7 @@
       "hen"
     ],
     "gloss_ar": [
-      "دجاجة"
+      "دجاجة‎"
     ],
     "pos": [
       "N"
@@ -53413,12 +53371,12 @@
       "Er"
     ],
     "raw": [
-      "diirhoot * hen * دجاجة * N * f * Er"
+      "diirhoot * hen * دجاجة‎ * N * f * Er"
     ],
     "source": {
       "page": 46,
-      "start_line": 53,
-      "end_line": 53
+      "start_line": 26,
+      "end_line": 26
     }
   },
   {
@@ -53427,13 +53385,14 @@
       "diisambar"
     ],
     "gloss_en": [
-      "December",
-      "Nam"
+      "December"
     ],
     "gloss_ar": [
       "ديسمبر"
     ],
-    "pos": null,
+    "pos": [
+      "Nam"
+    ],
     "gender": null,
     "number": null,
     "class": null,
@@ -53442,13 +53401,12 @@
       "Er"
     ],
     "raw": [
-      "diisambar * December * ديسمبر *",
-      "Nam * - * Er"
+      "diisambar * December * ديسمبر * Nam * - * Er"
     ],
     "source": {
       "page": 46,
-      "start_line": 54,
-      "end_line": 55
+      "start_line": 27,
+      "end_line": 27
     }
   },
   {
@@ -53457,10 +53415,9 @@
       "diiseet"
     ],
     "gloss_en": [
-      "slowly",
-      "sy"
+      "slowly"
     ],
-    "gloss_ar": null,
+    "gloss_ar": [],
     "pos": [
       "Adv"
     ],
@@ -53469,15 +53426,17 @@
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "diiseet * slowly * sy * Adv * * Er"
+      "diiseet * slowly *  * Adv * - * Er Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 56,
-      "end_line": 56
+      "start_line": 28,
+      "end_line": 28
     }
   },
   {
@@ -53489,7 +53448,7 @@
       "iron, steel, metal things"
     ],
     "gloss_ar": [
-      "المعدنية والاشياء الحديد"
+      "المعدنية‎ والاشياء الحديد"
     ],
     "pos": [
       "N"
@@ -53503,14 +53462,12 @@
       "Eg"
     ],
     "raw": [
-      "diit * iron, steel, metal things *",
-      "المعدنية والاشياء الحديد» * N * f*",
-      "Su Eg"
+      "diit * iron, steel, metal things * المعدنية‎ والاشياء الحديد * N * f * Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 59,
-      "end_line": 61
+      "start_line": 29,
+      "end_line": 29
     }
   },
   {
@@ -53519,32 +53476,10 @@
       "diiwaan"
     ],
     "gloss_en": [
-      "dowry given by, father of"
+      "dowry given by, father of, bride"
     ],
-    "gloss_ar": null,
-    "pos": null,
-    "gender": null,
-    "number": null,
-    "class": null,
-    "nominalized_verb": false,
-    "regions": null,
-    "raw": [
-      "diiwaan * dowry given by, father of,"
-    ],
-    "source": {
-      "page": 46,
-      "start_line": 62,
-      "end_line": 62
-    }
-  },
-  {
-    "headword": "bride",
-    "headword_parts": [
-      "bride"
-    ],
-    "gloss_en": null,
     "gloss_ar": [
-      "الذي المهر العروس"
+      "الذي‎ المهر العروس‎"
     ],
     "pos": [
       "N"
@@ -53557,13 +53492,12 @@
       "Su"
     ],
     "raw": [
-      "bride * alls 4038 الذي المهر",
-      "العروس * N * m * Su"
+      "diiwaan * dowry given by, father of, bride *  الذي‎ المهر العروس‎ * N * m * Su"
     ],
     "source": {
       "page": 46,
-      "start_line": 63,
-      "end_line": 64
+      "start_line": 30,
+      "end_line": 30
     }
   },
   {
@@ -53575,13 +53509,12 @@
       "shop"
     ],
     "gloss_ar": [
-      "المحل",
-      "مم"
+      "المحل‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -53591,20 +53524,18 @@
       "Eg"
     ],
     "raw": [
-      "dikwkwaan * shop * المحل * N * مم *",
-      "Er Su Eg"
+      "dikwkwaan * shop * المحل‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 65,
-      "end_line": 66
+      "start_line": 31,
+      "end_line": 31
     }
   },
   {
     "headword": "dikwkwaaniit kina",
     "headword_parts": [
-      "dikwkwaaniit",
-      "kina"
+      "dikwkwaaniit kina"
     ],
     "gloss_en": [
       "shop owner"
@@ -53624,13 +53555,12 @@
       "Eg"
     ],
     "raw": [
-      "dikwkwaaniit kina * shop owner *",
-      "متجر Gale * Phr * - * Er Eg"
+      "dikwkwaaniit kina * shop owner * متجر * Phr * - * Er Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 67,
-      "end_line": 68
+      "start_line": 32,
+      "end_line": 32
     }
   },
   {
@@ -53642,7 +53572,7 @@
       "healthy, be"
     ],
     "gloss_ar": [
-      "صحيا كن"
+      "صحيا‎ كن"
     ],
     "pos": [
       "V"
@@ -53656,13 +53586,12 @@
       "Eg"
     ],
     "raw": [
-      "dilaha * healthy, be * صحيا كن * V *",
-      "Sem * Su Eg"
+      "dilaha * healthy, be * صحيا‎ كن * V * Sem * Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 69,
-      "end_line": 70
+      "start_line": 33,
+      "end_line": 33
     }
   },
   {
@@ -53674,9 +53603,11 @@
       "look for, be sure"
     ],
     "gloss_ar": [
-      "تأكد"
+      "تأكد‎"
     ],
-    "pos": null,
+    "pos": [
+      "V"
+    ],
     "gender": null,
     "number": null,
     "class": "Cush",
@@ -53686,26 +53617,24 @@
       "Eg"
     ],
     "raw": [
-      "dilayaa * look for, be sure * تأكد * 7",
-      "* Cush * Su Eg"
+      "dilayaa * look for, be sure * تأكد‎ * V * Cush * Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 71,
-      "end_line": 72
+      "start_line": 34,
+      "end_line": 34
     }
   },
   {
     "headword": "dilbi miyaay",
     "headword_parts": [
-      "dilbi",
-      "miyaay"
+      "dilbi miyaay"
     ],
     "gloss_en": [
       "buying"
     ],
     "gloss_ar": [
-      "شراء"
+      "شراء‎"
     ],
     "pos": [
       "Phr"
@@ -53719,13 +53648,12 @@
       "Eg"
     ],
     "raw": [
-      "dilbi miyaay * buying * شراء * Phr *",
-      "- * Su Eg"
+      "dilbi miyaay * buying * شراء‎ * Phr * - * Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 73,
-      "end_line": 74
+      "start_line": 35,
+      "end_line": 35
     }
   },
   {
@@ -53737,7 +53665,7 @@
       "earthquake"
     ],
     "gloss_ar": [
-      "الزلزال"
+      "الزلزال‎"
     ],
     "pos": [
       "N"
@@ -53751,13 +53679,12 @@
       "Su"
     ],
     "raw": [
-      "dildaal * earthquake * الزلزال * N *",
-      "m * Er Su"
+      "dildaal * earthquake * الزلزال‎ * N * m * Er Su"
     ],
     "source": {
       "page": 46,
-      "start_line": 75,
-      "end_line": 76
+      "start_line": 36,
+      "end_line": 36
     }
   },
   {
@@ -53769,7 +53696,7 @@
       "slowness"
     ],
     "gloss_ar": [
-      "بطيء"
+      "بطيء‎"
     ],
     "pos": [
       "N"
@@ -53784,30 +53711,30 @@
       "Eg"
     ],
     "raw": [
-      "dileel * slowness * بطيء * N * m *",
-      "Er Su Eg"
+      "dileel * slowness * بطيء‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 46,
-      "start_line": 77,
-      "end_line": 78
+      "start_line": 37,
+      "end_line": 37
     }
   },
   {
     "headword": "dileel/t",
     "headword_parts": [
-      "dileel/t"
+      "dileel",
+      "t"
     ],
     "gloss_en": [
       "late"
     ],
     "gloss_ar": [
-      "متأخر"
+      "متأخر‎"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -53815,13 +53742,12 @@
       "Er"
     ],
     "raw": [
-      "dileel/t * late * متأخر * Adj * mf*",
-      "Er"
+      "dileel/t * late * متأخر‎ * Adj * m f * Er"
     ],
     "source": {
       "page": 47,
       "start_line": 1,
-      "end_line": 2
+      "end_line": 1
     }
   },
   {
@@ -53833,9 +53759,11 @@
       "delay, be slow"
     ],
     "gloss_ar": [
-      "بطيئا كن"
+      "بطيئا‎ كن"
     ],
-    "pos": null,
+    "pos": [
+      "V"
+    ],
     "gender": null,
     "number": null,
     "class": "Sem",
@@ -53846,30 +53774,30 @@
       "Eg"
     ],
     "raw": [
-      "dileela * delay, be slow * بطيئا كن * 17",
-      "* Sem * Er Su Eg"
+      "dileela * delay, be slow * بطيئا‎ كن * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 3,
-      "end_line": 4
+      "start_line": 2,
+      "end_line": 2
     }
   },
   {
     "headword": "dilhaab/t",
     "headword_parts": [
-      "dilhaab/t"
+      "dilhaab",
+      "t"
     ],
     "gloss_en": [
       "healthy"
     ],
     "gloss_ar": [
-      "صحي"
+      "صحي‎"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "f",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -53879,13 +53807,12 @@
       "Eg"
     ],
     "raw": [
-      "dilhaab/t * healthy * صحي * Adj *",
-      "m f * Er Su Eg"
+      "dilhaab/t * healthy * صحي‎ * Adj * m f * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 5,
-      "end_line": 6
+      "start_line": 3,
+      "end_line": 3
     }
   },
   {
@@ -53897,7 +53824,7 @@
       "to trade"
     ],
     "gloss_ar": [
-      "للتجارة"
+      "للتجارة‎"
     ],
     "pos": [
       "V"
@@ -53912,13 +53839,12 @@
       "Eg"
     ],
     "raw": [
-      "diliba * to trade * للتجارة * V * Sem",
-      "* Er Su Eg"
+      "diliba * to trade * للتجارة‎ * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 7,
-      "end_line": 8
+      "start_line": 4,
+      "end_line": 4
     }
   },
   {
@@ -53930,7 +53856,7 @@
       "pour"
     ],
     "gloss_ar": [
-      "اسكب"
+      "اسكب‎"
     ],
     "pos": [
       "V"
@@ -53940,15 +53866,17 @@
     "class": "Sem",
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "dilila * pour * اسكب * V * Sem * Er"
+      "dilila * pour * اسكب‎ * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 9,
-      "end_line": 9
+      "start_line": 5,
+      "end_line": 5
     }
   },
   {
@@ -53960,7 +53888,7 @@
       "do injustice"
     ],
     "gloss_ar": [
-      "الظلم القيام"
+      "الظلم‎ القيام"
     ],
     "pos": [
       "V"
@@ -53974,13 +53902,12 @@
       "Eg"
     ],
     "raw": [
-      "dilima * do injustice * الظلم القيام * V",
-      "* Sem * Su Eg"
+      "dilima * do injustice * الظلم‎ القيام * V * Sem * Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 11,
-      "end_line": 12
+      "start_line": 6,
+      "end_line": 6
     }
   },
   {
@@ -53992,7 +53919,7 @@
       "certain, be"
     ],
     "gloss_ar": [
-      "تحقق"
+      "تحقق‎"
     ],
     "pos": [
       "V"
@@ -54007,13 +53934,12 @@
       "Eg"
     ],
     "raw": [
-      "diliya * certain, be * تحقق «SG * V *",
-      "Sem * Er Su Eg"
+      "diliya * certain, be * تحقق‎ * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 13,
-      "end_line": 14
+      "start_line": 7,
+      "end_line": 7
     }
   },
   {
@@ -54025,7 +53951,7 @@
       "baobab fruit"
     ],
     "gloss_ar": [
-      "ثمرة"
+      "ثمرة‎"
     ],
     "pos": [
       "N"
@@ -54038,13 +53964,12 @@
       "Er"
     ],
     "raw": [
-      "dilleeb * baobab fruit * Gk sil ثمرة *",
-      "N * m* Er"
+      "dilleeb * baobab fruit * ثمرة‎ * N * m * Er"
     ],
     "source": {
       "page": 47,
-      "start_line": 15,
-      "end_line": 16
+      "start_line": 8,
+      "end_line": 8
     }
   },
   {
@@ -54056,7 +53981,7 @@
       "leaking, dripping, pouring"
     ],
     "gloss_ar": [
-      "سكب"
+      "سكب‎"
     ],
     "pos": [
       "N"
@@ -54071,13 +53996,12 @@
       "Eg"
     ],
     "raw": [
-      "diluul * leaking, dripping, pouring *",
-      "سكب * N * m * Er Su Eg"
+      "diluul * leaking, dripping, pouring * سكب‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 17,
-      "end_line": 18
+      "start_line": 9,
+      "end_line": 9
     }
   },
   {
@@ -54089,13 +54013,12 @@
       "violence"
     ],
     "gloss_ar": [
-      "العنف",
-      "مم"
+      "العنف‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -54103,13 +54026,12 @@
       "Er"
     ],
     "raw": [
-      "diluum * violence * العنف * N * مم *",
-      "Er"
+      "diluum * violence * العنف‎ * N * m * Er"
     ],
     "source": {
       "page": 47,
-      "start_line": 19,
-      "end_line": 20
+      "start_line": 10,
+      "end_line": 10
     }
   },
   {
@@ -54121,13 +54043,12 @@
       "assurance, surety"
     ],
     "gloss_ar": [
-      "ضمان",
-      "للتأكد"
+      "ضمان‎ للتأكد‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -54137,26 +54058,24 @@
       "Eg"
     ],
     "raw": [
-      "diluuy * assurance, surety * ضمان»",
-      "للتأكد * N * * Er Su Eg"
+      "diluuy * assurance, surety * ضمان‎ للتأكد‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 21,
-      "end_line": 22
+      "start_line": 11,
+      "end_line": 11
     }
   },
   {
     "headword": "dim aka",
     "headword_parts": [
-      "dim",
-      "aka"
+      "dim aka"
     ],
     "gloss_en": [
       "silent, be"
     ],
     "gloss_ar": [
-      "صه"
+      "صه‎"
     ],
     "pos": [
       "Phr"
@@ -54169,13 +54088,12 @@
       "Su"
     ],
     "raw": [
-      "dim aka * silent, be * صه * Phr*-*",
-      "Su"
+      "dim aka * silent, be * صه‎ * Phr * - * Su"
     ],
     "source": {
       "page": 47,
-      "start_line": 24,
-      "end_line": 25
+      "start_line": 12,
+      "end_line": 12
     }
   },
   {
@@ -54187,7 +54105,7 @@
       "squeezed, be"
     ],
     "gloss_ar": [
-      "تتقلص أن"
+      "تتقلص‎ أن"
     ],
     "pos": [
       "V"
@@ -54201,13 +54119,12 @@
       "Eg"
     ],
     "raw": [
-      "dimama * squeezed, be * تتقلص أن *",
-      "V * Sem * Er Eg"
+      "dimama * squeezed, be * تتقلص‎ أن * V * Sem * Er Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 26,
-      "end_line": 27
+      "start_line": 13,
+      "end_line": 13
     }
   },
   {
@@ -54219,7 +54136,7 @@
       "guarantee"
     ],
     "gloss_ar": [
-      "لضمان"
+      "لضمان‎"
     ],
     "pos": [
       "V"
@@ -54234,13 +54151,12 @@
       "Eg"
     ],
     "raw": [
-      "dimana * guarantee * لضمان * V* —",
-      "Sem * Er Su Eg"
+      "dimana * guarantee * لضمان‎ * V * — Sem * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 28,
-      "end_line": 29
+      "start_line": 14,
+      "end_line": 14
     }
   },
   {
@@ -54249,15 +54165,16 @@
       "dim'araab"
     ],
     "gloss_en": [
-      "gold",
-      "mpl _"
+      "gold"
     ],
     "gloss_ar": [
-      "الذهب"
+      "الذهب‎"
     ],
-    "pos": null,
-    "gender": null,
-    "number": null,
+    "pos": [
+      "N"
+    ],
+    "gender": "m",
+    "number": "pl",
     "class": null,
     "nominalized_verb": false,
     "regions": [
@@ -54265,30 +54182,30 @@
       "Eg"
     ],
     "raw": [
-      "dim'araab * gold * الذهب * <1 * mpl _",
-      "* Er Eg"
+      "dim'araab * gold * الذهب‎ * N * m pl * Er Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 30,
-      "end_line": 31
+      "start_line": 15,
+      "end_line": 15
     }
   },
   {
     "headword": "dim'araay/t",
     "headword_parts": [
-      "dim'araay/t"
+      "dim'araay",
+      "t"
     ],
     "gloss_en": [
       "golden"
     ],
     "gloss_ar": [
-      "الذهبي"
+      "الذهبي‎"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -54297,30 +54214,30 @@
       "Eg"
     ],
     "raw": [
-      "dim'araay/t * golden * الذهبي * Adj *",
-      "mf * Er Eg"
+      "dim'araay/t * golden * الذهبي‎ * Adj * m f * Er Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 32,
-      "end_line": 33
+      "start_line": 16,
+      "end_line": 16
     }
   },
   {
     "headword": "dimmaab/t",
     "headword_parts": [
-      "dimmaab/t"
+      "dimmaab",
+      "t"
     ],
     "gloss_en": [
       "dryness"
     ],
     "gloss_ar": [
-      "جفاف"
+      "جفاف‎"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -54329,13 +54246,12 @@
       "Eg"
     ],
     "raw": [
-      "dimmaab/t * dryness * جفاف * Adj *",
-      "mf * Su Eg"
+      "dimmaab/t * dryness * جفاف‎ * Adj * m f * Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 34,
-      "end_line": 35
+      "start_line": 17,
+      "end_line": 17
     }
   },
   {
@@ -54347,12 +54263,12 @@
       "dryness (summary)"
     ],
     "gloss_ar": [
-      "جفاف"
+      "جفاف‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -54362,13 +54278,12 @@
       "Eg"
     ],
     "raw": [
-      "dimmiit * dryness (summary) * جفاف",
-      "*N * ] * Er Su Eg"
+      "dimmiit * dryness (summary) * جفاف‎ * N * f * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 36,
-      "end_line": 37
+      "start_line": 18,
+      "end_line": 18
     }
   },
   {
@@ -54380,7 +54295,7 @@
       "dryness, squeezing (summary)"
     ],
     "gloss_ar": [
-      "والضغط"
+      "والضغط‎"
     ],
     "pos": [
       "N"
@@ -54395,26 +54310,24 @@
       "Eg"
     ],
     "raw": [
-      "dimuum * dryness, squeezing",
-      "(summary) * والضغط «Walia *",
-      "N * m* Er Su Eg"
+      "dimuum * dryness, squeezing (summary) * والضغط‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 38,
-      "end_line": 40
+      "start_line": 19,
+      "end_line": 19
     }
   },
   {
-    "headword": "din",
+    "headword": "din Adv",
     "headword_parts": [
-      "din"
+      "din Adv"
     ],
     "gloss_en": [
       "silent"
     ],
     "gloss_ar": [
-      "الصمت"
+      "الصمت‎"
     ],
     "pos": [
       "Adv"
@@ -54427,26 +54340,24 @@
       "Su"
     ],
     "raw": [
-      "din Adv * silent * الصمت * Adv * *",
-      "-",
-      "Su"
+      "din Adv * silent * الصمت‎ * Adv * - * Su"
     ],
     "source": {
       "page": 47,
-      "start_line": 41,
-      "end_line": 43
+      "start_line": 20,
+      "end_line": 20
     }
   },
   {
-    "headword": "din",
+    "headword": "din N",
     "headword_parts": [
-      "din"
+      "din N"
     ],
     "gloss_en": [
       "silence"
     ],
     "gloss_ar": [
-      "الصمت"
+      "الصمت‎"
     ],
     "pos": [
       "N"
@@ -54459,12 +54370,12 @@
       "Su"
     ],
     "raw": [
-      "din N * silence * الصمت * N * m * Su"
+      "din N * silence * الصمت‎ * N * m * Su"
     ],
     "source": {
       "page": 47,
-      "start_line": 44,
-      "end_line": 44
+      "start_line": 21,
+      "end_line": 21
     }
   },
   {
@@ -54476,7 +54387,7 @@
       "guess, weigh"
     ],
     "gloss_ar": [
-      "أو لتخمين"
+      "أو‎ لتخمين"
     ],
     "pos": [
       "V"
@@ -54489,13 +54400,12 @@
       "Er"
     ],
     "raw": [
-      "dina * guess, weigh * 053 أو لتخمين *",
-      "V * Sem * Er"
+      "dina * guess, weigh * أو‎ لتخمين * V * Sem * Er"
     ],
     "source": {
       "page": 47,
-      "start_line": 45,
-      "end_line": 46
+      "start_line": 22,
+      "end_line": 22
     }
   },
   {
@@ -54507,7 +54417,7 @@
       "silent, be"
     ],
     "gloss_ar": [
-      "صامتة لتكون"
+      "صامتة‎ لتكون"
     ],
     "pos": [
       "V"
@@ -54522,32 +54432,30 @@
       "Eg"
     ],
     "raw": [
-      "dinaa * silent, be * صامتة لتكون * V *",
-      "Cush * Er Su Eg"
+      "dinaa * silent, be * صامتة‎ لتكون * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 47,
-      "end_line": 48
+      "start_line": 23,
+      "end_line": 23
     }
   },
   {
     "headword": "dinaab/t",
     "headword_parts": [
-      "dinaab/t"
+      "dinaab",
+      "t"
     ],
     "gloss_en": [
       "calm"
     ],
     "gloss_ar": [
-      "تهدئة",
-      "الصفة"
+      "تهدئة‎ N / الصفة‎"
     ],
     "pos": [
-      "N",
       "Adj"
     ],
-    "gender": "f",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -54555,13 +54463,12 @@
       "Su"
     ],
     "raw": [
-      "dinaab/t * calm * تهدئة N / الصفة *",
-      "Adj * m f * Su"
+      "dinaab/t * calm * تهدئة‎ N / الصفة‎ * Adj * m f * Su"
     ],
     "source": {
       "page": 47,
-      "start_line": 49,
-      "end_line": 50
+      "start_line": 24,
+      "end_line": 24
     }
   },
   {
@@ -54573,8 +54480,7 @@
       "caution, punish"
     ],
     "gloss_ar": [
-      "تحذير",
-      "الى أو على"
+      "تحذير‎ الى‎ أو على"
     ],
     "pos": [
       "V"
@@ -54588,13 +54494,12 @@
       "Su"
     ],
     "raw": [
-      "dinina * caution, punish * 44 تحذير»",
-      "الى أو على * V * Sem * Er Su"
+      "dinina * caution, punish *  تحذير‎ الى‎ أو على * V * Sem * Er Su"
     ],
     "source": {
       "page": 47,
-      "start_line": 51,
-      "end_line": 52
+      "start_line": 25,
+      "end_line": 25
     }
   },
   {
@@ -54603,13 +54508,15 @@
       "dinisti"
     ],
     "gloss_en": [
-      "making silent, restraining",
-      "NV"
+      "making silent, restraining"
     ],
     "gloss_ar": [
-      "اسكات"
+      "اسكات‎"
     ],
-    "pos": null,
+    "pos": [
+      "N",
+      "V"
+    ],
     "gender": "m",
     "number": null,
     "class": null,
@@ -54620,13 +54527,12 @@
       "Eg"
     ],
     "raw": [
-      "dinisti * making silent, restraining *",
-      "اسكات * NV * m * Er Su Eg"
+      "dinisti * making silent, restraining * اسكات‎ * N V * m * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 53,
-      "end_line": 54
+      "start_line": 26,
+      "end_line": 26
     }
   },
   {
@@ -54638,12 +54544,12 @@
       "world, life"
     ],
     "gloss_ar": [
-      "والحياة العالم"
+      "والحياة‎ العالم"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -54652,13 +54558,12 @@
       "Eg"
     ],
     "raw": [
-      "diniyaat * world, life * والحياة العالم» *",
-      "N * £* Su Eg"
+      "diniyaat * world, life * والحياة‎ العالم * N * f * Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 55,
-      "end_line": 56
+      "start_line": 27,
+      "end_line": 27
     }
   },
   {
@@ -54670,7 +54575,7 @@
       "rebuke"
     ],
     "gloss_ar": [
-      "التوبيخ"
+      "التوبيخ‎"
     ],
     "pos": [
       "N"
@@ -54680,15 +54585,16 @@
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "dinni * rebuke * التوبيخ * N * m* Su"
+      "dinni * rebuke * التوبيخ‎ * N * m * Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 57,
-      "end_line": 57
+      "start_line": 28,
+      "end_line": 28
     }
   },
   {
@@ -54702,23 +54608,25 @@
     "gloss_ar": [
       "لإسكات"
     ],
-    "pos": null,
+    "pos": [
+      "V"
+    ],
     "gender": null,
     "number": null,
     "class": "Cush",
     "nominalized_verb": false,
     "regions": [
       "Er",
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "dinsaa * restrain silence * «eS",
-      "لإسكات * 17 * Cush * Er Su"
+      "dinsaa * restrain silence * لإسكات * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 59,
-      "end_line": 60
+      "start_line": 29,
+      "end_line": 29
     }
   },
   {
@@ -54730,25 +54638,25 @@
       "silence"
     ],
     "gloss_ar": [
-      "صمت"
+      "صمت‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Su"
+      "Er"
     ],
     "raw": [
-      "dintiib * silence * صمت «4 Su * N *"
+      "dintiib * silence * صمت‎ * N * m * Er"
     ],
     "source": {
       "page": 47,
-      "start_line": 62,
-      "end_line": 62
+      "start_line": 30,
+      "end_line": 30
     }
   },
   {
@@ -54760,8 +54668,7 @@
       "caution"
     ],
     "gloss_ar": [
-      "تحذير",
-      "حذرء الى أو على نبه"
+      "تحذير»‎ حذرء الى‎ أو على نبه"
     ],
     "pos": [
       "N"
@@ -54774,13 +54681,43 @@
       "Er"
     ],
     "raw": [
-      "dinuun * caution * «54s تحذير» حذرء",
-      "الى أو على نبه * N * m * Er"
+      "dinuun * caution * تحذير»‎ حذرء الى‎ أو على نبه * N * m * Er"
     ],
     "source": {
       "page": 47,
-      "start_line": 64,
-      "end_line": 65
+      "start_line": 31,
+      "end_line": 31
+    }
+  },
+  {
+    "headword": "dinyaat",
+    "headword_parts": [
+      "dinyaat"
+    ],
+    "gloss_en": [
+      "world"
+    ],
+    "gloss_ar": [
+      "العالم‎"
+    ],
+    "pos": [
+      "N"
+    ],
+    "gender": "f",
+    "number": null,
+    "class": null,
+    "nominalized_verb": false,
+    "regions": [
+      "Er",
+      "Eg"
+    ],
+    "raw": [
+      "dinyaat * world * العالم‎ * N * f * Er Eg"
+    ],
+    "source": {
+      "page": 47,
+      "start_line": 32,
+      "end_line": 32
     }
   },
   {
@@ -54792,7 +54729,7 @@
       "die"
     ],
     "gloss_ar": [
-      "مت"
+      "مت‎"
     ],
     "pos": [
       "V"
@@ -54807,13 +54744,12 @@
       "Eg"
     ],
     "raw": [
-      "dinyaatamaa * die * مت * V * Cush",
-      "* Er Su Eg"
+      "dinyaatamaa * die * مت‎ * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 68,
-      "end_line": 69
+      "start_line": 33,
+      "end_line": 33
     }
   },
   {
@@ -54825,7 +54761,7 @@
       "kill"
     ],
     "gloss_ar": [
-      "اقتل"
+      "اقتل‎"
     ],
     "pos": [
       "V"
@@ -54836,15 +54772,16 @@
     "nominalized_verb": false,
     "regions": [
       "Er",
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "dira * kill * اقتل * V * Sem * Er Su"
+      "dira * kill * اقتل‎ * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 70,
-      "end_line": 70
+      "start_line": 34,
+      "end_line": 34
     }
   },
   {
@@ -54856,7 +54793,7 @@
       "build"
     ],
     "gloss_ar": [
-      "ابني"
+      "ابني‎"
     ],
     "pos": [
       "V"
@@ -54869,12 +54806,12 @@
       "Er"
     ],
     "raw": [
-      "d'ira * build * ابني * V * Sem * Er"
+      "d'ira * build * ابني‎ * V * Sem * Er"
     ],
     "source": {
       "page": 47,
-      "start_line": 72,
-      "end_line": 72
+      "start_line": 35,
+      "end_line": 35
     }
   },
   {
@@ -54886,7 +54823,7 @@
       "get married"
     ],
     "gloss_ar": [
-      "تزوج"
+      "تزوج‎"
     ],
     "pos": [
       "V"
@@ -54900,29 +54837,28 @@
       "Eg"
     ],
     "raw": [
-      "d'ira * get married * تزوج * V * Sem",
-      "* Er Eg"
+      "d'ira * get married * تزوج‎ * V * Sem * Er Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 73,
-      "end_line": 74
+      "start_line": 36,
+      "end_line": 36
     }
   },
   {
     "headword": "dir'aab/t",
     "headword_parts": [
-      "dir'aab/t"
+      "dir'aab",
+      "t"
     ],
     "gloss_en": [
-      "farmer",
-      "OM"
+      "farmer"
     ],
-    "gloss_ar": null,
+    "gloss_ar": [],
     "pos": [
       "N"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -54931,13 +54867,12 @@
       "Eg"
     ],
     "raw": [
-      "dir'aab/t * farmer * OM * N* mf",
-      "* Er Eg"
+      "dir'aab/t * farmer *  * N * m f * Er Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 75,
-      "end_line": 76
+      "start_line": 37,
+      "end_line": 37
     }
   },
   {
@@ -54949,7 +54884,7 @@
       "button"
     ],
     "gloss_ar": [
-      "زر"
+      "زر‎"
     ],
     "pos": [
       "N"
@@ -54962,12 +54897,12 @@
       "Su"
     ],
     "raw": [
-      "diraar * button * زر * N * m* Su"
+      "diraar * button * زر‎ * N * m * Su"
     ],
     "source": {
       "page": 47,
-      "start_line": 77,
-      "end_line": 77
+      "start_line": 38,
+      "end_line": 38
     }
   },
   {
@@ -54979,7 +54914,7 @@
       "dinner"
     ],
     "gloss_ar": [
-      "العشاء"
+      "العشاء‎"
     ],
     "pos": [
       "N"
@@ -54989,15 +54924,17 @@
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "diraar * dinner * العشاء * N * m * Er"
+      "diraar * dinner * العشاء‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 47,
-      "start_line": 78,
-      "end_line": 78
+      "start_line": 39,
+      "end_line": 39
     }
   },
   {
@@ -55009,7 +54946,7 @@
       "study"
     ],
     "gloss_ar": [
-      "دراسة"
+      "دراسة‎"
     ],
     "pos": [
       "N"
@@ -55022,13 +54959,12 @@
       "Er"
     ],
     "raw": [
-      "diraasaat * study * دراسة * N * f *",
-      "Er"
+      "diraasaat * study * دراسة‎ * N * f * Er"
     ],
     "source": {
       "page": 47,
-      "start_line": 80,
-      "end_line": 81
+      "start_line": 40,
+      "end_line": 40
     }
   },
   {
@@ -55037,10 +54973,9 @@
       "dir'aat"
     ],
     "gloss_en": [
-      "agriculturefield, cultivation",
-      "4c\\)5"
+      "agriculturefield, cultivation"
     ],
-    "gloss_ar": null,
+    "gloss_ar": [],
     "pos": [
       "N"
     ],
@@ -55054,13 +54989,12 @@
       "Eg"
     ],
     "raw": [
-      "dir'aat * agriculturefield, cultivation",
-      "*4c\\)5*N*f* Er Su Eg"
+      "dir'aat * agriculturefield, cultivation *  * N * f * Er Su Eg"
     ],
     "source": {
       "page": 48,
       "start_line": 1,
-      "end_line": 2
+      "end_line": 1
     }
   },
   {
@@ -55072,7 +55006,7 @@
       "farmer"
     ],
     "gloss_ar": [
-      "الفلاح"
+      "الفلاح‎"
     ],
     "pos": [
       "N"
@@ -55086,13 +55020,12 @@
       "Eg"
     ],
     "raw": [
-      "dir'aatkinaab * farmer * الفلاح * N *",
-      "m * Er Eg"
+      "dir'aatkinaab * farmer * الفلاح‎ * N * m * Er Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 3,
-      "end_line": 4
+      "start_line": 2,
+      "end_line": 2
     }
   },
   {
@@ -55101,13 +55034,14 @@
       "dir'aayeegaab"
     ],
     "gloss_en": [
-      "farmer",
-      "N_"
+      "farmer"
     ],
     "gloss_ar": [
-      "الفلاح"
+      "الفلاح‎"
     ],
-    "pos": null,
+    "pos": [
+      "N"
+    ],
     "gender": "m",
     "number": null,
     "class": null,
@@ -55117,13 +55051,12 @@
       "Eg"
     ],
     "raw": [
-      "dir'aayeegaab * farmer * الفلاح * N_",
-      "*m * Er Eg"
+      "dir'aayeegaab * farmer * الفلاح‎ * N * m * Er Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 5,
-      "end_line": 6
+      "start_line": 3,
+      "end_line": 3
     }
   },
   {
@@ -55135,9 +55068,11 @@
       "eat supper"
     ],
     "gloss_ar": [
-      "العشاء تناول"
+      "العشاء‎ تناول"
     ],
-    "pos": null,
+    "pos": [
+      "V"
+    ],
     "gender": null,
     "number": null,
     "class": "Sem",
@@ -55148,13 +55083,12 @@
       "Eg"
     ],
     "raw": [
-      "dirara * eat supper * العشاء تناول * 7",
-      "* Sem * Er Su Eg"
+      "dirara * eat supper * العشاء‎ تناول * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 7,
-      "end_line": 8
+      "start_line": 4,
+      "end_line": 4
     }
   },
   {
@@ -55166,7 +55100,7 @@
       "frisk oneself"
     ],
     "gloss_ar": [
-      "النفس لتفتيشها"
+      "النفس‎ لتفتيشها"
     ],
     "pos": [
       "V"
@@ -55179,13 +55113,12 @@
       "Er"
     ],
     "raw": [
-      "dirawa * frisk oneself * النفس لتفتيشها *",
-      "V * Sem * Er"
+      "dirawa * frisk oneself * النفس‎ لتفتيشها * V * Sem * Er"
     ],
     "source": {
       "page": 48,
-      "start_line": 9,
-      "end_line": 10
+      "start_line": 5,
+      "end_line": 5
     }
   },
   {
@@ -55194,13 +55127,15 @@
       "dirbati"
     ],
     "gloss_en": [
-      "butter",
-      "NV"
+      "butter"
     ],
     "gloss_ar": [
-      "الزبدة"
+      "الزبدة‎"
     ],
-    "pos": null,
+    "pos": [
+      "N",
+      "V"
+    ],
     "gender": "f",
     "number": null,
     "class": null,
@@ -55210,13 +55145,12 @@
       "Su"
     ],
     "raw": [
-      "dirbati * butter * الزبدة * NV * f*",
-      "Er Su"
+      "dirbati * butter * الزبدة‎ * N V * f * Er Su"
     ],
     "source": {
       "page": 48,
-      "start_line": 11,
-      "end_line": 12
+      "start_line": 6,
+      "end_line": 6
     }
   },
   {
@@ -55228,7 +55162,7 @@
       "winnow, mix"
     ],
     "gloss_ar": [
-      "غربل"
+      "غربل‎"
     ],
     "pos": [
       "V"
@@ -55243,31 +55177,30 @@
       "Eg"
     ],
     "raw": [
-      "dirboobaa * winnow, mix * غربل * V",
-      "* Cush * Er Su Eg"
+      "dirboobaa * winnow, mix * غربل‎ * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 13,
-      "end_line": 14
+      "start_line": 7,
+      "end_line": 7
     }
   },
   {
     "headword": "dirif/t",
     "headword_parts": [
-      "dirif/t"
+      "dirif",
+      "t"
     ],
     "gloss_en": [
       "gray, dark, brown"
     ],
     "gloss_ar": [
-      "البني",
-      "والظلام"
+      "البني‎ والظلام‎"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -55277,14 +55210,12 @@
       "Eg"
     ],
     "raw": [
-      "dirif/t * gray, dark, brown * البني»",
-      "والظلام «(sale ily * Adj * mf*",
-      "Er Su Eg"
+      "dirif/t * gray, dark, brown * البني‎ والظلام‎ * Adj * m f * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 15,
-      "end_line": 17
+      "start_line": 8,
+      "end_line": 8
     }
   },
   {
@@ -55296,7 +55227,7 @@
       "light a fire"
     ],
     "gloss_ar": [
-      "النار إشعل"
+      "النار‎ إشعل"
     ],
     "pos": [
       "V"
@@ -55311,13 +55242,12 @@
       "Eg"
     ],
     "raw": [
-      "diriga * light a fire * النار إشعل * V *",
-      "Sem * Er Su Eg"
+      "diriga * light a fire * النار‎ إشعل * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 18,
-      "end_line": 19
+      "start_line": 9,
+      "end_line": 9
     }
   },
   {
@@ -55329,7 +55259,7 @@
       "drinking place for camels"
     ],
     "gloss_ar": [
-      "لسقي حوض"
+      "لسقي‎ حوض"
     ],
     "pos": [
       "N"
@@ -55339,16 +55269,17 @@
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "dirikw * drinking place for camels *",
-      "bY) لسقي حوض * N * m * Er"
+      "dirikw * drinking place for camels * لسقي‎ حوض * N * m * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 20,
-      "end_line": 21
+      "start_line": 10,
+      "end_line": 10
     }
   },
   {
@@ -55360,7 +55291,7 @@
       "herd, cattle, flock"
     ],
     "gloss_ar": [
-      "الماشية والقطيع"
+      "الماشية‎ والقطيع‎"
     ],
     "pos": [
       "N"
@@ -55375,13 +55306,12 @@
       "Eg"
     ],
     "raw": [
-      "dirimt * herd, cattle, flock * الماشية",
-      "والقطيع * N * f* Er Su Eg"
+      "dirimt * herd, cattle, flock * الماشية‎ والقطيع‎ * N * f * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 23,
-      "end_line": 24
+      "start_line": 11,
+      "end_line": 11
     }
   },
   {
@@ -55390,29 +55320,31 @@
       "dirimti"
     ],
     "gloss_en": [
-      "travel, grazing",
-      "NV"
+      "travel, grazing"
     ],
     "gloss_ar": [
-      "بدايةإرسال للرعي الماشية"
+      "بدايةإرسال‎ للرعي‎ الماشية"
     ],
-    "pos": null,
-    "gender": null,
+    "pos": [
+      "N",
+      "V"
+    ],
+    "gender": "f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
     "regions": [
       "Er",
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "dirimti * travel, grazing * بدايةإرسال",
-      "للرعي الماشية * NV * £* Er Su"
+      "dirimti * travel, grazing * بدايةإرسال‎ للرعي‎ الماشية * N V * f * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 25,
-      "end_line": 26
+      "start_line": 12,
+      "end_line": 12
     }
   },
   {
@@ -55424,7 +55356,7 @@
       "feed supper"
     ],
     "gloss_ar": [
-      "تعشى"
+      "تعشى‎"
     ],
     "pos": [
       "V"
@@ -55439,13 +55371,12 @@
       "Eg"
     ],
     "raw": [
-      "dirira * feed supper * تعشى * V *",
-      "Sem * Er Su Eg"
+      "dirira * feed supper * تعشى‎ * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 28,
-      "end_line": 29
+      "start_line": 13,
+      "end_line": 13
     }
   },
   {
@@ -55457,7 +55388,7 @@
       "spill"
     ],
     "gloss_ar": [
-      "ليمتد"
+      "ليمتد‎"
     ],
     "pos": [
       "V"
@@ -55470,13 +55401,12 @@
       "Er"
     ],
     "raw": [
-      "dirirsaa * spill * ليمتد * V * Cush* —",
-      "Er"
+      "dirirsaa * spill * ليمتد‎ * V * Cush * Er"
     ],
     "source": {
       "page": 48,
-      "start_line": 30,
-      "end_line": 31
+      "start_line": 14,
+      "end_line": 14
     }
   },
   {
@@ -55488,7 +55418,7 @@
       "examine, frisk"
     ],
     "gloss_ar": [
-      "لدراسة لتفتيشها"
+      "لدراسة‎ لتفتيشها‎"
     ],
     "pos": [
       "V"
@@ -55502,13 +55432,12 @@
       "Su"
     ],
     "raw": [
-      "diriwa * examine, frisk * لدراسة",
-      "لتفتيشها * V * Sem * Er Su"
+      "diriwa * examine, frisk * لدراسة‎ لتفتيشها‎ * V * Sem * Er Su"
     ],
     "source": {
       "page": 48,
-      "start_line": 32,
-      "end_line": 33
+      "start_line": 15,
+      "end_line": 15
     }
   },
   {
@@ -55520,7 +55449,7 @@
       "tortoise"
     ],
     "gloss_ar": [
-      "السلحفاة"
+      "السلحفاة‎"
     ],
     "pos": [
       "N"
@@ -55534,13 +55463,12 @@
       "Eg"
     ],
     "raw": [
-      "dirkwaahilloob * tortoise * السلحفاة *",
-      "N * m* Er Eg"
+      "dirkwaahilloob * tortoise * السلحفاة‎ * N * m * Er Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 34,
-      "end_line": 35
+      "start_line": 16,
+      "end_line": 16
     }
   },
   {
@@ -55549,33 +55477,10 @@
       "dirkwaat"
     ],
     "gloss_en": [
-      "pot for fetching water"
+      "pot for fetching water, bucket"
     ],
-    "gloss_ar": null,
-    "pos": null,
-    "gender": null,
-    "number": null,
-    "class": null,
-    "nominalized_verb": false,
-    "regions": null,
-    "raw": [
-      "dirkwaat * pot for fetching water,"
-    ],
-    "source": {
-      "page": 48,
-      "start_line": 36,
-      "end_line": 36
-    }
-  },
-  {
-    "headword": "bucket",
-    "headword_parts": [
-      "bucket"
-    ],
-    "gloss_en": null,
     "gloss_ar": [
-      "جي المياه",
-      "وعاء"
+      "جي‎ المياه  وعاء‎"
     ],
     "pos": [
       "N"
@@ -55590,13 +55495,12 @@
       "Eg"
     ],
     "raw": [
-      "bucket * جي المياه lal وعاء *",
-      "N * f* Er Su Eg"
+      "dirkwaat * pot for fetching water, bucket * جي‎ المياه  وعاء‎ * N * f * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 37,
-      "end_line": 38
+      "start_line": 17,
+      "end_line": 17
     }
   },
   {
@@ -55608,7 +55512,7 @@
       "tortoise"
     ],
     "gloss_ar": [
-      "السلحفاة"
+      "السلحفاة‎"
     ],
     "pos": [
       "N"
@@ -55623,13 +55527,12 @@
       "Eg"
     ],
     "raw": [
-      "dirkwahalloob * tortoise * السلحفاة *",
-      "N * m* Er Su Eg"
+      "dirkwahalloob * tortoise * السلحفاة‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 39,
-      "end_line": 40
+      "start_line": 18,
+      "end_line": 18
     }
   },
   {
@@ -55641,7 +55544,7 @@
       "graze"
     ],
     "gloss_ar": [
-      "ارعي"
+      "ارعي‎"
     ],
     "pos": [
       "V"
@@ -55656,30 +55559,30 @@
       "Eg"
     ],
     "raw": [
-      "dirmaa * graze * ارعي * V * Cush *",
-      "Er Su Eg"
+      "dirmaa * graze * ارعي‎ * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 41,
-      "end_line": 42
+      "start_line": 19,
+      "end_line": 19
     }
   },
   {
     "headword": "dirmanaab/t",
     "headword_parts": [
-      "dirmanaab/t"
+      "dirmanaab",
+      "t"
     ],
     "gloss_en": [
       "herdsman"
     ],
     "gloss_ar": [
-      "الراعي"
+      "الراعي‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -55689,13 +55592,12 @@
       "Eg"
     ],
     "raw": [
-      "dirmanaab/t * herdsman * الراعي *",
-      "N * ] * Er Su Eg"
+      "dirmanaab/t * herdsman * الراعي‎ * N * f * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 43,
-      "end_line": 44
+      "start_line": 20,
+      "end_line": 20
     }
   },
   {
@@ -55707,7 +55609,7 @@
       "full of green grass, be"
     ],
     "gloss_ar": [
-      "أخضر"
+      "أخضر‎"
     ],
     "pos": [
       "V"
@@ -55720,13 +55622,12 @@
       "Su"
     ],
     "raw": [
-      "diroora * full of green grass, be *",
-      "أخضر * V * Sem * Su"
+      "diroora * full of green grass, be * أخضر‎ * V * Sem * Su"
     ],
     "source": {
       "page": 48,
-      "start_line": 45,
-      "end_line": 46
+      "start_line": 21,
+      "end_line": 21
     }
   },
   {
@@ -55738,7 +55639,7 @@
       "ancestors"
     ],
     "gloss_ar": [
-      "أسلاف"
+      "أسلاف‎"
     ],
     "pos": [
       "N"
@@ -55752,13 +55653,12 @@
       "Su"
     ],
     "raw": [
-      "dirriyaayt * ancestors * أسلاف * N *",
-      "f* Er Su"
+      "dirriyaayt * ancestors * أسلاف‎ * N * f * Er Su"
     ],
     "source": {
       "page": 48,
-      "start_line": 47,
-      "end_line": 48
+      "start_line": 22,
+      "end_line": 22
     }
   },
   {
@@ -55767,32 +55667,10 @@
       "diruuf"
     ],
     "gloss_en": [
-      "sustenance, means of"
+      "sustenance, means of livelihood"
     ],
-    "gloss_ar": null,
-    "pos": null,
-    "gender": null,
-    "number": null,
-    "class": null,
-    "nominalized_verb": false,
-    "regions": null,
-    "raw": [
-      "diruuf * sustenance, means of"
-    ],
-    "source": {
-      "page": 48,
-      "start_line": 49,
-      "end_line": 49
-    }
-  },
-  {
-    "headword": "livelihood",
-    "headword_parts": [
-      "livelihood"
-    ],
-    "gloss_en": null,
     "gloss_ar": [
-      "العيش الظروف"
+      "العيش‎ الظروف"
     ],
     "pos": [
       "N"
@@ -55806,13 +55684,12 @@
       "Eg"
     ],
     "raw": [
-      "livelihood * العيش الظروف * N",
-      "* m * Er Eg"
+      "diruuf * sustenance, means of livelihood * العيش‎ الظروف * N * m * Er Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 50,
-      "end_line": 51
+      "start_line": 23,
+      "end_line": 23
     }
   },
   {
@@ -55824,7 +55701,7 @@
       "light, lighting a fire"
     ],
     "gloss_ar": [
-      "اشعال"
+      "اشعال‎"
     ],
     "pos": [
       "N"
@@ -55839,13 +55716,12 @@
       "Eg"
     ],
     "raw": [
-      "diruug * light, lighting a fire * اشعال",
-      "* N * m * Er Su Eg"
+      "diruug * light, lighting a fire * اشعال‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 52,
-      "end_line": 53
+      "start_line": 24,
+      "end_line": 24
     }
   },
   {
@@ -55857,13 +55733,12 @@
       "liquid"
     ],
     "gloss_ar": [
-      "السوائل",
-      "ع"
+      "السوائل‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "f",
     "number": "sg",
     "class": null,
     "nominalized_verb": false,
@@ -55872,13 +55747,12 @@
       "Eg"
     ],
     "raw": [
-      "diruuranaat * liquid * السوائل * N * ع",
-      "sg * Er Eg"
+      "diruuranaat * liquid * السوائل‎ * N * f sg * Er Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 54,
-      "end_line": 55
+      "start_line": 25,
+      "end_line": 25
     }
   },
   {
@@ -55887,32 +55761,10 @@
       "dirwaab"
     ],
     "gloss_en": [
-      "chewing of camels"
+      "chewing of camels, digesting (harming)"
     ],
-    "gloss_ar": null,
-    "pos": null,
-    "gender": null,
-    "number": null,
-    "class": null,
-    "nominalized_verb": false,
-    "regions": null,
-    "raw": [
-      "dirwaab * chewing of camels,"
-    ],
-    "source": {
-      "page": 48,
-      "start_line": 56,
-      "end_line": 56
-    }
-  },
-  {
-    "headword": "digesting",
-    "headword_parts": [
-      "digesting"
-    ],
-    "gloss_en": null,
     "gloss_ar": [
-      "مضخ وهضم الإبل"
+      "مضخ‎ وهضم‎ الإبل"
     ],
     "pos": [
       "N"
@@ -55923,16 +55775,16 @@
     "nominalized_verb": false,
     "regions": [
       "Er",
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "digesting (harming) * مضخ",
-      "وهضم الإبل» * N * m * Er Su"
+      "dirwaab * chewing of camels, digesting (harming) * مضخ‎ وهضم‎ الإبل * N * m * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 57,
-      "end_line": 58
+      "start_line": 26,
+      "end_line": 26
     }
   },
   {
@@ -55941,28 +55793,30 @@
       "dirwaati"
     ],
     "gloss_en": [
-      "chewing, munching of animals",
-      "NV",
-      "ErEg"
+      "chewing, munching of animals"
     ],
     "gloss_ar": [
-      "طاحن بصوت المضغ"
+      "طاحن‎ بصوت المضغ"
     ],
-    "pos": null,
+    "pos": [
+      "N",
+      "V"
+    ],
     "gender": null,
     "number": null,
     "class": null,
     "nominalized_verb": false,
-    "regions": null,
+    "regions": [
+      "Er",
+      "Eg"
+    ],
     "raw": [
-      "dirwaati * chewing, munching of",
-      "animals * طاحن بصوت المضغ *",
-      "NV*-* ErEg"
+      "dirwaati * chewing, munching of animals * طاحن‎ بصوت المضغ * N V * - * Er Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 60,
-      "end_line": 62
+      "start_line": 27,
+      "end_line": 27
     }
   },
   {
@@ -55974,7 +55828,7 @@
       "chewing, munching"
     ],
     "gloss_ar": [
-      "اليفع لعلاج"
+      "اليفع‎ لعلاج"
     ],
     "pos": [
       "N"
@@ -55988,13 +55842,12 @@
       "Eg"
     ],
     "raw": [
-      "dirwaawt * chewing, munching *",
-      "اليفع لعلاج * N * f* Er Eg"
+      "dirwaawt * chewing, munching * اليفع‎ لعلاج * N * f * Er Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 63,
-      "end_line": 64
+      "start_line": 28,
+      "end_line": 28
     }
   },
   {
@@ -56006,8 +55859,7 @@
       "chew, munch"
     ],
     "gloss_ar": [
-      "امضغ",
-      "لمونش"
+      "امضغ‎ لمونش‎"
     ],
     "pos": [
       "V"
@@ -56022,27 +55874,24 @@
       "Eg"
     ],
     "raw": [
-      "dirwaayaa * chew, munch * امضغ»",
-      "لمونش * V * Cush * Er Su Eg"
+      "dirwaayaa * chew, munch * امضغ‎ لمونش‎ * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 65,
-      "end_line": 66
+      "start_line": 29,
+      "end_line": 29
     }
   },
   {
     "headword": "dis adhidh",
     "headword_parts": [
-      "dis",
-      "adhidh"
+      "dis adhidh"
     ],
     "gloss_en": [
-      "swb-topic, sub-unit"
+      "sub-topic, sub-unit"
     ],
     "gloss_ar": [
-      "فرعية وحدة الموضوع",
-      "ء شبه"
+      "فرعية‎ وحدة الموضوع.ء شبه"
     ],
     "pos": [
       "Phr"
@@ -56056,31 +55905,30 @@
       "Eg"
     ],
     "raw": [
-      "dis adhidh * swb-topic, sub-unit *",
-      "فرعية وحدة الموضوع.ء شبه * Phr",
-      "*_* Er Eg"
+      "dis adhidh * sub-topic, sub-unit * فرعية‎ وحدة الموضوع.ء شبه * Phr * - * Er Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 67,
-      "end_line": 69
+      "start_line": 30,
+      "end_line": 30
     }
   },
   {
     "headword": "dis/t",
     "headword_parts": [
-      "dis/t"
+      "dis",
+      "t"
     ],
     "gloss_en": [
       "small"
     ],
     "gloss_ar": [
-      "الصغير"
+      "الصغير‎"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -56090,13 +55938,12 @@
       "Eg"
     ],
     "raw": [
-      "dis/t * small * الصغير * Adj * mf*",
-      "Er Su Eg"
+      "dis/t * small * الصغير‎ * Adj * m f * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 70,
-      "end_line": 71
+      "start_line": 31,
+      "end_line": 31
     }
   },
   {
@@ -56108,7 +55955,7 @@
       "small, be"
     ],
     "gloss_ar": [
-      "إصغر"
+      "إصغر‎"
     ],
     "pos": [
       "V"
@@ -56123,13 +55970,12 @@
       "Eg"
     ],
     "raw": [
-      "disa * small, be * إصغر * V * Sem *",
-      "Er Su Eg"
+      "disa * small, be * إصغر‎ * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 72,
-      "end_line": 73
+      "start_line": 32,
+      "end_line": 32
     }
   },
   {
@@ -56141,10 +55987,11 @@
       "sub unit, sub topic"
     ],
     "gloss_ar": [
-      "فرعي موضوع فرعية",
-      "وحدة"
+      "فرعي‎ موضوع فرعية وحدة"
     ],
-    "pos": null,
+    "pos": [
+      "N"
+    ],
     "gender": "m",
     "number": null,
     "class": null,
@@ -56154,14 +56001,12 @@
       "Eg"
     ],
     "raw": [
-      "dis'adhidh * sub unit, sub topic *",
-      "فرعي موضوع فرعية» وحدة * (1 *",
-      "m * Er Eg"
+      "dis'adhidh * sub unit, sub topic * فرعي‎ موضوع فرعية وحدة * N * m * Er Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 74,
-      "end_line": 76
+      "start_line": 33,
+      "end_line": 33
     }
   },
   {
@@ -56173,7 +56018,7 @@
       "coccyx, tail bone"
     ],
     "gloss_ar": [
-      "العصعص"
+      "العصعص‎"
     ],
     "pos": [
       "N"
@@ -56186,13 +56031,12 @@
       "Er"
     ],
     "raw": [
-      "disg'aab * coccyx, tail bone *",
-      "العصعص * N * m * Er"
+      "disg'aab * coccyx, tail bone * العصعص‎ * N * m * Er"
     ],
     "source": {
       "page": 48,
-      "start_line": 77,
-      "end_line": 78
+      "start_line": 34,
+      "end_line": 34
     }
   },
   {
@@ -56204,7 +56048,7 @@
       "laziness, idleness"
     ],
     "gloss_ar": [
-      "الكسل"
+      "الكسل‎"
     ],
     "pos": [
       "N"
@@ -56218,13 +56062,12 @@
       "Eg"
     ],
     "raw": [
-      "diss'eet * laziness, idleness * الكسل *",
-      "N * f* Su Eg"
+      "diss'eet * laziness, idleness * الكسل‎ * N * f * Su Eg"
     ],
     "source": {
       "page": 48,
-      "start_line": 79,
-      "end_line": 0
+      "start_line": 35,
+      "end_line": 35
     }
   },
   {
@@ -56236,7 +56079,7 @@
       "lazy, be"
     ],
     "gloss_ar": [
-      "اكسل"
+      "اكسل‎"
     ],
     "pos": [
       "V"
@@ -56250,25 +56093,24 @@
       "Eg"
     ],
     "raw": [
-      "diss'eetaa * lazy, be * اكسل * V *",
-      "Cush * Su Eg"
+      "diss'eetaa * lazy, be * اكسل‎ * V * Cush * Su Eg"
     ],
     "source": {
       "page": 49,
       "start_line": 1,
-      "end_line": 2
+      "end_line": 1
     }
   },
   {
-    "headword": "dist'eet",
+    "headword": "dist'eet Adv",
     "headword_parts": [
-      "dist'eet"
+      "dist'eet Adv"
     ],
     "gloss_en": [
       "lazily, aimless"
     ],
     "gloss_ar": [
-      "كسول"
+      "كسول‎"
     ],
     "pos": [
       "Adv"
@@ -56282,30 +56124,29 @@
       "Eg"
     ],
     "raw": [
-      "dist'eet Adv * lazily, aimless * كسول",
-      "* Adv * - * Er Eg"
+      "dist'eet Adv * lazily, aimless * كسول‎ * Adv * - * Er Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 3,
-      "end_line": 4
+      "start_line": 2,
+      "end_line": 2
     }
   },
   {
-    "headword": "dist'eet",
+    "headword": "dist'eet N",
     "headword_parts": [
-      "dist'eet"
+      "dist'eet N"
     ],
     "gloss_en": [
       "boring"
     ],
     "gloss_ar": [
-      "نقبء أضجر أسأم"
+      "نقبء‎ أضجر‎ أسأم"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -56313,13 +56154,12 @@
       "Er"
     ],
     "raw": [
-      "dist'eet N * boring * «= 8 نقبء",
-      "أضجر أسأم» * N * 2 * Er"
+      "dist'eet N * boring * نقبء‎ أضجر‎ أسأم * N * f * Er"
     ],
     "source": {
       "page": 49,
-      "start_line": 5,
-      "end_line": 6
+      "start_line": 3,
+      "end_line": 3
     }
   },
   {
@@ -56331,7 +56171,7 @@
       "freeze"
     ],
     "gloss_ar": [
-      "تجمد"
+      "تجمد‎"
     ],
     "pos": [
       "V"
@@ -56344,13 +56184,12 @@
       "Er"
     ],
     "raw": [
-      "diwaa * freeze * تجمد * V*Cush*",
-      "Er"
+      "diwaa * freeze * تجمد‎ * V * Cush * Er"
     ],
     "source": {
       "page": 49,
-      "start_line": 7,
-      "end_line": 8
+      "start_line": 4,
+      "end_line": 4
     }
   },
   {
@@ -56362,7 +56201,7 @@
       "sleep"
     ],
     "gloss_ar": [
-      "ثم"
+      "ثم‎"
     ],
     "pos": [
       "V"
@@ -56372,15 +56211,17 @@
     "class": "Cush",
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "diwaa * sleep * ثم * V*Cush* Er —"
+      "diwaa * sleep * ثم‎ * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 9,
-      "end_line": 9
+      "start_line": 5,
+      "end_line": 5
     }
   },
   {
@@ -56392,8 +56233,7 @@
       "container, mud container"
     ],
     "gloss_ar": [
-      "الطين",
-      "الزير"
+      "الطين‎ الزير‎"
     ],
     "pos": [
       "N"
@@ -56403,16 +56243,17 @@
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "diwaan * container, mud container *",
-      "الطين 4a gla الزير * N * m * Er"
+      "diwaan * container, mud container * الطين‎ الزير‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 11,
-      "end_line": 12
+      "start_line": 6,
+      "end_line": 6
     }
   },
   {
@@ -56421,43 +56262,10 @@
       "diwaant"
     ],
     "gloss_en": [
-      "gadget for making dough",
-      "f£"
+      "gadget for making dough"
     ],
     "gloss_ar": [
-      "العجين لصنع الأداة"
-    ],
-    "pos": [
-      "N"
-    ],
-    "gender": null,
-    "number": null,
-    "class": null,
-    "nominalized_verb": false,
-    "regions": [
-      "Er"
-    ],
-    "raw": [
-      "diwaant * gadget for making dough",
-      "* العجين لصنع الأداة * N*f£* Er"
-    ],
-    "source": {
-      "page": 49,
-      "start_line": 14,
-      "end_line": 15
-    }
-  },
-  {
-    "headword": "diwalt",
-    "headword_parts": [
-      "diwalt"
-    ],
-    "gloss_en": [
-      "countries",
-      "f Ar."
-    ],
-    "gloss_ar": [
-      "الدول"
+      "العجين‎ لصنع الأداة"
     ],
     "pos": [
       "N"
@@ -56467,30 +56275,58 @@
     "class": null,
     "nominalized_verb": false,
     "regions": [
+      "Er"
+    ],
+    "raw": [
+      "diwaant * gadget for making dough * العجين‎ لصنع الأداة * N * f * Er"
+    ],
+    "source": {
+      "page": 49,
+      "start_line": 7,
+      "end_line": 7
+    }
+  },
+  {
+    "headword": "diwalt",
+    "headword_parts": [
+      "diwalt"
+    ],
+    "gloss_en": [
+      "countries"
+    ],
+    "gloss_ar": [
+      "الدول‎"
+    ],
+    "pos": [
+      "N"
+    ],
+    "gender": "f",
+    "number": null,
+    "class": "Ar.",
+    "nominalized_verb": false,
+    "regions": [
       "Er",
       "Eg"
     ],
     "raw": [
-      "diwalt * countries * الدول * N * f Ar.",
-      "* Er Eg"
+      "diwalt * countries * الدول‎ * N * f Ar. * Er Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 16,
-      "end_line": 17
+      "start_line": 8,
+      "end_line": 8
     }
   },
   {
     "headword": "diwiiniib kaya",
     "headword_parts": [
-      "diwiiniib",
-      "kaya"
+      "diwiiniib kaya"
     ],
     "gloss_en": [
       "asleep, be"
     ],
     "gloss_ar": [
-      "يكون نائما"
+      "يكون‎ نائما‎"
     ],
     "pos": [
       "Phr"
@@ -56503,30 +56339,30 @@
       "Su"
     ],
     "raw": [
-      "diwiiniib kaya * asleep, be * يكون",
-      "نائما * Phr * - * Su"
+      "diwiiniib kaya * asleep, be * يكون‎ نائما‎ * Phr * - * Su"
     ],
     "source": {
       "page": 49,
-      "start_line": 18,
-      "end_line": 19
+      "start_line": 9,
+      "end_line": 9
     }
   },
   {
     "headword": "diwiiniib/t",
     "headword_parts": [
-      "diwiiniib/t"
+      "diwiiniib",
+      "t"
     ],
     "gloss_en": [
       "asleep"
     ],
     "gloss_ar": [
-      "يكون نائماء"
+      "يكون‎ نائماء"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -56534,13 +56370,12 @@
       "Su"
     ],
     "raw": [
-      "diwiiniib/t * asleep * iG يكون نائماء *",
-      "Adj * mf * Su"
+      "diwiiniib/t * asleep * يكون‎ نائماء * Adj * m f * Su"
     ],
     "source": {
       "page": 49,
-      "start_line": 20,
-      "end_line": 21
+      "start_line": 10,
+      "end_line": 10
     }
   },
   {
@@ -56552,7 +56387,7 @@
       "approach, be close"
     ],
     "gloss_ar": [
-      "اقترب"
+      "اقترب‎"
     ],
     "pos": [
       "V"
@@ -56567,13 +56402,12 @@
       "Eg"
     ],
     "raw": [
-      "diwila * approach, be close * اقترب *",
-      "V * Sem * Er Su Eg"
+      "diwila * approach, be close * اقترب‎ * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 22,
-      "end_line": 23
+      "start_line": 11,
+      "end_line": 11
     }
   },
   {
@@ -56585,7 +56419,7 @@
       "putting to sleep"
     ],
     "gloss_ar": [
-      "التنويم"
+      "التنويم‎"
     ],
     "pos": [
       "N"
@@ -56599,44 +56433,44 @@
       "Eg"
     ],
     "raw": [
-      "diwistiib * putting to sleep * التنويم *",
-      "N * m* Er Eg"
+      "diwistiib * putting to sleep * التنويم‎ * N * m * Er Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 24,
-      "end_line": 25
+      "start_line": 12,
+      "end_line": 12
     }
   },
   {
     "headword": "diwlaab/t",
     "headword_parts": [
-      "diwlaab/t"
+      "diwlaab",
+      "t"
     ],
     "gloss_en": [
-      "close, near",
-      "ErEg"
+      "close, near"
     ],
     "gloss_ar": [
-      "من بالقرب",
-      "مم"
+      "من‎ بالقرب"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": null,
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
-    "regions": null,
+    "regions": [
+      "Er",
+      "Eg"
+    ],
     "raw": [
-      "diwlaab/t * close, near * «8",
-      "من بالقرب * Adj * مم 1 * ErEg"
+      "diwlaab/t * close, near * من‎ بالقرب * Adj * m f * Er Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 26,
-      "end_line": 27
+      "start_line": 13,
+      "end_line": 13
     }
   },
   {
@@ -56648,36 +56482,8 @@
       "sleep"
     ],
     "gloss_ar": [
-      "النوم"
+      "النوم‎"
     ],
-    "pos": [
-      "N"
-    ],
-    "gender": "m",
-    "number": null,
-    "class": null,
-    "nominalized_verb": false,
-    "regions": [
-      "Er"
-    ],
-    "raw": [
-      "diwtiib * sleep * النوم * N*m* Er"
-    ],
-    "source": {
-      "page": 49,
-      "start_line": 28,
-      "end_line": 28
-    }
-  },
-  {
-    "headword": "diwuul",
-    "headword_parts": [
-      "diwuul"
-    ],
-    "gloss_en": [
-      "proximity"
-    ],
-    "gloss_ar": null,
     "pos": [
       "N"
     ],
@@ -56690,13 +56496,41 @@
       "Eg"
     ],
     "raw": [
-      "diwuul * proximity * 28*N*m* _",
-      "Er Eg"
+      "diwtiib * sleep * النوم‎ * N * m * Er Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 30,
-      "end_line": 31
+      "start_line": 14,
+      "end_line": 14
+    }
+  },
+  {
+    "headword": "diwuul",
+    "headword_parts": [
+      "diwuul"
+    ],
+    "gloss_en": [
+      "proximity"
+    ],
+    "gloss_ar": [],
+    "pos": [
+      "N"
+    ],
+    "gender": "m",
+    "number": null,
+    "class": null,
+    "nominalized_verb": false,
+    "regions": [
+      "Er",
+      "Eg"
+    ],
+    "raw": [
+      "diwuul * proximity *  * N * m * Er Eg"
+    ],
+    "source": {
+      "page": 49,
+      "start_line": 15,
+      "end_line": 15
     }
   },
   {
@@ -56704,9 +56538,11 @@
     "headword_parts": [
       "diya"
     ],
-    "gloss_en": null,
+    "gloss_en": [
+      "say"
+    ],
     "gloss_ar": [
-      "قل"
+      "قل‎"
     ],
     "pos": [
       "V"
@@ -56717,15 +56553,16 @@
     "nominalized_verb": false,
     "regions": [
       "Er",
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "diya * * قل * V * Sem * Er Su"
+      "diya * say * قل‎ * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 32,
-      "end_line": 32
+      "start_line": 16,
+      "end_line": 16
     }
   },
   {
@@ -56737,7 +56574,7 @@
       "finish, do"
     ],
     "gloss_ar": [
-      "اصنع"
+      "اصنع‎"
     ],
     "pos": [
       "V"
@@ -56752,13 +56589,12 @@
       "Eg"
     ],
     "raw": [
-      "d'iya * finish, do * اصنع * V * Sem *",
-      "Er Su Eg"
+      "d'iya * finish, do * اصنع‎ * V * Sem * Er Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 35,
-      "end_line": 36
+      "start_line": 17,
+      "end_line": 17
     }
   },
   {
@@ -56770,7 +56606,7 @@
       "band"
     ],
     "gloss_ar": [
-      "سير"
+      "سير‎"
     ],
     "pos": [
       "N"
@@ -56783,12 +56619,12 @@
       "Er"
     ],
     "raw": [
-      "diyaadt * band * سير * N * f* Er"
+      "diyaadt * band * سير‎ * N * f * Er"
     ],
     "source": {
       "page": 49,
-      "start_line": 37,
-      "end_line": 37
+      "start_line": 18,
+      "end_line": 18
     }
   },
   {
@@ -56800,7 +56636,7 @@
       "gird"
     ],
     "gloss_ar": [
-      "اربط"
+      "اربط‎"
     ],
     "pos": [
       "V"
@@ -56810,15 +56646,16 @@
     "class": "Sem",
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Eg"
     ],
     "raw": [
-      "diyida * gird * اربط * V* Sem* Er"
+      "diyida * gird * اربط‎ * V * Sem * Er Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 38,
-      "end_line": 38
+      "start_line": 19,
+      "end_line": 19
     }
   },
   {
@@ -56830,7 +56667,7 @@
       "marriage"
     ],
     "gloss_ar": [
-      "الزواج"
+      "الزواج‎"
     ],
     "pos": [
       "N"
@@ -56845,13 +56682,12 @@
       "Eg"
     ],
     "raw": [
-      "doob * marriage * الزواج * N*m*",
-      "Er Su Eg"
+      "doob * marriage * الزواج‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 40,
-      "end_line": 41
+      "start_line": 20,
+      "end_line": 20
     }
   },
   {
@@ -56863,7 +56699,7 @@
       "worm"
     ],
     "gloss_ar": [
-      "الدودة"
+      "الدودة‎"
     ],
     "pos": [
       "N"
@@ -56873,15 +56709,17 @@
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "d'oob * worm * الدودة * N * m * Er"
+      "d'oob * worm * الدودة‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 42,
-      "end_line": 42
+      "start_line": 21,
+      "end_line": 21
     }
   },
   {
@@ -56893,7 +56731,7 @@
       "get married"
     ],
     "gloss_ar": [
-      "تزوج"
+      "تزوج‎"
     ],
     "pos": [
       "V"
@@ -56907,13 +56745,12 @@
       "Eg"
     ],
     "raw": [
-      "doobaa * get married * تزوج * V *",
-      "Cush * Su Eg"
+      "doobaa * get married * تزوج‎ * V * Cush * Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 44,
-      "end_line": 45
+      "start_line": 22,
+      "end_line": 22
     }
   },
   {
@@ -56925,7 +56762,7 @@
       "bridegroom"
     ],
     "gloss_ar": [
-      "العريس"
+      "العريس‎"
     ],
     "pos": [
       "N"
@@ -56940,13 +56777,12 @@
       "Eg"
     ],
     "raw": [
-      "doobaab * bridegroom * العريس * N",
-      "*m * Er Su Eg"
+      "doobaab * bridegroom * العريس‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 46,
-      "end_line": 47
+      "start_line": 23,
+      "end_line": 23
     }
   },
   {
@@ -56958,7 +56794,7 @@
       "wedding"
     ],
     "gloss_ar": [
-      "الزفاف حفل"
+      "الزفاف‎ حفل"
     ],
     "pos": [
       "N"
@@ -56972,13 +56808,12 @@
       "Eg"
     ],
     "raw": [
-      "doobaaniib * wedding * الزفاف حفل *",
-      "N * m* Su Eg"
+      "doobaaniib * wedding * الزفاف‎ حفل * N * m * Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 48,
-      "end_line": 49
+      "start_line": 24,
+      "end_line": 24
     }
   },
   {
@@ -56990,7 +56825,7 @@
       "army raid"
     ],
     "gloss_ar": [
-      "غارة الجيش"
+      "غارة‎ الجيش"
     ],
     "pos": [
       "N"
@@ -57004,13 +56839,12 @@
       "Eg"
     ],
     "raw": [
-      "doobaar * army raid * غارة الجيش *",
-      "N * m* Er Eg"
+      "doobaar * army raid * غارة‎ الجيش * N * m * Er Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 50,
-      "end_line": 51
+      "start_line": 25,
+      "end_line": 25
     }
   },
   {
@@ -57022,7 +56856,7 @@
       "bride"
     ],
     "gloss_ar": [
-      "العروس"
+      "العروس‎"
     ],
     "pos": [
       "N"
@@ -57037,13 +56871,12 @@
       "Eg"
     ],
     "raw": [
-      "doobaat * bride * العروس * N * f *",
-      "Er Su Eg"
+      "doobaat * bride * العروس‎ * N * f * Er Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 52,
-      "end_line": 53
+      "start_line": 26,
+      "end_line": 26
     }
   },
   {
@@ -57052,15 +56885,16 @@
       "doobisti"
     ],
     "gloss_en": [
-      "being at a marriage",
-      "NV"
+      "being at a marriage"
     ],
     "gloss_ar": [
-      "التزويج",
-      "مم"
+      "التزويج‎"
     ],
-    "pos": null,
-    "gender": null,
+    "pos": [
+      "N",
+      "V"
+    ],
+    "gender": "m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -57069,13 +56903,12 @@
       "Eg"
     ],
     "raw": [
-      "doobisti * being at a marriage *",
-      "التزويج * NV * مم * Su Eg"
+      "doobisti * being at a marriage * التزويج‎ * N V * m * Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 54,
-      "end_line": 55
+      "start_line": 27,
+      "end_line": 27
     }
   },
   {
@@ -57087,9 +56920,11 @@
       "cause to marry"
     ],
     "gloss_ar": [
-      "زوج"
+      "زوج‎"
     ],
-    "pos": null,
+    "pos": [
+      "V"
+    ],
     "gender": null,
     "number": null,
     "class": "Cush",
@@ -57100,13 +56935,12 @@
       "Eg"
     ],
     "raw": [
-      "doobsaa * cause to marry * زوج * 7",
-      "* Cush * Er Su Eg"
+      "doobsaa * cause to marry * زوج‎ * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 56,
-      "end_line": 57
+      "start_line": 28,
+      "end_line": 28
     }
   },
   {
@@ -57133,13 +56967,12 @@
       "Eg"
     ],
     "raw": [
-      "doof * piece, chip of meat * «x",
-      "وقطعة * N * m * Er Su Eg"
+      "doof * piece, chip of meat * وقطعة * N * m * Er Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 58,
-      "end_line": 59
+      "start_line": 29,
+      "end_line": 29
     }
   },
   {
@@ -57151,9 +56984,11 @@
       "feeding milk to a baby, by force"
     ],
     "gloss_ar": [
-      "الارضاع"
+      "الارضاع‎"
     ],
-    "pos": null,
+    "pos": [
+      "N"
+    ],
     "gender": "m",
     "number": null,
     "class": null,
@@ -57162,13 +56997,12 @@
       "Er"
     ],
     "raw": [
-      "d'ool * feeding milk to a baby, by",
-      "force * الارضاع * 2[ * m * Er"
+      "d'ool * feeding milk to a baby, by force * الارضاع‎ * N * m * Er"
     ],
     "source": {
       "page": 49,
-      "start_line": 60,
-      "end_line": 61
+      "start_line": 30,
+      "end_line": 30
     }
   },
   {
@@ -57180,13 +57014,12 @@
       "box, cupboard"
     ],
     "gloss_ar": [
-      "مربعء الدولاب",
-      "مم"
+      "مربعء‎ الدولاب"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -57196,13 +57029,12 @@
       "Eg"
     ],
     "raw": [
-      "doolaab * box, cupboard * مربعء",
-      "الدولاب * N * مم * Er Su Eg"
+      "doolaab * box, cupboard * مربعء‎ الدولاب * N * m * Er Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 62,
-      "end_line": 63
+      "start_line": 31,
+      "end_line": 31
     }
   },
   {
@@ -57214,7 +57046,7 @@
       "wormy, be"
     ],
     "gloss_ar": [
-      "تسوس"
+      "تسوس‎"
     ],
     "pos": [
       "V"
@@ -57228,28 +57060,30 @@
       "Su"
     ],
     "raw": [
-      "d'oomaa * wormy, be * تسوس * V *",
-      "Cush * Er Su"
+      "d'oomaa * wormy, be * تسوس‎ * V * Cush * Er Su"
     ],
     "source": {
       "page": 49,
-      "start_line": 64,
-      "end_line": 65
+      "start_line": 32,
+      "end_line": 32
     }
   },
   {
     "headword": "d'oomaab/t",
     "headword_parts": [
-      "d'oomaab/t"
+      "d'oomaab",
+      "t"
     ],
     "gloss_en": [
       "maggoty"
     ],
     "gloss_ar": [
-      "اليرقات كثير الدودات أو"
+      "اليرقات‎ كثير الدودات‎ أو"
     ],
-    "pos": null,
-    "gender": "mf",
+    "pos": [
+      "N"
+    ],
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -57257,13 +57091,42 @@
       "Er"
     ],
     "raw": [
-      "d'oomaab/t * maggoty * اليرقات كثير",
-      "الدودات أو * 2[ * mf * Er"
+      "d'oomaab/t * maggoty * اليرقات‎ كثير الدودات‎ أو * N * m f * Er"
     ],
     "source": {
       "page": 49,
-      "start_line": 66,
-      "end_line": 67
+      "start_line": 33,
+      "end_line": 33
+    }
+  },
+  {
+    "headword": "doon",
+    "headword_parts": [
+      "doon"
+    ],
+    "gloss_en": [
+      "weight"
+    ],
+    "gloss_ar": [
+      "وزن‎"
+    ],
+    "pos": [
+      "N"
+    ],
+    "gender": "m",
+    "number": null,
+    "class": null,
+    "nominalized_verb": false,
+    "regions": [
+      "Su"
+    ],
+    "raw": [
+      "doon * weight * وزن‎ * N * m * Su"
+    ],
+    "source": {
+      "page": 49,
+      "start_line": 34,
+      "end_line": 34
     }
   },
   {
@@ -57272,13 +57135,14 @@
       "dooneeb"
     ],
     "gloss_en": [
-      "Jalala",
-      "Inty"
+      "lalala"
     ],
     "gloss_ar": [
-      "للرقص اغنية"
+      "للرقص‎ اغنية"
     ],
-    "pos": null,
+    "pos": [
+      "Intj"
+    ],
     "gender": null,
     "number": null,
     "class": null,
@@ -57287,13 +57151,12 @@
       "Su"
     ],
     "raw": [
-      "dooneeb * Jalala * 200 للرقص اغنية *",
-      "Inty * - * Su"
+      "dooneeb * lalala * للرقص‎ اغنية * Intj * - * Su"
     ],
     "source": {
       "page": 49,
-      "start_line": 69,
-      "end_line": 70
+      "start_line": 35,
+      "end_line": 35
     }
   },
   {
@@ -57305,41 +57168,39 @@
       "term, time, occasion, turn"
     ],
     "gloss_ar": [
-      "مدة الوقت",
-      "مم"
+      "مدة‎ الوقت"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
     "regions": [
       "Er",
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "door * term, time, occasion, turn *",
-      "مدة الوقت» * N * مم * Er Su"
+      "door * term, time, occasion, turn * مدة‎ الوقت * N * m * Er Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 71,
-      "end_line": 72
+      "start_line": 36,
+      "end_line": 36
     }
   },
   {
     "headword": "door gaal",
     "headword_parts": [
-      "door",
-      "gaal"
+      "door gaal"
     ],
     "gloss_en": [
       "at once"
     ],
     "gloss_ar": [
-      "واحد آن في"
+      "واحد‎ آن في"
     ],
     "pos": [
       "Phr"
@@ -57349,16 +57210,16 @@
     "class": null,
     "nominalized_verb": false,
     "regions": [
+      "Er",
       "Eg"
     ],
     "raw": [
-      "door gaal * at once * واحد آن في * Phr",
-      "* * Br Eg"
+      "door gaal * at once * واحد‎ آن في * Phr * - * Er Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 74,
-      "end_line": 75
+      "start_line": 37,
+      "end_line": 37
     }
   },
   {
@@ -57370,7 +57231,7 @@
       "suckle, give milk"
     ],
     "gloss_ar": [
-      "ارضع"
+      "ارضع‎"
     ],
     "pos": [
       "V"
@@ -57384,13 +57245,12 @@
       "Eg"
     ],
     "raw": [
-      "d'ooraa * suckle, give milk * ارضع *",
-      "V * Cush * Su Eg"
+      "d'ooraa * suckle, give milk * ارضع‎ * V * Cush * Su Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 76,
-      "end_line": 77
+      "start_line": 38,
+      "end_line": 38
     }
   },
   {
@@ -57402,7 +57262,7 @@
       "sometimes"
     ],
     "gloss_ar": [
-      "نادرا"
+      "نادرا‎"
     ],
     "pos": [
       "Adv"
@@ -57416,52 +57276,30 @@
       "Eg"
     ],
     "raw": [
-      "dooraab * sometimes * نادرا «Ghai *",
-      "Adv * - * Er Eg"
+      "dooraab * sometimes * نادرا‎ * Adv * - * Er Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 78,
-      "end_line": 79
+      "start_line": 39,
+      "end_line": 39
     }
   },
   {
     "headword": "dooraab/t",
     "headword_parts": [
-      "dooraab/t"
+      "dooraab",
+      "t"
     ],
     "gloss_en": [
       "aunt, uncle"
     ],
     "gloss_ar": [
-      "العمة"
+      "العمة‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
-    "number": null,
-    "class": null,
-    "nominalized_verb": false,
-    "regions": null,
-    "raw": [
-      "dooraab/t * aunt, uncle * العمة * N *"
-    ],
-    "source": {
-      "page": 49,
-      "start_line": 80,
-      "end_line": 80
-    }
-  },
-  {
-    "headword": "fm",
-    "headword_parts": [
-      "fm"
-    ],
-    "gloss_en": null,
-    "gloss_ar": null,
-    "pos": null,
-    "gender": null,
+    "gender": "f m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -57469,12 +57307,12 @@
       "Eg"
     ],
     "raw": [
-      "fm * Eg"
+      "dooraab/t * aunt, uncle * العمة‎ * N * f m * Eg"
     ],
     "source": {
       "page": 49,
-      "start_line": 81,
-      "end_line": 81
+      "start_line": 40,
+      "end_line": 40
     }
   },
   {
@@ -57483,10 +57321,9 @@
       "dooraayeeb"
     ],
     "gloss_en": [
-      "multiplication",
-      "AS"
+      "multiplication"
     ],
-    "gloss_ar": null,
+    "gloss_ar": [],
     "pos": [
       "N"
     ],
@@ -57499,13 +57336,12 @@
       "Eg"
     ],
     "raw": [
-      "dooraayeeb * multiplication * AS *",
-      "N * m* Er Eg"
+      "dooraayeeb * multiplication *  * N * m * Er Eg"
     ],
     "source": {
       "page": 50,
       "start_line": 1,
-      "end_line": 2
+      "end_line": 1
     }
   },
   {
@@ -57517,7 +57353,7 @@
       "seldom"
     ],
     "gloss_ar": [
-      "قلما نادراء"
+      "قلما‎ نادراء"
     ],
     "pos": [
       "Phr"
@@ -57530,31 +57366,30 @@
       "Er"
     ],
     "raw": [
-      "dooraayeebka * seldom * قلما نادراء ; *",
-      "Phr * - * Er"
+      "dooraayeebka * seldom * قلما‎ نادراء ; * Phr * - * Er"
     ],
     "source": {
       "page": 50,
-      "start_line": 3,
-      "end_line": 4
+      "start_line": 2,
+      "end_line": 2
     }
   },
   {
     "headword": "d'ooranaab/t",
     "headword_parts": [
-      "d'ooranaab/t"
+      "d'ooranaab",
+      "t"
     ],
     "gloss_en": [
       "nursing"
     ],
     "gloss_ar": [
-      "ممرضة",
-      "١"
+      "ممرضة‎"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -57563,13 +57398,12 @@
       "Eg"
     ],
     "raw": [
-      "d'ooranaab/t * nursing * ممرضة * ١",
-      "Adj * mf * Su Eg"
+      "d'ooranaab/t * nursing * ممرضة‎ * Adj * m f * Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 5,
-      "end_line": 6
+      "start_line": 3,
+      "end_line": 3
     }
   },
   {
@@ -57581,7 +57415,7 @@
       "way, direction"
     ],
     "gloss_ar": [
-      "الاتجاه الطريق"
+      "الاتجاه‎ الطريق"
     ],
     "pos": [
       "N"
@@ -57596,13 +57430,42 @@
       "Eg"
     ],
     "raw": [
-      "dooy * way, direction * الاتجاه الطريق»",
-      "*N * m * Er Su Eg"
+      "dooy * way, direction * الاتجاه‎ الطريق * N * m * Er Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 7,
-      "end_line": 8
+      "start_line": 4,
+      "end_line": 4
+    }
+  },
+  {
+    "headword": "dooy-maalhiib",
+    "headword_parts": [
+      "dooy-maalhiib"
+    ],
+    "gloss_en": [
+      "access"
+    ],
+    "gloss_ar": [
+      "وسيلة‎ ممر الى الوصول"
+    ],
+    "pos": [
+      "Phr"
+    ],
+    "gender": "m",
+    "number": null,
+    "class": null,
+    "nominalized_verb": false,
+    "regions": [
+      "Er"
+    ],
+    "raw": [
+      "dooy-maalhiib * access * وسيلة‎ ممر الى الوصول * Phr * m * Er"
+    ],
+    "source": {
+      "page": 50,
+      "start_line": 5,
+      "end_line": 5
     }
   },
   {
@@ -57614,8 +57477,7 @@
       "request, supplication"
     ],
     "gloss_ar": [
-      "الدعاء الطلبء",
-      "ررك"
+      "الدعاء الطلبء"
     ],
     "pos": [
       "N"
@@ -57626,17 +57488,79 @@
     "nominalized_verb": false,
     "regions": [
       "Er",
+      "Su",
       "Eg"
     ],
     "raw": [
-      "du'aab * request, supplication *",
-      "الدعاء الطلبء * N*m* Er ررك",
-      "Eg"
+      "du'aab * request, supplication * الدعاء الطلبء * N * m * Er Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 11,
-      "end_line": 13
+      "start_line": 6,
+      "end_line": 6
+    }
+  },
+  {
+    "headword": "dukwkwaan, dikwkwaan",
+    "headword_parts": [
+      "dukwkwaan, dikwkwaan"
+    ],
+    "gloss_en": [
+      "shop"
+    ],
+    "gloss_ar": [
+      "المحل"
+    ],
+    "pos": [
+      "N"
+    ],
+    "gender": "m",
+    "number": null,
+    "class": null,
+    "nominalized_verb": false,
+    "regions": [
+      "Su",
+      "Eg"
+    ],
+    "raw": [
+      "dukwkwaan, dikwkwaan * shop * المحل * N * m * Su Eg"
+    ],
+    "source": {
+      "page": 50,
+      "start_line": 7,
+      "end_line": 7
+    }
+  },
+  {
+    "headword": "duniyaat, dunyaat",
+    "headword_parts": [
+      "duniyaat, dunyaat"
+    ],
+    "gloss_en": [
+      "world"
+    ],
+    "gloss_ar": [
+      "العالم"
+    ],
+    "pos": [
+      "N"
+    ],
+    "gender": "f",
+    "number": null,
+    "class": null,
+    "nominalized_verb": false,
+    "regions": [
+      "Er",
+      "Su",
+      "Eg"
+    ],
+    "raw": [
+      "duniyaat, dunyaat * world * العالم * N * f * Er Su Eg"
+    ],
+    "source": {
+      "page": 50,
+      "start_line": 8,
+      "end_line": 8
     }
   },
   {
@@ -57648,37 +57572,7 @@
       "build"
     ],
     "gloss_ar": [
-      "ابني"
-    ],
-    "pos": [
-      "V"
-    ],
-    "gender": null,
-    "number": null,
-    "class": "Sem",
-    "nominalized_verb": false,
-    "regions": [
-      "Su"
-    ],
-    "raw": [
-      "d'ura * build * ابني * V * Sem * Su"
-    ],
-    "source": {
-      "page": 50,
-      "start_line": 18,
-      "end_line": 18
-    }
-  },
-  {
-    "headword": "d'ura",
-    "headword_parts": [
-      "d'ura"
-    ],
-    "gloss_en": [
-      "get married"
-    ],
-    "gloss_ar": [
-      "تزوج"
+      "ابني‎"
     ],
     "pos": [
       "V"
@@ -57692,13 +57586,43 @@
       "Eg"
     ],
     "raw": [
-      "d'ura * get married * تزوج * V *",
-      "Sem * Su Eg"
+      "d'ura * build * ابني‎ * V * Sem * Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 20,
-      "end_line": 21
+      "start_line": 9,
+      "end_line": 9
+    }
+  },
+  {
+    "headword": "d'ura",
+    "headword_parts": [
+      "d'ura"
+    ],
+    "gloss_en": [
+      "get married"
+    ],
+    "gloss_ar": [
+      "تزوج‎"
+    ],
+    "pos": [
+      "V"
+    ],
+    "gender": null,
+    "number": null,
+    "class": "Sem",
+    "nominalized_verb": false,
+    "regions": [
+      "Su",
+      "Eg"
+    ],
+    "raw": [
+      "d'ura * get married * تزوج‎ * V * Sem * Su Eg"
+    ],
+    "source": {
+      "page": 50,
+      "start_line": 10,
+      "end_line": 10
     }
   },
   {
@@ -57710,7 +57634,7 @@
       "atom"
     ],
     "gloss_ar": [
-      "ذرة"
+      "ذرة‎"
     ],
     "pos": [
       "N"
@@ -57723,12 +57647,12 @@
       "Er"
     ],
     "raw": [
-      "durraat * atom * ذرة * N * f* Er"
+      "durraat * atom * ذرة‎ * N * f * Er"
     ],
     "source": {
       "page": 50,
-      "start_line": 22,
-      "end_line": 22
+      "start_line": 11,
+      "end_line": 11
     }
   },
   {
@@ -57753,13 +57677,12 @@
       "Su"
     ],
     "raw": [
-      "duud * spring, source of water * a",
-      "المياه * N * m * Su"
+      "duud * spring, source of water * المياه * N * m * Su"
     ],
     "source": {
       "page": 50,
-      "start_line": 23,
-      "end_line": 24
+      "start_line": 12,
+      "end_line": 12
     }
   },
   {
@@ -57771,35 +57694,7 @@
       "cause to run by frightening, chase especially animals"
     ],
     "gloss_ar": [
-      "تديرها السماح"
-    ],
-    "pos": null,
-    "gender": null,
-    "number": null,
-    "class": null,
-    "nominalized_verb": false,
-    "regions": null,
-    "raw": [
-      "duudsaa * cause to run by",
-      "frightening, chase especially",
-      "animals * تديرها السماح"
-    ],
-    "source": {
-      "page": 50,
-      "start_line": 25,
-      "end_line": 27
-    }
-  },
-  {
-    "headword": "sald",
-    "headword_parts": [
-      "sald"
-    ],
-    "gloss_en": [
-      "2 Cush"
-    ],
-    "gloss_ar": [
-      "المخيفة الحيوانات"
+      "تديرها‎ السماح  المخيفة‎ الحيوانات"
     ],
     "pos": [
       "V"
@@ -57813,13 +57708,12 @@
       "Eg"
     ],
     "raw": [
-      "sald المخيفة الحيوانات * V* 2",
-      "Cush * Su Eg"
+      "duudsaa * cause to run by frightening, chase especially animals * تديرها‎ السماح  المخيفة‎ الحيوانات * V *  Cush * Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 28,
-      "end_line": 29
+      "start_line": 13,
+      "end_line": 13
     }
   },
   {
@@ -57831,27 +57725,27 @@
       "sweat"
     ],
     "gloss_ar": [
-      "العرق",
-      "مم",
-      "رك"
+      "العرق‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "duuf * sweat * العرق * N * مم * Er ,رك"
+      "duuf * sweat * العرق‎ * N * m * Er Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 30,
-      "end_line": 30
+      "start_line": 14,
+      "end_line": 14
     }
   },
   {
@@ -57863,8 +57757,7 @@
       "cause sweating"
     ],
     "gloss_ar": [
-      "سبب التعرق",
-      "و"
+      "سبب‎ التعرق"
     ],
     "pos": [
       "V"
@@ -57875,16 +57768,16 @@
     "nominalized_verb": false,
     "regions": [
       "Er",
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "duufsaa * cause sweating * سبب",
-      "التعرق * V * Cush * Er Su و2"
+      "duufsaa * cause sweating * سبب‎ التعرق * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 32,
-      "end_line": 33
+      "start_line": 15,
+      "end_line": 15
     }
   },
   {
@@ -57911,13 +57804,12 @@
       "Eg"
     ],
     "raw": [
-      "duugaa * sip, suck * ارشف * V *",
-      "Cush * Er Su Eg"
+      "duugaa * sip, suck * ارشف * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 34,
-      "end_line": 35
+      "start_line": 16,
+      "end_line": 16
     }
   },
   {
@@ -57940,16 +57832,16 @@
     "nominalized_verb": false,
     "regions": [
       "Er",
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "duum * type of dry, brittle fruit *",
-      "هش الجافة» * N * m * Er Su"
+      "duum * type of dry, brittle fruit * هش الجافة * N * m * Er Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 36,
-      "end_line": 37
+      "start_line": 17,
+      "end_line": 17
     }
   },
   {
@@ -57961,12 +57853,12 @@
       "nutrition"
     ],
     "gloss_ar": [
-      "الغذاء"
+      "الغذاء‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -57974,13 +57866,12 @@
       "Er"
     ],
     "raw": [
-      "duumanayt * nutrition * الغذاء * N*",
-      "] * Er"
+      "duumanayt * nutrition * الغذاء‎ * N * f * Er"
     ],
     "source": {
       "page": 50,
-      "start_line": 39,
-      "end_line": 40
+      "start_line": 18,
+      "end_line": 18
     }
   },
   {
@@ -57992,13 +57883,12 @@
       "action"
     ],
     "gloss_ar": [
-      "والعمل",
-      "م"
+      "والعمل‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -58007,13 +57897,42 @@
       "Su"
     ],
     "raw": [
-      "d'uur * action * والعمل «idl * N * م",
-      "* Er Su"
+      "d'uur * action * والعمل‎ * N * m * Er Su"
     ],
     "source": {
       "page": 50,
-      "start_line": 41,
-      "end_line": 42
+      "start_line": 19,
+      "end_line": 19
+    }
+  },
+  {
+    "headword": "d'uur",
+    "headword_parts": [
+      "d'uur"
+    ],
+    "gloss_en": [
+      "construction"
+    ],
+    "gloss_ar": [
+      "بناء‎"
+    ],
+    "pos": [
+      "N"
+    ],
+    "gender": "m",
+    "number": null,
+    "class": null,
+    "nominalized_verb": false,
+    "regions": [
+      "Er"
+    ],
+    "raw": [
+      "d'uur * construction * بناء‎ * N * m * Er"
+    ],
+    "source": {
+      "page": 50,
+      "start_line": 20,
+      "end_line": 20
     }
   },
   {
@@ -58025,7 +57944,7 @@
       "kiss with respect"
     ],
     "gloss_ar": [
-      "اليد قبل الاحترام مع"
+      "اليد‎ قبل الاحترام‎ مع"
     ],
     "pos": [
       "V"
@@ -58036,33 +57955,34 @@
     "nominalized_verb": false,
     "regions": [
       "Er",
-      "Su"
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "duuraa * kiss with respect * اليد قبل",
-      "الاحترام مع * V * Cush * Er Su"
+      "duuraa * kiss with respect * اليد‎ قبل الاحترام‎ مع * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 45,
-      "end_line": 46
+      "start_line": 21,
+      "end_line": 21
     }
   },
   {
     "headword": "duuraab/t",
     "headword_parts": [
-      "duuraab/t"
+      "duuraab",
+      "t"
     ],
     "gloss_en": [
       "uncle, aunt"
     ],
     "gloss_ar": [
-      "عم"
+      "عم‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": "f",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -58071,22 +57991,22 @@
       "Eg"
     ],
     "raw": [
-      "duuraab/t * uncle, aunt * عم * N *",
-      "m f * Er Eg"
+      "duuraab/t * uncle, aunt * عم‎ * N * m f * Er Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 48,
-      "end_line": 49
+      "start_line": 22,
+      "end_line": 22
     }
   },
   {
     "headword": "duuranaab/t",
     "headword_parts": [
-      "duuranaab/t"
+      "duuranaab",
+      "t"
     ],
     "gloss_en": [
-      "visitor"
+      "visitor‏"
     ],
     "gloss_ar": [
       "الزائر"
@@ -58094,7 +58014,7 @@
     "pos": [
       "N"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -58104,13 +58024,12 @@
       "Eg"
     ],
     "raw": [
-      "duuranaab/t * visitor * الزائر * N *",
-      "mf * Er Su Eg"
+      "duuranaab/t * visitor‏ * الزائر * N * m f * Er Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 50,
-      "end_line": 51
+      "start_line": 23,
+      "end_line": 23
     }
   },
   {
@@ -58122,7 +58041,7 @@
       "accomplishing, doing, putting"
     ],
     "gloss_ar": [
-      "ووضع فعل"
+      "ووضع‎ فعل"
     ],
     "pos": [
       "N"
@@ -58137,14 +58056,12 @@
       "Eg"
     ],
     "raw": [
-      "d'uuy * accomplishing, doing,",
-      "putting * ووضع فعل» * N*m",
-      "* Er Su Eg"
+      "d'uuy * accomplishing, doing, putting * ووضع‎ فعل * N * m * Er Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 52,
-      "end_line": 54
+      "start_line": 24,
+      "end_line": 24
     }
   },
   {
@@ -58156,7 +58073,7 @@
       "shin"
     ],
     "gloss_ar": [
-      "الساق مقدم القصبة"
+      "الساق مقدم القصبة»"
     ],
     "pos": [
       "N"
@@ -58169,13 +58086,12 @@
       "Er"
     ],
     "raw": [
-      "duuyduuy * shin * الساق مقدم القصبة» *",
-      "N*m* Er"
+      "duuyduuy * shin * الساق مقدم القصبة» * N * m * Er"
     ],
     "source": {
       "page": 50,
-      "start_line": 55,
-      "end_line": 56
+      "start_line": 25,
+      "end_line": 25
     }
   },
   {
@@ -58187,7 +58103,7 @@
       "freeze"
     ],
     "gloss_ar": [
-      "بفعل شديداً تبريداً برد"
+      "بفعل‎ شديداً تبريداً برد"
     ],
     "pos": [
       "V"
@@ -58200,13 +58116,12 @@
       "Er"
     ],
     "raw": [
-      "dwisaa * freeze * بفعل شديداً تبريداً برد",
-      "all * V * Cush * Er"
+      "dwisaa * freeze * بفعل‎ شديداً تبريداً برد * V * Cush * Er"
     ],
     "source": {
       "page": 50,
-      "start_line": 57,
-      "end_line": 58
+      "start_line": 26,
+      "end_line": 26
     }
   },
   {
@@ -58215,13 +58130,14 @@
       "ee"
     ],
     "gloss_en": [
-      "calling a person",
-      "Int]"
+      "calling a person"
     ],
     "gloss_ar": [
-      "شخص استدعاء"
+      "شخص‎ استدعاء"
     ],
-    "pos": null,
+    "pos": [
+      "Intj"
+    ],
     "gender": null,
     "number": null,
     "class": null,
@@ -58230,13 +58146,12 @@
       "Su"
     ],
     "raw": [
-      "ee * calling a person * شخص استدعاء",
-      "* Int] * - * Su"
+      "ee * calling a person * شخص‎ استدعاء * Intj * - * Su"
     ],
     "source": {
       "page": 50,
-      "start_line": 59,
-      "end_line": 60
+      "start_line": 27,
+      "end_line": 27
     }
   },
   {
@@ -58248,8 +58163,7 @@
       "shame, scorn, contempt"
     ],
     "gloss_ar": [
-      "عار",
-      "الاحتقار الازدراءء"
+      "عار‎ الاحتقار‎ الازدراءء"
     ],
     "pos": [
       "N"
@@ -58259,16 +58173,17 @@
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su",
+      "Eg"
     ],
     "raw": [
-      "eeb * shame, scorn, contempt * عار»",
-      "الاحتقار الازدراءء * N * m * Er"
+      "eeb * shame, scorn, contempt * عار‎ الاحتقار‎ الازدراءء * N * m * Er Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 61,
-      "end_line": 62
+      "start_line": 28,
+      "end_line": 28
     }
   },
   {
@@ -58277,7 +58192,7 @@
       "eebaa"
     ],
     "gloss_en": [
-      "insult, despise"
+      "insult, despise‏"
     ],
     "gloss_ar": [
       "احتقر اعيب"
@@ -58293,13 +58208,12 @@
       "Su"
     ],
     "raw": [
-      "eebaa * insult, despise * احتقر اعيب *",
-      "V * Cush * Su"
+      "eebaa * insult, despise‏ * احتقر اعيب * V * Cush * Su"
     ],
     "source": {
       "page": 50,
-      "start_line": 64,
-      "end_line": 65
+      "start_line": 29,
+      "end_line": 29
     }
   },
   {
@@ -58311,7 +58225,7 @@
       "faultfinder"
     ],
     "gloss_ar": [
-      "الناقد"
+      "الناقد‎"
     ],
     "pos": [
       "N"
@@ -58325,13 +58239,12 @@
       "Eg"
     ],
     "raw": [
-      "eebanaab * faultfinder * الناقد * N *",
-      "m * Su Eg"
+      "eebanaab * faultfinder * الناقد‎ * N * m * Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 66,
-      "end_line": 67
+      "start_line": 30,
+      "end_line": 30
     }
   },
   {
@@ -58343,7 +58256,7 @@
       "only"
     ],
     "gloss_ar": [
-      "فقط"
+      "فقط‎"
     ],
     "pos": [
       "Adv"
@@ -58353,15 +58266,16 @@
     "class": null,
     "nominalized_verb": false,
     "regions": [
-      "Er"
+      "Er",
+      "Su"
     ],
     "raw": [
-      "eebhat * only * فقط * Adv * pl * Er"
+      "eebhat * only * فقط‎ * Adv * pl * Er Su"
     ],
     "source": {
       "page": 50,
-      "start_line": 68,
-      "end_line": 68
+      "start_line": 31,
+      "end_line": 31
     }
   },
   {
@@ -58373,7 +58287,7 @@
       "cause to be despised"
     ],
     "gloss_ar": [
-      "أن الاحتقار على تعمل"
+      "أن‎ الاحتقار‎ على تعمل"
     ],
     "pos": [
       "V"
@@ -58388,14 +58302,12 @@
       "Eg"
     ],
     "raw": [
-      "eebsaa * cause to be despised * أن",
-      "الاحتقار على تعمل * V * Cush *",
-      "Er Su Eg"
+      "eebsaa * cause to be despised * أن‎ الاحتقار‎ على تعمل * V * Cush * Er Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 70,
-      "end_line": 72
+      "start_line": 32,
+      "end_line": 33
     }
   },
   {
@@ -58421,31 +58333,30 @@
       "Eg"
     ],
     "raw": [
-      "eebtik * mid * منتصف * Adv * * Su",
-      "-",
-      "Eg"
+      "eebtik * mid * منتصف * Adv * - * Su Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 73,
-      "end_line": 75
+      "start_line": 34,
+      "end_line": 34
     }
   },
   {
     "headword": "eebtikeesay/t",
     "headword_parts": [
-      "eebtikeesay/t"
+      "eebtikeesay",
+      "t"
     ],
     "gloss_en": [
       "from amid"
     ],
     "gloss_ar": [
-      "وسط من"
+      "وسط‎ من"
     ],
     "pos": [
       "Adj"
     ],
-    "gender": "mf",
+    "gender": "m f",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -58453,13 +58364,12 @@
       "Eg"
     ],
     "raw": [
-      "eebtikeesay/t * from amid * وسط من",
-      "* Adj * mf* Eg"
+      "eebtikeesay/t * from amid * وسط‎ من * Adj * m f * Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 76,
-      "end_line": 77
+      "start_line": 35,
+      "end_line": 35
     }
   },
   {
@@ -58484,13 +58394,12 @@
       "Er"
     ],
     "raw": [
-      "eedaamaa * execute * أعدم * V *",
-      "Cush * Er"
+      "eedaamaa * execute * أعدم * V * Cush * Er"
     ],
     "source": {
       "page": 50,
-      "start_line": 78,
-      "end_line": 79
+      "start_line": 36,
+      "end_line": 36
     }
   },
   {
@@ -58502,13 +58411,12 @@
       "marrying"
     ],
     "gloss_ar": [
-      "الزواج",
-      "جم"
+      "الزواج‎"
     ],
     "pos": [
       "N"
     ],
-    "gender": null,
+    "gender": "m",
     "number": null,
     "class": null,
     "nominalized_verb": false,
@@ -58517,13 +58425,12 @@
       "Eg"
     ],
     "raw": [
-      "eed'ar * marrying * الزواج * N * جم *",
-      "Er Eg"
+      "eed'ar * marrying * الزواج‎ * N * m * Er Eg"
     ],
     "source": {
       "page": 50,
-      "start_line": 80,
-      "end_line": 81
+      "start_line": 37,
+      "end_line": 37
     }
   },
   {
