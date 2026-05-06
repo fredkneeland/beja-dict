@@ -300,7 +300,7 @@ export default function HomeScreen() {
       <View style={styles.searchContainer}>
         <TextInput
           style={styles.searchInput}
-          placeholder={isBeja ? 'Search Beja…' : 'Search English…'}
+          placeholder={isBeja ? 'Search Bidhaawyeet…' : 'Search English…'}
           value={search}
           onChangeText={setSearch}
           autoCapitalize="none"
@@ -313,7 +313,7 @@ export default function HomeScreen() {
               accessibilityState={{ selected: isBeja }}
               style={[styles.segment, isBeja && styles.segmentActive]}
               onPress={() => setIsBeja(true)}>
-              <Text style={[styles.segmentText, isBeja && styles.segmentTextActive]}>Beja</Text>
+              <Text style={[styles.segmentText, isBeja && styles.segmentTextActive]}>Bidhaawyeet…</Text>
             </TouchableOpacity>
             <TouchableOpacity
               accessibilityRole="tab"
