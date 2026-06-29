@@ -313,7 +313,7 @@ export default function HomeScreen() {
               accessibilityState={{ selected: isBeja }}
               style={[styles.segment, isBeja && styles.segmentActive]}
               onPress={() => setIsBeja(true)}>
-              <Text style={[styles.segmentText, isBeja && styles.segmentTextActive]}>Bidhaawyeet…</Text>
+              <Text style={[styles.segmentText, isBeja && styles.segmentTextActive]}>Bidhaawyeet</Text>
             </TouchableOpacity>
             <TouchableOpacity
               accessibilityRole="tab"
