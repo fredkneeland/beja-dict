@@ -14,7 +14,7 @@ import { useRouter } from 'expo-router';
 export default function HomeScreen() {
   const router = useRouter();
   const [search, setSearch] = React.useState("");
-  const [isBeja, setIsBeja] = React.useState(true);
+  const [searchMode, setSearchMode] = React.useState<'beja' | 'english' | 'arabic'>('beja');
 
   type SearchResult =
     | { kind: 'beja_en'; entry: DictionaryEntry }
@@ -149,7 +149,15 @@ export default function HomeScreen() {
       setResults([]);
       return;
     }
-    if (!isBeja) {
+    if (searchMode === 'arabic') {
+      const s = search.trim();
+      const arabicMatches: SearchResult[] = dictionary
+        .filter(entry =>
+          entry.gloss_ar && entry.gloss_ar.some(g => g.includes(s))
+        )
+        .map(entry => ({ kind: 'beja_en' as const, entry }));
+      setResults(arabicMatches);
+    } else if (searchMode === 'english') {
       // English strict search: match in gloss_en or raw
       const s = search.trim().toLowerCase();
       const bejaEnMatches: SearchResult[] = dictionary
@@ -223,7 +231,7 @@ export default function HomeScreen() {
 
       setResults(merged);
     } else {
-      // Fuzzy Beja search: match headword and headword_parts
+      // Fuzzy Beja search (searchMode === 'beja'): match headword and headword_parts
       const q = normalizeForSearch(search);
       const qNoApos = stripApostrophes(q);
       const qCompact = q.replace(/\s+/g, '');
@@ -261,7 +269,7 @@ export default function HomeScreen() {
 
       setResults(sorted);
     }
-  }, [search, isBeja, dictionary, englishBeja, dict2, fuse, normalizeForSearch, stripApostrophes, isWithinEditDistance1]);
+  }, [search, searchMode, dictionary, englishBeja, dict2, fuse, normalizeForSearch, stripApostrophes, isWithinEditDistance1]);
 
   const getBejaText = (r: SearchResult) => {
     if (r.kind === 'beja_en') return r.entry.headword ?? '';
@@ -292,15 +300,23 @@ export default function HomeScreen() {
     return (r.entry.raw ?? []).join('\n');
   };
 
-  const getPrimaryText = (r: SearchResult) => (isBeja ? getBejaText(r) : getEnglishText(r));
-  const getSecondaryText = (r: SearchResult) => (isBeja ? getEnglishText(r) : getBejaText(r));
+  const getPrimaryText = (r: SearchResult) => {
+    if (searchMode === 'arabic') return getArabicText(r);
+    if (searchMode === 'english') return getEnglishText(r);
+    return getBejaText(r);
+  };
+  const getSecondaryText = (r: SearchResult) => {
+    if (searchMode === 'arabic') return `${getBejaText(r)}${getEnglishText(r) ? ' — ' + getEnglishText(r) : ''}`;
+    if (searchMode === 'english') return getBejaText(r);
+    return getEnglishText(r);
+  };
 
   return (
     <SafeAreaView style={styles.screen} edges={['top', 'left', 'right']}>
       <View style={styles.searchContainer}>
         <TextInput
           style={styles.searchInput}
-          placeholder={isBeja ? 'Search Bidhaawyeet…' : 'Search English…'}
+          placeholder={searchMode === 'beja' ? 'Search Bidhaawyeet…' : searchMode === 'arabic' ? 'Search Arabic…' : 'Search English…'}
           value={search}
           onChangeText={setSearch}
           autoCapitalize="none"
@@ -310,17 +326,24 @@ export default function HomeScreen() {
           <View style={styles.segmented} accessibilityRole="tablist">
             <TouchableOpacity
               accessibilityRole="tab"
-              accessibilityState={{ selected: isBeja }}
-              style={[styles.segment, isBeja && styles.segmentActive]}
-              onPress={() => setIsBeja(true)}>
-              <Text style={[styles.segmentText, isBeja && styles.segmentTextActive]}>Bidhaawyeet</Text>
+              accessibilityState={{ selected: searchMode === 'beja' }}
+              style={[styles.segment, searchMode === 'beja' && styles.segmentActive]}
+              onPress={() => setSearchMode('beja')}>
+              <Text style={[styles.segmentText, searchMode === 'beja' && styles.segmentTextActive]}>Bidhaawyeet</Text>
             </TouchableOpacity>
             <TouchableOpacity
               accessibilityRole="tab"
-              accessibilityState={{ selected: !isBeja }}
-              style={[styles.segment, !isBeja && styles.segmentActive]}
-              onPress={() => setIsBeja(false)}>
-              <Text style={[styles.segmentText, !isBeja && styles.segmentTextActive]}>English</Text>
+              accessibilityState={{ selected: searchMode === 'arabic' }}
+              style={[styles.segment, searchMode === 'arabic' && styles.segmentActive]}
+              onPress={() => setSearchMode('arabic')}>
+              <Text style={[styles.segmentText, searchMode === 'arabic' && styles.segmentTextActive]}>Arabic</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              accessibilityRole="tab"
+              accessibilityState={{ selected: searchMode === 'english' }}
+              style={[styles.segment, searchMode === 'english' && styles.segmentActive]}
+              onPress={() => setSearchMode('english')}>
+              <Text style={[styles.segmentText, searchMode === 'english' && styles.segmentTextActive]}>English</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -345,7 +368,7 @@ export default function HomeScreen() {
                   if (typeof page === 'number') {
                     const offset = getPdfOffset(r);
                     const doc = getPdfDoc(r);
-                    const term = isBeja ? getBejaText(r) : search.trim();
+                    const term = searchMode === 'beja' ? getBejaText(r) : search.trim();
                     const headword = getBejaText(r) || getPrimaryText(r);
                     router.push({
                       pathname: '/pdf',
@@ -359,7 +382,7 @@ export default function HomeScreen() {
                 <Text style={styles.resultHeadword}>{getPrimaryText(r)}</Text>
                 <Text style={styles.resultGloss}>
                   {getSecondaryText(r)}
-                  {getArabicText(r) ? ` — ${getArabicText(r)}` : ''}
+                  {searchMode !== 'arabic' && getArabicText(r) ? ` — ${getArabicText(r)}` : ''}
                 </Text>
               </TouchableOpacity>
               <CopyButton
