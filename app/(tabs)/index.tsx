@@ -5,7 +5,7 @@ import { CopyButton } from '../../components/ui/copy-button';
 
 import Fuse from 'fuse.js';
 import React from 'react';
-import { latinToArabic } from '../../data/bejaScript';
+import { arabicToLatin, latinToArabic, searchKey } from '../../data/bejaScript';
 import { Dict2Entry, getDict2 } from '../../data/dict2';
 import { DictionaryEntry, getDictionary } from '../../data/dictionary';
 import { EnglishBejaEntry, getEnglishBeja } from '../../data/english_beja';
@@ -19,6 +19,35 @@ export default function HomeScreen() {
   const [searchMode, setSearchMode] = React.useState<'beja' | 'english' | 'arabic'>('beja');
   const [arabicScript, setArabicScript] = React.useState(false);
   const [largeText, setLargeText] = React.useState(false);
+  const convertedSearch = React.useRef<{ latin: string; arabic: string } | null>(null);
+
+  const toArabicSearch = (text: string) => {
+    const arabic = latinToArabic(text);
+    convertedSearch.current = { latin: text, arabic };
+    return arabic;
+  };
+  const toLatinSearch = (text: string) => {
+    const original = convertedSearch.current;
+    convertedSearch.current = null;
+    return original && original.arabic === text ? original.latin : arabicToLatin(text);
+  };
+  const changeScript = () => {
+    if (searchMode === 'beja') {
+      setSearch(arabicScript ? toLatinSearch(search) : toArabicSearch(search));
+    }
+    setArabicScript(!arabicScript);
+  };
+  const changeSearchMode = (mode: typeof searchMode) => {
+    if (arabicScript && mode !== searchMode) {
+      if (searchMode === 'beja') setSearch(toLatinSearch(search));
+      else if (mode === 'beja') setSearch(toArabicSearch(search));
+    }
+    setSearchMode(mode);
+  };
+  const bejaQuery = convertedSearch.current?.arabic === search
+    ? convertedSearch.current.latin
+    : search;
+  const isArabicBejaQuery = searchMode === 'beja' && /[\u0600-\u06ff]/.test(bejaQuery);
 
   type SearchResult =
     | { kind: 'beja_en'; entry: DictionaryEntry }
@@ -84,7 +113,7 @@ export default function HomeScreen() {
     return edits <= 1;
   }, []);
 
-  const fuse = React.useMemo(() => {
+  const indexedResults = React.useMemo(() => {
     type IndexedResult = SearchResult & {
       bejaPrimary: string;
       bejaPrimaryNoApos: string;
@@ -136,22 +165,37 @@ export default function HomeScreen() {
       }),
     ];
 
-    return new Fuse(collection, {
-      includeScore: true,
-      ignoreLocation: true,
-      // Slightly stricter threshold keeps very-distant matches from crowding out
-      // near-misses like giraat → giiraat.
-      threshold: 0.33,
-      minMatchCharLength: 2,
-      // Prefer primary headword matches, but keep broader forms for flexibility.
-      keys: [
-        { name: 'bejaPrimary', weight: 0.75 },
-        { name: 'bejaPrimaryNoApos', weight: 0.15 },
-        { name: 'bejaSearch', weight: 0.08 },
-        { name: 'bejaSearchNoApos', weight: 0.02 },
-      ],
-    });
+    return collection;
   }, [dictionary, englishBeja, dict2, vanhove, normalizeForSearch, stripApostrophes]);
+
+  const fuseOptions = React.useMemo(() => ({
+    includeScore: true,
+    ignoreLocation: true,
+    threshold: 0.33,
+    minMatchCharLength: 2,
+    keys: [
+      { name: 'bejaPrimary', weight: 0.75 },
+      { name: 'bejaPrimaryNoApos', weight: 0.15 },
+      { name: 'bejaSearch', weight: 0.08 },
+      { name: 'bejaSearchNoApos', weight: 0.02 },
+    ],
+  }), []);
+  const fuse = React.useMemo(() => new Fuse(indexedResults, fuseOptions), [indexedResults, fuseOptions]);
+  const arabicFuse = React.useMemo(() => {
+    if (!isArabicBejaQuery) return null;
+    const collection = indexedResults.map(item => {
+      const bejaPrimary = searchKey(item.bejaPrimary);
+      const bejaSearch = searchKey(item.bejaSearch);
+      return {
+        ...item,
+        bejaPrimary,
+        bejaPrimaryNoApos: bejaPrimary,
+        bejaSearch,
+        bejaSearchNoApos: bejaSearch,
+      };
+    });
+    return new Fuse(collection, fuseOptions);
+  }, [indexedResults, fuseOptions, isArabicBejaQuery]);
 
   React.useEffect(() => {
     if (!search.trim()) {
@@ -247,11 +291,11 @@ export default function HomeScreen() {
       setResults(merged);
     } else {
       // Fuzzy Beja search (searchMode === 'beja'): match headword and headword_parts
-      const q = normalizeForSearch(search);
+      const q = isArabicBejaQuery ? searchKey(bejaQuery) : normalizeForSearch(bejaQuery);
       const qNoApos = stripApostrophes(q);
       const qCompact = q.replace(/\s+/g, '');
       const qNoAposCompact = qNoApos.replace(/\s+/g, '');
-      const matches = fuse.search(q, { limit: 200 });
+      const matches = (arabicFuse ?? fuse).search(q, { limit: 200 });
       const ranked = matches.map((m) => {
         const item: any = m.item;
         const bejaSearchCompact = String(item?.bejaSearch ?? '').replace(/\s+/g, '');
@@ -284,7 +328,7 @@ export default function HomeScreen() {
 
       setResults(sorted);
     }
-  }, [search, searchMode, dictionary, englishBeja, dict2, vanhove, fuse, normalizeForSearch, stripApostrophes, isWithinEditDistance1]);
+  }, [search, searchMode, bejaQuery, isArabicBejaQuery, dictionary, englishBeja, dict2, vanhove, fuse, arabicFuse, normalizeForSearch, stripApostrophes, isWithinEditDistance1]);
 
   const getBejaText = (r: SearchResult) => {
     if (r.kind === 'beja_en') return r.entry.headword ?? '';
@@ -336,9 +380,14 @@ export default function HomeScreen() {
       <View style={styles.searchContainer}>
         <TextInput
           style={[styles.searchInput, largeText && styles.largeSearchInput, arabicScript ? styles.alignRight : styles.alignLeft]}
-          placeholder={searchMode === 'beja' ? 'Search Bidhaawyeet…' : searchMode === 'arabic' ? 'Search Arabic…' : 'Search English…'}
+          placeholder={arabicScript
+            ? searchMode === 'beja' ? `ابحث في ${latinToArabic('bidhaawyeet')}…` : searchMode === 'arabic' ? 'ابحث بالعربية…' : 'ابحث بالإنجليزية…'
+            : searchMode === 'beja' ? 'Search Bidhaawyeet…' : searchMode === 'arabic' ? 'Search Arabic…' : 'Search English…'}
           value={search}
-          onChangeText={setSearch}
+          onChangeText={text => {
+            if (text !== convertedSearch.current?.arabic) convertedSearch.current = null;
+            setSearch(text);
+          }}
           autoCapitalize="none"
           autoCorrect={false}
         />
@@ -348,22 +397,26 @@ export default function HomeScreen() {
               accessibilityRole="tab"
               accessibilityState={{ selected: searchMode === 'beja' }}
               style={[styles.segment, largeText && styles.largeSegment, searchMode === 'beja' && styles.segmentActive]}
-              onPress={() => setSearchMode('beja')}>
-              <Text style={[styles.segmentText, largeText && styles.largeControlText, searchMode === 'beja' && styles.segmentTextActive]}>Bidhaawyeet</Text>
+              onPress={() => changeSearchMode('beja')}>
+              <Text style={[styles.segmentText, largeText && styles.largeControlText, searchMode === 'beja' && styles.segmentTextActive]}>
+                {arabicScript ? latinToArabic('bidhaawyeet') : 'Bidhaawyeet'}
+              </Text>
             </TouchableOpacity>
             <TouchableOpacity
               accessibilityRole="tab"
               accessibilityState={{ selected: searchMode === 'arabic' }}
               style={[styles.segment, largeText && styles.largeSegment, searchMode === 'arabic' && styles.segmentActive]}
-              onPress={() => setSearchMode('arabic')}>
-              <Text style={[styles.segmentText, largeText && styles.largeControlText, searchMode === 'arabic' && styles.segmentTextActive]}>Arabic</Text>
+              onPress={() => changeSearchMode('arabic')}>
+              <Text style={[styles.segmentText, largeText && styles.largeControlText, searchMode === 'arabic' && styles.segmentTextActive]}>عربي</Text>
             </TouchableOpacity>
             <TouchableOpacity
               accessibilityRole="tab"
               accessibilityState={{ selected: searchMode === 'english' }}
               style={[styles.segment, largeText && styles.largeSegment, searchMode === 'english' && styles.segmentActive]}
-              onPress={() => setSearchMode('english')}>
-              <Text style={[styles.segmentText, largeText && styles.largeControlText, searchMode === 'english' && styles.segmentTextActive]}>English</Text>
+              onPress={() => changeSearchMode('english')}>
+              <Text style={[styles.segmentText, largeText && styles.largeControlText, searchMode === 'english' && styles.segmentTextActive]}>
+                {arabicScript ? 'إنجليزي' : 'English'}
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -373,7 +426,7 @@ export default function HomeScreen() {
             accessibilityRole="button"
             accessibilityLabel={arabicScript ? 'Switch to Latin script' : 'Switch to Arabic script'}
             accessibilityHint="Changes how Bidhaawyeet results are displayed."
-            onPress={() => setArabicScript(value => !value)}>
+            onPress={changeScript}>
             <Text style={[styles.displayButtonText, largeText && styles.largeControlText]}>
               {arabicScript ? 'Latin script' : 'حروف العربي'}
             </Text>
@@ -386,7 +439,7 @@ export default function HomeScreen() {
             accessibilityState={{ selected: largeText }}
             onPress={() => setLargeText(value => !value)}>
             <Text style={[styles.textSizeLarge, largeText && styles.displayButtonTextActive]}>
-              A<Text style={styles.textSizeSmall}>a</Text>
+              {arabicScript ? 'ا' : 'A'}<Text style={styles.textSizeSmall}>{arabicScript ? 'ا' : 'a'}</Text>
             </Text>
           </TouchableOpacity>
         </View>

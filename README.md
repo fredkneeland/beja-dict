@@ -4,7 +4,8 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
 Search includes the Vanhove & Hamid Ahmed 2026 dictionary alongside the existing sources. Its entries show their source page, can be copied, and open the corresponding PDF page.
 
-The script button switches displayed Beja results between Latin (the default) and Arabic script using the Wedekind pedagogical convention. Bidhaawyeet searches still use Latin input, and copied source text remains unchanged.
+The script button switches displayed Beja results and Bidhaawyeet search input between Latin (the default) and Arabic script using the Wedekind pedagogical convention. Arabic-script search also accepts unvowelled and common keyboard spellings; converting edited Arabic input back to Latin is approximate. Copied source text remains unchanged.
+The language buttons also follow the selected script; the Arabic button always uses Arabic lettering.
 
 Use the A/a button to toggle larger search controls and results. The standard size is the default.
 
