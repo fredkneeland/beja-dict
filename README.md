@@ -2,6 +2,12 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).  This app is suppose to be a dictionary that supports fuzzy searches in the Beja language.
 
+Search includes the Vanhove & Hamid Ahmed 2026 dictionary alongside the existing sources. Its entries show their source page, can be copied, and open the corresponding PDF page.
+
+The script button switches displayed Beja results between Latin (the default) and Arabic script using the Wedekind pedagogical convention. Bidhaawyeet searches still use Latin input, and copied source text remains unchanged.
+
+Use the A/a button to toggle larger search controls and results. The standard size is the default.
+
 ## Get started
 
 1. Install dependencies

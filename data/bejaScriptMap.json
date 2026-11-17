@@ -1,0 +1,124 @@
+{
+  "name": "Bidhaawyeet Latin <-> Arabic script map (Wedekind pedagogical convention)",
+  "version": "1.0.0",
+  "source": "Klaus & Charlotte Wedekind and Abuzeinab Musa, Beja Pedagogical Grammar (Aswan 2004 - Asmara 2005), Table 1 'Transcriptions and Pronunciation' (PDF p. 7-8) and the Arabic-script transliterations throughout the book. File in vault: Research/Beja_Pedagogical_Grammar.pdf",
+  "marks": {
+    "fatha": "َ",
+    "kasra": "ِ",
+    "damma": "ُ",
+    "sukun": "ْ",
+    "shadda": "ّ",
+    "kasratan_long_ii": "ٍ",
+    "dammatan_long_uu": "ٌ"
+  },
+  "consonants": {
+    "b": "ب",
+    "d": "د",
+    "dh": "ڈ",
+    "f": "ف",
+    "g": "ق",
+    "gh": "غ",
+    "gw": "قْو",
+    "h": "ه",
+    "j": "ج",
+    "k": "ك",
+    "kh": "خ",
+    "kw": "كْو",
+    "l": "ل",
+    "m": "م",
+    "n": "ن",
+    "r": "ر",
+    "s": "س",
+    "sh": "ش",
+    "t": "ت",
+    "th": "ٹ",
+    "w": "و",
+    "y": "ي",
+    "z": "ز",
+    "p": "پ",
+    "v": "ڤ"
+  },
+  "silentE": {
+    "rule": "A single 'e' between a consonant and 'h' is silent (deh, teh, seh, keh, geh). It only shows that the letters are separate (d+h, not retroflex dh). It is not written in Arabic script, because Arabic already writes these sounds with different letters.",
+    "examples": {
+      "dehay": "دهَي",
+      "sehaal": "سهال",
+      "baruukehan": "بَرٌوكهَن"
+    }
+  },
+  "vowels": {
+    "comment": "Seat = how a vowel is written depending on where it is. 'initial' = start of word; 'afterHamza' = right after an apostrophe; 'medial' = after a consonant inside the word; 'final' = last sound of the word. Marks shown here are dropped in 'plain' mode.",
+    "a": {
+      "initial": "أَ",
+      "afterHamza": "أَ",
+      "medial": "َ",
+      "final": "ه"
+    },
+    "aa": {
+      "initial": "آ",
+      "afterHamza": "آ",
+      "medial": "ا",
+      "final": "ا"
+    },
+    "i": {
+      "initial": "إِ",
+      "afterHamza": "إِ",
+      "medial": "ِ",
+      "final": "ے"
+    },
+    "ii": {
+      "initial": "إي",
+      "afterHamza": "إي",
+      "medial": "ٍي",
+      "final": "ٍي"
+    },
+    "u": {
+      "initial": "أُ",
+      "afterHamza": "ءُ",
+      "medial": "ُ",
+      "final": "ُ"
+    },
+    "uu": {
+      "initial": "أُو",
+      "afterHamza": "ءُو",
+      "medial": "ٌو",
+      "final": "ٌو"
+    },
+    "ee": {
+      "initial": "ێ",
+      "afterHamza": "ئێ",
+      "medial": "ێ",
+      "final": "ێ"
+    },
+    "oo": {
+      "initial": "ۆ",
+      "afterHamza": "ؤۆ",
+      "medial": "ۆ",
+      "final": "ۆ"
+    }
+  },
+  "hamza": {
+    "beforeConsonantOrEnd": "ء",
+    "comment": "Latin apostrophe = glottal stop. Before a vowel it takes that vowel's 'afterHamza' seat: 'a -> أَ, 'aa -> آ, 'i -> إِ, 'ii -> إي, 'u -> ءُ, 'uu -> ءُو, 'ee -> ئێ, 'oo -> ؤۆ. A final 'a is written أه (oond'a -> ۆندأه). Before a consonant or at the end of a word: ء."
+  },
+  "gemination": "A doubled consonant is written once with shadda (assaa -> أَسّا). A doubled gw or kw is written out twice, as the book does (sikwkwart -> سِكْوكْوَرت).",
+  "punctuation": {
+    "?": "؟",
+    ",": "،",
+    ";": "؛"
+  },
+  "notInSource": {
+    "comment": "Characters the Pedagogical Grammar does not cover. They are added so that no input fails. The single vowels e and o occur only in a few loanwords and in Vanhove spellings; they are written like ee and oo, and that change cannot be undone when converting back.",
+    "p": "پ",
+    "v": "ڤ",
+    "e": "same as ee (ێ); silent between a consonant and h",
+    "o": "same as oo (ۆ)"
+  },
+  "finalA_afterHamza": "أه",
+  "addedForReversibility": {
+    "comment": "Not in the Pedagogical Grammar. Added in 'full' mode only, so that Arabic can be turned back into exactly the same Latin spelling. 'plain' mode removes them.",
+    "finalH": "A word-final consonant h gets sukun: baruuh -> بَرٌوهْ (otherwise a final ه reads as the -a ending).",
+    "consonantalYW": "y or w with no vowel after them gets sukun when it follows a consonant or a short i/u: hidy -> هِديْ, eetyhami -> ێتيْهَمے (otherwise ي/و reads as long ii/uu).",
+    "vowelHiatus": "Two vowels in a row with no apostrophe are written as if there were one (uugin'a-inriib -> ...أَإِ...); converting back adds the apostrophe."
+  }
+}

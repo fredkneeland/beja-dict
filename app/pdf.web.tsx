@@ -5,7 +5,7 @@ import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 
 export default function PdfScreenWeb() {
   const params = useLocalSearchParams<{ doc?: string; page?: string; offset?: string; term?: string; headword?: string }>();
-  const doc = typeof params.doc === 'string' && params.doc === 'dict2' ? 'dict2' : 'dictionary';
+  const doc = params.doc === 'dict2' || params.doc === 'vanhove' ? params.doc : 'dictionary';
   const basePage = Number(params.page ?? '1');
   const offset = Number(params.offset ?? '16');
   const safeOffset = Number.isFinite(offset) ? offset : 16;
@@ -13,7 +13,7 @@ export default function PdfScreenWeb() {
   const term = typeof params.term === 'string' ? params.term.trim() : '';
   const headword = typeof params.headword === 'string' ? params.headword.trim() : '';
 
-  const title = headword || term || (doc === 'dict2' ? 'Dict 2' : 'Dictionary');
+  const title = headword || term || (doc === 'dict2' ? 'Dict 2' : doc === 'vanhove' ? 'Vanhove Dictionary' : 'Dictionary');
 
   const [pdfUri, setPdfUri] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
@@ -22,7 +22,10 @@ export default function PdfScreenWeb() {
     let cancelled = false;
     (async () => {
       try {
-        const asset = Asset.fromModule(doc === 'dict2' ? require('../data/dict2.pdf') : require('../data/dictionary.pdf'));
+        const asset = Asset.fromModule(
+          doc === 'dict2' ? require('../data/dict2.pdf') :
+            doc === 'vanhove' ? require('../data/Vanhove-2026-dictionary.pdf') : require('../data/dictionary.pdf')
+        );
         // On web this typically resolves immediately, but downloadAsync is safe.
         await asset.downloadAsync();
         const uri = asset.localUri ?? asset.uri;

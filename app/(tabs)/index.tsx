@@ -5,9 +5,11 @@ import { CopyButton } from '../../components/ui/copy-button';
 
 import Fuse from 'fuse.js';
 import React from 'react';
+import { latinToArabic } from '../../data/bejaScript';
 import { Dict2Entry, getDict2 } from '../../data/dict2';
 import { DictionaryEntry, getDictionary } from '../../data/dictionary';
 import { EnglishBejaEntry, getEnglishBeja } from '../../data/english_beja';
+import { VanhoveEntry, getVanhoveDictionary } from '../../data/vanhove_2026_dictionary';
 
 import { useRouter } from 'expo-router';
 
@@ -15,16 +17,20 @@ export default function HomeScreen() {
   const router = useRouter();
   const [search, setSearch] = React.useState("");
   const [searchMode, setSearchMode] = React.useState<'beja' | 'english' | 'arabic'>('beja');
+  const [arabicScript, setArabicScript] = React.useState(false);
+  const [largeText, setLargeText] = React.useState(false);
 
   type SearchResult =
     | { kind: 'beja_en'; entry: DictionaryEntry }
     | { kind: 'en_beja'; entry: EnglishBejaEntry }
-    | { kind: 'dict2'; entry: Dict2Entry };
+    | { kind: 'dict2'; entry: Dict2Entry }
+    | { kind: 'vanhove'; entry: VanhoveEntry };
 
   const [results, setResults] = React.useState<SearchResult[]>([]);
   const dictionary = React.useMemo(() => getDictionary(), []);
   const englishBeja = React.useMemo(() => getEnglishBeja(), []);
   const dict2 = React.useMemo(() => getDict2(), []);
+  const vanhove = React.useMemo(() => getVanhoveDictionary(), []);
   const limitedResults = React.useMemo(() => results.slice(0, 30), [results]);
 
   const normalizeForSearch = React.useCallback((input: string) => {
@@ -87,13 +93,16 @@ export default function HomeScreen() {
     };
 
     const collection: IndexedResult[] = [
-      ...dictionary.map((entry) => {
+      ...[
+        ...dictionary.map((entry) => ({ kind: 'beja_en' as const, entry })),
+        ...vanhove.map((entry) => ({ kind: 'vanhove' as const, entry })),
+      ].map((result) => {
+        const { entry } = result;
         const bejaPrimary = normalizeForSearch(entry.headword ?? '');
         const bejaRaw = [entry.headword, ...(entry.headword_parts ?? [])].join(' ');
         const bejaSearch = normalizeForSearch(bejaRaw);
         return {
-          kind: 'beja_en' as const,
-          entry,
+          ...result,
           bejaPrimary,
           bejaPrimaryNoApos: stripApostrophes(bejaPrimary),
           bejaSearch,
@@ -142,7 +151,7 @@ export default function HomeScreen() {
         { name: 'bejaSearchNoApos', weight: 0.02 },
       ],
     });
-  }, [dictionary, englishBeja, dict2, normalizeForSearch, stripApostrophes]);
+  }, [dictionary, englishBeja, dict2, vanhove, normalizeForSearch, stripApostrophes]);
 
   React.useEffect(() => {
     if (!search.trim()) {
@@ -151,11 +160,10 @@ export default function HomeScreen() {
     }
     if (searchMode === 'arabic') {
       const s = search.trim();
-      const arabicMatches: SearchResult[] = dictionary
-        .filter(entry =>
-          entry.gloss_ar && entry.gloss_ar.some(g => g.includes(s))
-        )
-        .map(entry => ({ kind: 'beja_en' as const, entry }));
+      const arabicMatches: SearchResult[] = [
+        ...dictionary.map(entry => ({ kind: 'beja_en' as const, entry })),
+        ...vanhove.map(entry => ({ kind: 'vanhove' as const, entry })),
+      ].filter(({ entry }) => entry.gloss_ar && entry.gloss_ar.some(g => g.includes(s)));
       setResults(arabicMatches);
     } else if (searchMode === 'english') {
       // English strict search: match in gloss_en or raw
@@ -181,9 +189,16 @@ export default function HomeScreen() {
         )
         .map(entry => ({ kind: 'dict2' as const, entry }));
 
+      const vanhoveMatches: SearchResult[] = vanhove
+        .filter(entry =>
+          (entry.gloss_en && entry.gloss_en.some(g => g.toLowerCase().includes(s))) ||
+          (entry.raw && entry.raw.some(r => r.toLowerCase().includes(s)))
+        )
+        .map(entry => ({ kind: 'vanhove' as const, entry }));
+
       const scoreEnglishResult = (r: SearchResult) => {
         const englishCandidates: string[] =
-          r.kind === 'beja_en'
+          r.kind === 'beja_en' || r.kind === 'vanhove'
             ? (r.entry.gloss_en ?? [])
             : r.kind === 'en_beja'
               ? [r.entry.english ?? '']
@@ -208,7 +223,7 @@ export default function HomeScreen() {
         return { rank, bestLen };
       };
 
-      const merged = [ ...bejaEnMatches, ...enBejaMatches, ...dict2Matches]
+      const merged = [ ...bejaEnMatches, ...enBejaMatches, ...dict2Matches, ...vanhoveMatches]
         .map(r => ({ r, ...scoreEnglishResult(r) }))
         .sort((a, b) => {
           if (a.rank !== b.rank) return a.rank - b.rank;
@@ -269,7 +284,7 @@ export default function HomeScreen() {
 
       setResults(sorted);
     }
-  }, [search, searchMode, dictionary, englishBeja, dict2, fuse, normalizeForSearch, stripApostrophes, isWithinEditDistance1]);
+  }, [search, searchMode, dictionary, englishBeja, dict2, vanhove, fuse, normalizeForSearch, stripApostrophes, isWithinEditDistance1]);
 
   const getBejaText = (r: SearchResult) => {
     if (r.kind === 'beja_en') return r.entry.headword ?? '';
@@ -280,9 +295,14 @@ export default function HomeScreen() {
   };
 
   const getEnglishText = (r: SearchResult) => {
-    if (r.kind === 'beja_en') return r.entry.gloss_en?.join('; ') ?? '';
+    if (r.kind === 'beja_en' || r.kind === 'vanhove') return r.entry.gloss_en?.join('; ') ?? '';
     if (r.kind === 'en_beja') return r.entry.english ?? '';
     return r.entry.gloss_en ?? '';
+  };
+
+  const getDisplayedBejaText = (r: SearchResult) => {
+    const text = getBejaText(r);
+    return arabicScript ? latinToArabic(text) : text;
   };
 
   const getArabicText = (r: SearchResult) => {
@@ -292,8 +312,8 @@ export default function HomeScreen() {
   };
 
   const getSourcePage = (r: SearchResult) => r.entry.source?.page;
-  const getPdfOffset = (r: SearchResult) => (r.kind === 'en_beja' ? 198 : r.kind === 'dict2' ? 0 : 16);
-  const getPdfDoc = (r: SearchResult) => (r.kind === 'dict2' ? 'dict2' : 'dictionary');
+  const getPdfOffset = (r: SearchResult) => (r.kind === 'en_beja' ? 198 : r.kind === 'dict2' || r.kind === 'vanhove' ? 0 : 16);
+  const getPdfDoc = (r: SearchResult) => (r.kind === 'dict2' ? 'dict2' : r.kind === 'vanhove' ? 'vanhove' : 'dictionary');
 
   const getRawText = (r: SearchResult) => {
     if (r.kind === 'dict2') return r.entry.raw ?? '';
@@ -303,11 +323,11 @@ export default function HomeScreen() {
   const getPrimaryText = (r: SearchResult) => {
     if (searchMode === 'arabic') return getArabicText(r);
     if (searchMode === 'english') return getEnglishText(r);
-    return getBejaText(r);
+    return getDisplayedBejaText(r);
   };
   const getSecondaryText = (r: SearchResult) => {
-    if (searchMode === 'arabic') return `${getBejaText(r)}${getEnglishText(r) ? ' — ' + getEnglishText(r) : ''}`;
-    if (searchMode === 'english') return getBejaText(r);
+    if (searchMode === 'arabic') return `${getDisplayedBejaText(r)}${getEnglishText(r) ? ' — ' + getEnglishText(r) : ''}`;
+    if (searchMode === 'english') return getDisplayedBejaText(r);
     return getEnglishText(r);
   };
 
@@ -315,7 +335,7 @@ export default function HomeScreen() {
     <SafeAreaView style={styles.screen} edges={['top', 'left', 'right']}>
       <View style={styles.searchContainer}>
         <TextInput
-          style={styles.searchInput}
+          style={[styles.searchInput, largeText && styles.largeSearchInput, arabicScript ? styles.alignRight : styles.alignLeft]}
           placeholder={searchMode === 'beja' ? 'Search Bidhaawyeet…' : searchMode === 'arabic' ? 'Search Arabic…' : 'Search English…'}
           value={search}
           onChangeText={setSearch}
@@ -327,49 +347,72 @@ export default function HomeScreen() {
             <TouchableOpacity
               accessibilityRole="tab"
               accessibilityState={{ selected: searchMode === 'beja' }}
-              style={[styles.segment, searchMode === 'beja' && styles.segmentActive]}
+              style={[styles.segment, largeText && styles.largeSegment, searchMode === 'beja' && styles.segmentActive]}
               onPress={() => setSearchMode('beja')}>
-              <Text style={[styles.segmentText, searchMode === 'beja' && styles.segmentTextActive]}>Bidhaawyeet</Text>
+              <Text style={[styles.segmentText, largeText && styles.largeControlText, searchMode === 'beja' && styles.segmentTextActive]}>Bidhaawyeet</Text>
             </TouchableOpacity>
             <TouchableOpacity
               accessibilityRole="tab"
               accessibilityState={{ selected: searchMode === 'arabic' }}
-              style={[styles.segment, searchMode === 'arabic' && styles.segmentActive]}
+              style={[styles.segment, largeText && styles.largeSegment, searchMode === 'arabic' && styles.segmentActive]}
               onPress={() => setSearchMode('arabic')}>
-              <Text style={[styles.segmentText, searchMode === 'arabic' && styles.segmentTextActive]}>Arabic</Text>
+              <Text style={[styles.segmentText, largeText && styles.largeControlText, searchMode === 'arabic' && styles.segmentTextActive]}>Arabic</Text>
             </TouchableOpacity>
             <TouchableOpacity
               accessibilityRole="tab"
               accessibilityState={{ selected: searchMode === 'english' }}
-              style={[styles.segment, searchMode === 'english' && styles.segmentActive]}
+              style={[styles.segment, largeText && styles.largeSegment, searchMode === 'english' && styles.segmentActive]}
               onPress={() => setSearchMode('english')}>
-              <Text style={[styles.segmentText, searchMode === 'english' && styles.segmentTextActive]}>English</Text>
+              <Text style={[styles.segmentText, largeText && styles.largeControlText, searchMode === 'english' && styles.segmentTextActive]}>English</Text>
             </TouchableOpacity>
           </View>
+        </View>
+        <View style={styles.displayControls}>
+          <TouchableOpacity
+            style={styles.displayButton}
+            accessibilityRole="button"
+            accessibilityLabel={arabicScript ? 'Switch to Latin script' : 'Switch to Arabic script'}
+            accessibilityHint="Changes how Bidhaawyeet results are displayed."
+            onPress={() => setArabicScript(value => !value)}>
+            <Text style={[styles.displayButtonText, largeText && styles.largeControlText]}>
+              {arabicScript ? 'Latin script' : 'حروف العربي'}
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.displayButton, styles.textSizeButton, largeText && styles.displayButtonActive]}
+            accessibilityRole="button"
+            accessibilityLabel="Large text"
+            accessibilityHint="Toggles larger text and copy icons."
+            accessibilityState={{ selected: largeText }}
+            onPress={() => setLargeText(value => !value)}>
+            <Text style={[styles.textSizeLarge, largeText && styles.displayButtonTextActive]}>
+              A<Text style={styles.textSizeSmall}>a</Text>
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
 
       <ScrollView style={styles.resultsContainer} contentContainerStyle={{ paddingBottom: 24 }}>
         {search.trim().length > 0 && limitedResults.length === 0 ? (
-          <Text style={styles.emptyText}>No results found.</Text>
+          <Text style={[styles.emptyText, largeText && styles.largeResultText, arabicScript ? styles.alignRight : styles.alignLeft]}>No results found.</Text>
         ) : null}
 
         {limitedResults.map((r, i) => {
-          const bejaWord = getBejaText(r);
+          const bejaWord = getDisplayedBejaText(r);
           return (
             <View
-              key={`${r.kind}-${getPrimaryText(r)}-${getSourcePage(r) ?? i}-${i}`}
-              style={[styles.resultItem, { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }]}
+              key={`${r.kind}-${getBejaText(r)}-${getSourcePage(r) ?? i}-${i}`}
+              style={[styles.resultItem, arabicScript && styles.resultItemRight]}
             >
               <TouchableOpacity
                 style={{ flex: 1 }}
                 onPress={() => {
-                  const page = getSourcePage(r);
+                  const page = r.kind === 'vanhove' ? r.entry.source.pdf_page : getSourcePage(r);
                   if (typeof page === 'number') {
                     const offset = getPdfOffset(r);
                     const doc = getPdfDoc(r);
                     const term = searchMode === 'beja' ? getBejaText(r) : search.trim();
-                    const headword = getBejaText(r) || getPrimaryText(r);
+                    const headword = getDisplayedBejaText(r) || getPrimaryText(r);
                     router.push({
                       pathname: '/pdf',
                       params: { doc, page: String(page), offset: String(offset), term, headword },
@@ -379,18 +422,22 @@ export default function HomeScreen() {
                 accessibilityRole="button"
                 accessibilityLabel={`View PDF for ${bejaWord}`}
               >
-                <Text style={styles.resultHeadword}>{getPrimaryText(r)}</Text>
-                <Text style={styles.resultGloss}>
+                <Text style={[styles.resultHeadword, largeText && styles.largeHeadword, arabicScript ? styles.alignRight : styles.alignLeft]}>{getPrimaryText(r)}</Text>
+                <Text style={[styles.resultGloss, largeText && styles.largeResultText, arabicScript ? styles.alignRight : styles.alignLeft]}>
                   {getSecondaryText(r)}
                   {searchMode !== 'arabic' && getArabicText(r) ? ` — ${getArabicText(r)}` : ''}
                 </Text>
+                {r.kind === 'vanhove' ? (
+                  <Text style={[styles.resultMeta, largeText && styles.largeMeta, arabicScript ? styles.alignRight : styles.alignLeft]}>Vanhove &amp; Hamid Ahmed 2026, p. {r.entry.source.page}</Text>
+                ) : null}
               </TouchableOpacity>
               <CopyButton
+                size={largeText ? 30 : 22}
                 onPress={() => {
                   const raw = getRawText(r);
                   if (raw) Clipboard.setStringAsync(raw);
                 }}
-                style={{ marginLeft: 8 }}
+                style={arabicScript ? styles.copyButtonRight : styles.copyButtonLeft}
               />
             </View>
           );
@@ -416,26 +463,79 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderRadius: 8,
     padding: 10,
-    fontSize: 16,
+    fontSize: 18,
     marginBottom: 12,
     backgroundColor: '#fff',
+  },
+  largeSearchInput: {
+    fontSize: 37,
   },
   toggleRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  displayControls: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+    gap: 8,
+  },
+  displayButton: {
+    minHeight: 44,
+    minWidth: 44,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  displayButtonActive: {
+    backgroundColor: '#111827',
+  },
+  displayButtonText: {
+    fontSize: 14,
+    color: '#111827',
+    fontWeight: '600',
+  },
+  displayButtonTextActive: {
+    color: '#fff',
+  },
+  textSizeButton: {
+    paddingVertical: 0,
+  },
+  textSizeLarge: {
+    color: '#111827',
+    fontSize: 24,
+    fontWeight: '600',
+  },
+  textSizeSmall: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  largeControlText: {
+    fontSize: 28,
+  },
   segmented: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 10,
     overflow: 'hidden',
+    maxWidth: '100%',
   },
   segment: {
     paddingVertical: 8,
     paddingHorizontal: 16,
     backgroundColor: '#fff',
+  },
+  largeSegment: {
+    paddingHorizontal: 8,
+    flexShrink: 1,
   },
   segmentActive: {
     backgroundColor: '#111827',
@@ -452,27 +552,56 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   emptyText: {
-    textAlign: 'center',
     marginTop: 16,
+    marginHorizontal: 12,
+    fontSize: 18,
     color: '#666',
   },
   resultItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
     padding: 12,
     borderBottomWidth: 1,
     borderColor: '#eee',
     backgroundColor: '#fff',
   },
+  resultItemRight: {
+    flexDirection: 'row-reverse',
+  },
+  alignLeft: {
+    textAlign: 'left',
+  },
+  alignRight: {
+    textAlign: 'right',
+  },
+  copyButtonLeft: {
+    marginLeft: 8,
+  },
+  copyButtonRight: {
+    marginLeft: 0,
+    marginRight: 8,
+  },
   resultHeadword: {
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 20,
   },
   resultGloss: {
     color: '#333',
+    fontSize: 18,
     marginTop: 2,
   },
   resultMeta: {
     color: '#888',
-    fontSize: 12,
+    fontSize: 14,
     marginTop: 2,
+  },
+  largeHeadword: {
+    fontSize: 40,
+  },
+  largeResultText: {
+    fontSize: 37,
+  },
+  largeMeta: {
+    fontSize: 31,
   },
 });
